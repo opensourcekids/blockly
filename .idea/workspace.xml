@@ -22,47 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="comment.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/comment.js">
+      <file leaf-file-name="overlay.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demos/resizable/overlay.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2512">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolbox.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/toolbox.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1776">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="widgetdiv.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/widgetdiv.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demos/code/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+            <state relative-caret-position="-608">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -73,13 +37,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/demos/code/index.html" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="773" />
+    <option name="y" value="31" />
     <option name="width" value="1280" />
     <option name="height" value="773" />
   </component>
@@ -155,7 +127,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
+              <option name="myItemId" value="resizable" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -418,8 +390,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <frame x="773" y="31" width="1280" height="773" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2536349" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -481,12 +453,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/comment.js">
+    <entry file="file://$PROJECT_DIR$/core/widgetdiv.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2512">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1459977029000" expanded="true" signature="0:674" placeholder="/** @license ...*/" />
+            <marker date="1459977029000" expanded="true" signature="676:944" placeholder="/** @fileoverview A div that floats on top of Blockly.  This singleton contains ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1081:1172" placeholder="/** The HTML container.  Set once by Blockly.WidgetDiv.createDom. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1204:1287" placeholder="/** The object currently using this container. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1322:1431" placeholder="/** Optional cleanup function set by whichever object uses the widget. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1468:1529" placeholder="/** Create the widget div and inject it onto the page. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1842:2164" placeholder="/** Initialize and display the widget div.  Close the old one if needed. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="2223:2681" placeholder="{...}" />
+            <marker date="1459977029000" expanded="true" signature="2334:2464" placeholder="//..." />
+            <marker date="1459977029000" expanded="true" signature="3243:3249" placeholder="{...}" />
+            <marker date="1459977029000" expanded="true" signature="3243:3251" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -497,24 +479,57 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1459977029000" expanded="true" signature="1141:1311" placeholder="/** Class for a Toolbox. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1445:1495" placeholder="/** Width of the toolbox. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1534:1613" placeholder="/** The SVG group currently selected. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1665:1758" placeholder="/** The tree node most recently selected. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1808:1916" placeholder="/** Configuration constants for Closure's tree UI. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="2283:2318" placeholder="/** Initializes the toolbox. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="2363:3119" placeholder="{...}" />
+            <marker date="1459977029000" expanded="true" signature="2741:2975" placeholder="{...}" />
+            <marker date="1459977029000" expanded="true" signature="2809:2883" placeholder="{...}" />
+            <marker date="1459977029000" expanded="true" signature="2889:2967" placeholder="{...}" />
+            <marker date="1459977029000" expanded="true" signature="3003:3119" placeholder="{...}" />
+            <marker date="1459977029000" expanded="true" signature="13122:13128" placeholder="{...}" />
+            <marker date="1459977029000" expanded="true" signature="13122:13182" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/widgetdiv.js">
+    <entry file="file://$PROJECT_DIR$/core/comment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-2512">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1459977029000" expanded="true" signature="676:779" placeholder="/** @fileoverview Object representing a code comment. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="925:1072" placeholder="/** Class for a comment. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="1241:1248" placeholder="/** Icon in base64 format. ...*/" />
+            <marker date="1459977029000" expanded="true" signature="8469:8546" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demos/code/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        <state relative-caret-position="-432">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/css.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/resizable/overlay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-608">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
           <folding />
         </state>
       </provider>
