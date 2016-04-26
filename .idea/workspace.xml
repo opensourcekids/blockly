@@ -2,299 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51649ca5-cd1a-4766-9a8c-c7d3753cd305" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/menu_graphic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/snappy_code.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/Blob.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/FileSaver.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blockly_helper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blockly_uncompressed.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/base.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/bool.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/builtins.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/colour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/datetime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/dict.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/explorerhat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/fractions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/functions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/general.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/gpio.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/gpiozero.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/lib_time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/lists.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/loops.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/math.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/methods.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/numbers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/objects-alt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/objects.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/os.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/pibrella.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/piliter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/procedures.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/random.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/rpi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/signal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/str.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/sys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/text.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/tuple.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/turtle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/variables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/base.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/bool.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/builtins.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/datetime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/dict.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/explorerhat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/fractions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/functions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/general.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/gpio.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/gpiozero.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/lib_time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/methods.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/numbers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/objects-alt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/objects.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/os.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/pibrella.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/piliter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/random.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/rpi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/signal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/str.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/sys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/tuple.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/blocks/turtle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/block_render_svg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/block_svg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/blockly.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/blocks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/bubble.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/comment.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/connection.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/connection_db.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/constants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/contextmenu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/events.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field_angle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field_checkbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field_colour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field_date.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field_dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field_image.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field_label.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field_textinput.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/field_variable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/flyout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/hue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/icon.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/inject.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/input.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/msg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/mutator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/names.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/procedures.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/scrollbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/toolbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/trashcan.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/type.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/variables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/warning.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/widgetdiv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/workspace.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/workspace_svg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/xml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core-original/zoom_controls.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core/hue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/core/type.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/blockly_code.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery-1.11.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery-1.2.6.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery-2.1.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.layout-1.2.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.layout-1.4.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.layout.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.ui-1.11.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.ui-1.5.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/layout-default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/nested_sidebars.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/overlay-panel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/panels.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/simple-block.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/simple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/dart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/dart/colour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/dart/lists.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/dart/logic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/dart/loops.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/dart/math.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/dart/procedures.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/dart/text.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/dart/variables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/javascript.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/javascript/colour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/javascript/lists.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/javascript/logic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/javascript/loops.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/javascript/math.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/javascript/procedures.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/javascript/text.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/javascript/variables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/lua.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/lua/colour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/lua/lists.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/lua/logic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/lua/loops.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/lua/math.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/lua/procedures.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/lua/text.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/lua/variables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/php.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/php/colour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/php/lists.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/php/logic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/php/loops.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/php/math.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/php/procedures.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/php/text.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/php/variables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/ajl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/bool.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/builtins.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/collections.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/colour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/datetime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/dict.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/explorerhat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/fractions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/general.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/gpio.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/gpiozero.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/lib_time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/lists.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/logic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/loops.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/math.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/methods.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/numbers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/objects.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/os.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/pibrella.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/piliter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/procedures.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/random.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/rpi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/signal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/str.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/sys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/text.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/tuple.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/turtle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators-original/python/variables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/ajl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/bool.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/builtins.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/collections.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/datetime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/dict.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/explorerhat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/fractions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/general.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/gpio.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/gpiozero.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/lib_time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/methods.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/numbers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/objects.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/os.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/pibrella.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/piliter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/random.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/rpi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/signal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/str.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/sys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/tuple.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/generators/python/turtle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/blockly/spin.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/app.yaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/apple-touch-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/index.yaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/index_redirect.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/redirect.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/storage.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/appengine/storage.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/blockly/core/block_svg-old.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/blockly/blocks/logic.js" afterPath="$PROJECT_DIR$/static/blockly/blocks-original/logic.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/blockly/core/block-old.js" afterPath="$PROJECT_DIR$/static/blockly/core-original/block.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/blockly_compressed.js" afterPath="$PROJECT_DIR$/static/blockly/blockly_compressed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/blocks/colour.js" afterPath="$PROJECT_DIR$/static/blockly/blocks/colour.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/blocks/lists.js" afterPath="$PROJECT_DIR$/static/blockly/blocks/lists.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/blocks/loops.js" afterPath="$PROJECT_DIR$/static/blockly/blocks/loops.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/blocks/math.js" afterPath="$PROJECT_DIR$/static/blockly/blocks/math.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/blocks/procedures.js" afterPath="$PROJECT_DIR$/static/blockly/blocks/procedures.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/blocks/text.js" afterPath="$PROJECT_DIR$/static/blockly/blocks/text.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/blocks/variables.js" afterPath="$PROJECT_DIR$/static/blockly/blocks/variables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/blocks_compressed.js" afterPath="$PROJECT_DIR$/static/blockly/blocks_compressed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/build.py" afterPath="$PROJECT_DIR$/static/blockly/build.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/core/block.js" afterPath="$PROJECT_DIR$/static/blockly/core/block.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/core/blockly.js" afterPath="$PROJECT_DIR$/static/blockly/core/blockly.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/core/constants.js" afterPath="$PROJECT_DIR$/static/blockly/core/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/core/field.js" afterPath="$PROJECT_DIR$/static/blockly/core/field.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/dart.js" afterPath="$PROJECT_DIR$/static/blockly/generators/dart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/dart/colour.js" afterPath="$PROJECT_DIR$/static/blockly/generators/dart/colour.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/dart/lists.js" afterPath="$PROJECT_DIR$/static/blockly/generators/dart/lists.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/dart/logic.js" afterPath="$PROJECT_DIR$/static/blockly/generators/dart/logic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/dart/loops.js" afterPath="$PROJECT_DIR$/static/blockly/generators/dart/loops.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/dart/math.js" afterPath="$PROJECT_DIR$/static/blockly/generators/dart/math.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/dart/procedures.js" afterPath="$PROJECT_DIR$/static/blockly/generators/dart/procedures.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/dart/text.js" afterPath="$PROJECT_DIR$/static/blockly/generators/dart/text.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/dart/variables.js" afterPath="$PROJECT_DIR$/static/blockly/generators/dart/variables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/javascript.js" afterPath="$PROJECT_DIR$/static/blockly/generators/javascript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/javascript/colour.js" afterPath="$PROJECT_DIR$/static/blockly/generators/javascript/colour.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/javascript/lists.js" afterPath="$PROJECT_DIR$/static/blockly/generators/javascript/lists.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/javascript/logic.js" afterPath="$PROJECT_DIR$/static/blockly/generators/javascript/logic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/javascript/loops.js" afterPath="$PROJECT_DIR$/static/blockly/generators/javascript/loops.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/javascript/math.js" afterPath="$PROJECT_DIR$/static/blockly/generators/javascript/math.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/javascript/procedures.js" afterPath="$PROJECT_DIR$/static/blockly/generators/javascript/procedures.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/javascript/text.js" afterPath="$PROJECT_DIR$/static/blockly/generators/javascript/text.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/javascript/variables.js" afterPath="$PROJECT_DIR$/static/blockly/generators/javascript/variables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/php.js" afterPath="$PROJECT_DIR$/static/blockly/generators/php.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/php/colour.js" afterPath="$PROJECT_DIR$/static/blockly/generators/php/colour.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/php/lists.js" afterPath="$PROJECT_DIR$/static/blockly/generators/php/lists.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/php/logic.js" afterPath="$PROJECT_DIR$/static/blockly/generators/php/logic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/php/loops.js" afterPath="$PROJECT_DIR$/static/blockly/generators/php/loops.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/php/math.js" afterPath="$PROJECT_DIR$/static/blockly/generators/php/math.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/php/procedures.js" afterPath="$PROJECT_DIR$/static/blockly/generators/php/procedures.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/php/text.js" afterPath="$PROJECT_DIR$/static/blockly/generators/php/text.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/php/variables.js" afterPath="$PROJECT_DIR$/static/blockly/generators/php/variables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/python.js" afterPath="$PROJECT_DIR$/static/blockly/generators/python.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/python/colour.js" afterPath="$PROJECT_DIR$/static/blockly/generators/python/colour.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/python/lists.js" afterPath="$PROJECT_DIR$/static/blockly/generators/python/lists.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/python/logic.js" afterPath="$PROJECT_DIR$/static/blockly/generators/python/logic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/python/loops.js" afterPath="$PROJECT_DIR$/static/blockly/generators/python/loops.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/python/math.js" afterPath="$PROJECT_DIR$/static/blockly/generators/python/math.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/python/procedures.js" afterPath="$PROJECT_DIR$/static/blockly/generators/python/procedures.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/python/text.js" afterPath="$PROJECT_DIR$/static/blockly/generators/python/text.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/generators/python/variables.js" afterPath="$PROJECT_DIR$/static/blockly/generators/python/variables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/python_compressed.js" afterPath="$PROJECT_DIR$/static/blockly/python_compressed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.layout-1.2.0.js" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.layout-1.2.0.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.layout.min.js" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.layout.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.ui-1.5.2.js" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/jquery.ui-1.5.2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/demos/resizable/layout-default.css" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/layout-default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/demos/resizable/nested_sidebars.html" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/nested_sidebars.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/demos/resizable/simple-block.html" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/simple-block.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/blockly/demos/resizable/simple.html" afterPath="$PROJECT_DIR$/static/blockly/demos/resizable/simple.html" />
     </list>
     <ignored path="pyplus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -319,8 +34,8 @@
       <file leaf-file-name="simple-block.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/blockly/demos/resizable/simple-block.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="426" column="53" selection-start-line="426" selection-start-column="53" selection-end-line="426" selection-end-column="53" />
+            <state relative-caret-position="420">
+              <caret line="438" column="13" selection-start-line="438" selection-start-column="13" selection-end-line="438" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -802,13 +517,21 @@
       <option name="presentableId" value="Default" />
       <updated>1459970463075</updated>
     </task>
+    <task id="LOCAL-00001" summary="1.  Added JQuery UI Layout Plugin to resize demo for new layout.&#10;2.  Pasted core blockly code from pybly to here.">
+      <created>1461649568380</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1461649568380</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2786753" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2786753" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -817,7 +540,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -858,6 +581,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1.  Added JQuery UI Layout Plugin to resize demo for new layout.&#10;2.  Pasted core blockly code from pybly to here." />
+    <option name="LAST_COMMIT_MESSAGE" value="1.  Added JQuery UI Layout Plugin to resize demo for new layout.&#10;2.  Pasted core blockly code from pybly to here." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1290,8 +1017,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/blockly/demos/resizable/simple-block.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="426" column="53" selection-start-line="426" selection-start-column="53" selection-end-line="426" selection-end-column="53" />
+        <state relative-caret-position="420">
+          <caret line="438" column="13" selection-start-line="438" selection-start-column="13" selection-end-line="438" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
