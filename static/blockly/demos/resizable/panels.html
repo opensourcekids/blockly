@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W2UI Demo: layout-7</title>
+    <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://w2ui.com/src/w2ui-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div id="layout" style="width: 100%; height: 400px;"></div>
+
+
+<span style="display: inline-block; width: 60px;"> Main: </span>
+<button class="w2ui-btn" onclick="w2ui['layout'].toggle('top', window.instant)">Top</button>
+<button class="w2ui-btn" onclick="w2ui['layout'].toggle('left', window.instant)">Left</button>
+<button class="w2ui-btn" onclick="w2ui['layout'].toggle('right', window.instant)">Right</button>
+<button class="w2ui-btn" onclick="w2ui['layout'].toggle('preview', window.instant)">Preview</button>
+<button class="w2ui-btn" onclick="w2ui['layout'].toggle('bottom', window.instant)">Bottom</button>
+
+<div style="height: 10px;"></div>
+
+<span style="display: inline-block; width: 60px;"> Nested: </span>
+<button class="w2ui-btn" onclick="w2ui['layout2'].toggle('top', window.instant)">Top</button>
+<button class="w2ui-btn" onclick="w2ui['layout2'].toggle('left', window.instant)">Left</button>
+<button class="w2ui-btn" onclick="w2ui['layout2'].toggle('right', window.instant)">Right</button>
+<button class="w2ui-btn" onclick="w2ui['layout2'].toggle('preview', window.instant)">Preview</button>
+<button class="w2ui-btn" onclick="w2ui['layout2'].toggle('bottom', window.instant)">Bottom</button>
+
+<script type="text/javascript">
+$(function () {
+    var pstyle = 'border: 1px solid #0000ff; padding: 5px;';
+    $('#layout').w2layout({
+        name: 'layout',
+        panels: [
+            { type: 'top', size: 30, resizable: false, style: pstyle, content: 'top' },
+//            { type: 'left', size: '60%', resizable: true, style: pstyle, content: 'left' },
+            { type: 'main', style: pstyle, overflow: 'shown' },
+            { type: 'right', size: '40%', resizable: true, style: pstyle, content: 'right' },
+            { type: 'preview', size: '50%', resizable: true, hidden: true, style: pstyle, content: 'preview' },
+            { type: 'bottom', size: 50, resizable: true, hidden: true, style: pstyle, content: 'bottom' }
+        ]
+    });
+    var pstyle = 'background-color: #F0F0C1; border: 1px solid #dfdfdf; padding: 5px;';
+    var style_code = 'border: 1px solid #000000; padding: 5px; color: #000000; background-color: #ffffff';
+
+    var style_output = 'border: 1px solid #000000; padding: 5px; color: #ffffff; background-color: #000000';
+
+    $().w2layout({
+        name: 'layout2',
+        panels: [
+            { type: 'top', size: '50%', resizable: true, style: style_code, content: 'top' },
+            { type: 'main', style: style_output }
+        ]
+    });
+
+    w2ui['layout'].content('right', w2ui['layout2']);
+})
+</script>
+
+</body>
+</html>

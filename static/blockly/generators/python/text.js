@@ -61,7 +61,8 @@ Blockly.Python['text_join'] = function(block) {
     }
     var tempVar = Blockly.Python.variableDB_.getDistinctName('temp_value',
         Blockly.Variables.NAME_TYPE);
-    code = '\'\'.join([str(' + tempVar + ') for ' + tempVar + ' in [' +
+    Blockly.Python.definitions_['add_temp'] = 'temp_value = \'\'';
+    code = '\n\'\'.join([str(' + tempVar + ') for ' + tempVar + ' in [' +
         code.join(', ') + ']])';
     return [code, Blockly.Python.ORDER_FUNCTION_CALL];
   }
@@ -77,14 +78,14 @@ Blockly.Python['text_append'] = function(block) {
 };
 
 Blockly.Python['text_length'] = function(block) {
-  // Is the string null or array empty?
+  // String length.
   var argument0 = Blockly.Python.valueToCode(block, 'VALUE',
       Blockly.Python.ORDER_NONE) || '\'\'';
   return ['len(' + argument0 + ')', Blockly.Python.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Python['text_isEmpty'] = function(block) {
-  // Is the string null or array empty?
+  // Is the string null?
   var argument0 = Blockly.Python.valueToCode(block, 'VALUE',
       Blockly.Python.ORDER_NONE) || '\'\'';
   var code = 'not len(' + argument0 + ')';
@@ -234,8 +235,8 @@ Blockly.Python['text_print'] = function(block) {
   return 'print(' + argument0 + ')\n';
 };
 
-Blockly.Python['text_prompt_ext'] = function(block) {
-  // Prompt function.
+Blockly.Python['text_prompt'] = function(block) {
+  // Prompt function (internal message).
   var functionName = Blockly.Python.provideFunction_(
       'text_prompt',
       ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
@@ -243,14 +244,7 @@ Blockly.Python['text_prompt_ext'] = function(block) {
        '    return raw_input(msg)',
        '  except NameError:',
        '    return input(msg)']);
-  if (block.getField('TEXT')) {
-    // Internal message.
-    var msg = Blockly.Python.quote_(block.getFieldValue('TEXT'));
-  } else {
-    // External message.
-    var msg = Blockly.Python.valueToCode(block, 'TEXT',
-        Blockly.Python.ORDER_NONE) || '\'\'';
-  }
+  var msg = Blockly.Python.quote_(block.getFieldValue('TEXT'));
   var code = functionName + '(' + msg + ')';
   var toNumber = block.getFieldValue('TYPE') == 'NUMBER';
   if (toNumber) {
@@ -259,4 +253,40 @@ Blockly.Python['text_prompt_ext'] = function(block) {
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
 
-Blockly.Python['text_prompt'] = Blockly.Python['text_prompt_ext'];
+Blockly.Python['text_prompt_ext'] = function(block) {
+  // Prompt function (external message).
+  var functionName = Blockly.Python.provideFunction_(
+      'text_prompt',
+      ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(msg):',
+       '  try:',
+       '    return raw_input(msg)',
+       '  except NameError:',
+       '    return input(msg)']);
+  var msg = Blockly.Python.valueToCode(block, 'TEXT',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  var code = functionName + '(' + msg + ')';
+  var toNumber = block.getFieldValue('TYPE') == 'NUMBER';
+  if (toNumber) {
+    code = 'float(' + code + ')';
+  }
+  return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+
+Blockly.Python['text_concatenate'] = function(block) {
+// Create a list with any number of elements of any type.
+    var code = new Array(block.itemCount_);
+
+    for (var n = 0; n < block.itemCount_; n++) {
+        var val = Blockly.Python.valueToCode(block, 'ADD' + n, Blockly.Python.ORDER_NONE);
+
+        if (val.charAt(0) == "\'"){
+            code[n] = val;
+
+        } else{
+            code[n] = 'str(' + val + ')'
+        }
+    }
+    code =  code.join(' + ');
+    return [code, Blockly.Python.ORDER_ATOMIC];
+};

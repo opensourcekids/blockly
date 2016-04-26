@@ -603,7 +603,9 @@ Blockly.Block.prototype.setColour = function(colour) {
   } else if (goog.isString(colour) && colour.match(/^#[0-9a-fA-F]{6}$/)) {
     this.colour_ = colour;
   } else {
-    throw 'Invalid colour: ' + colour;
+    // AJL: Changed this to allow black blocks.
+    // throw 'Invalid colour: ' + colour;
+    this.colour_ = Blockly.hueToRgb(hue);
   }
 };
 

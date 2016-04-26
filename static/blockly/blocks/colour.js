@@ -27,11 +27,9 @@
 goog.provide('Blockly.Blocks.colour');
 
 goog.require('Blockly.Blocks');
+//goog.require('Blockly.Hue');
 
 
-/**
- * Common HSV hue for all blocks in this category.
- */
 Blockly.Blocks.colour.HUE = 20;
 
 Blockly.Blocks['colour_picker'] = {
@@ -40,26 +38,15 @@ Blockly.Blocks['colour_picker'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit({
-      "message0": "%1",
-      "args0": [
-        {
-          "type": "field_colour",
-          "name": "COLOUR",
-          "colour": "#ff0000"
-        }
-      ],
-      "output": "Colour",
-      "colour": Blockly.Blocks.colour.HUE,
-      "helpUrl": Blockly.Msg.COLOUR_PICKER_HELPURL
-    });
-    // Assign 'this' to a variable for use in the tooltip closure below.
-    var thisBlock = this;
-    // Colour block is trivial.  Use tooltip of parent block if it exists.
-    this.setTooltip(function() {
-      var parent = thisBlock.getParent();
-      return (parent && parent.tooltip) || Blockly.Msg.COLOUR_PICKER_TOOLTIP;
-    });
+      this.block_type = Blockly.Type.COLOUR;
+          this.setHelpUrl(Blockly.Msg.COLOUR_PICKER_HELPURL);
+    this.setColour(Blockly.Hue.COLOUR);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldColour('#ff0000'), 'COLOUR');
+    this.setOutput(true, this.block_type);
+    this.setTooltip(Blockly.Msg.COLOUR_PICKER_TOOLTIP);
+
+
   }
 };
 
@@ -69,13 +56,13 @@ Blockly.Blocks['colour_random'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit({
-      "message0": Blockly.Msg.COLOUR_RANDOM_TITLE,
-      "output": "Colour",
-      "colour": Blockly.Blocks.colour.HUE,
-      "tooltip": Blockly.Msg.COLOUR_RANDOM_TOOLTIP,
-      "helpUrl": Blockly.Msg.COLOUR_RANDOM_HELPURL
-    });
+      this.block_type = Blockly.Type.COLOUR;
+    this.setHelpUrl(Blockly.Msg.COLOUR_RANDOM_HELPURL);
+    this.setColour(Blockly.Hue.COLOUR);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.COLOUR_RANDOM_TITLE);
+    this.setOutput(true, this.block_type);
+    this.setTooltip(Blockly.Msg.COLOUR_RANDOM_TOOLTIP);
   }
 };
 
@@ -85,22 +72,23 @@ Blockly.Blocks['colour_rgb'] = {
    * @this Blockly.Block
    */
   init: function() {
+      this.block_type = Blockly.Type.COLOUR;
     this.setHelpUrl(Blockly.Msg.COLOUR_RGB_HELPURL);
-    this.setColour(Blockly.Blocks.colour.HUE);
+    this.setColour(Blockly.Hue.COLOUR);
     this.appendValueInput('RED')
-        .setCheck('Number')
+        .setCheck([Blockly.Type.INT, Blockly.Type.NONE])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.COLOUR_RGB_TITLE)
         .appendField(Blockly.Msg.COLOUR_RGB_RED);
     this.appendValueInput('GREEN')
-        .setCheck('Number')
+        .setCheck([Blockly.Type.INT, Blockly.Type.NONE])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.COLOUR_RGB_GREEN);
     this.appendValueInput('BLUE')
-        .setCheck('Number')
+        .setCheck([Blockly.Type.INT, Blockly.Type.NONE])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.COLOUR_RGB_BLUE);
-    this.setOutput(true, 'Colour');
+    this.setOutput(true, this.block_type);
     this.setTooltip(Blockly.Msg.COLOUR_RGB_TOOLTIP);
   }
 };
@@ -111,22 +99,23 @@ Blockly.Blocks['colour_blend'] = {
    * @this Blockly.Block
    */
   init: function() {
+      this.block_type = Blockly.Type.COLOUR;
     this.setHelpUrl(Blockly.Msg.COLOUR_BLEND_HELPURL);
     this.setColour(Blockly.Blocks.colour.HUE);
     this.appendValueInput('COLOUR1')
-        .setCheck('Colour')
+        .setCheck([this.block_type, Blockly.Type.NONE])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.COLOUR_BLEND_TITLE)
         .appendField(Blockly.Msg.COLOUR_BLEND_COLOUR1);
     this.appendValueInput('COLOUR2')
-        .setCheck('Colour')
+        .setCheck([this.block_type, Blockly.Type.NONE])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.COLOUR_BLEND_COLOUR2);
     this.appendValueInput('RATIO')
-        .setCheck('Number')
+        .setCheck([Blockly.Type.INT, Blockly.Type.NONE])
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(Blockly.Msg.COLOUR_BLEND_RATIO);
-    this.setOutput(true, 'Colour');
+    this.setOutput(true, this.block_type);
     this.setTooltip(Blockly.Msg.COLOUR_BLEND_TOOLTIP);
   }
 };
