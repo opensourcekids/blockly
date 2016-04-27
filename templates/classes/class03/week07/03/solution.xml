@@ -1,0 +1,53 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="fractions_import_mixed" x="13" y="12">
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">How do you convert a mixed number to an improper fraction?</field>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">mixed_number</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="general_input">
+                                <value name="INPUT">
+                                    <block type="strings">
+                                        <field name="TEXT">Enter a mixed number (X X/X):  </field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">m</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="fractions_Mixed">
+                                        <value name="MIX">
+                                            <block type="variables_get">
+                                                <field name="VAR">mixed_number</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="fractions_mixed_as_improper">
+                                                <value name="MIX">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">m</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

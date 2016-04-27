@@ -1,0 +1,107 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="turtle_import" x="38" y="37">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">t</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="turtle_turtle"></block>
+                </value>
+                <next>
+                    <block type="turtle_shape">
+                        <field name="VAR">t</field>
+                        <field name="IMAGE">turtle</field>
+                        <next>
+                            <block type="turtle_speed">
+                                <field name="VAR">t</field>
+                                <field name="SPEED">3</field>
+                                <next>
+                                    <block type="turtle_colour_internal">
+                                        <field name="VAR">t</field>
+                                        <field name="COLOUR">#0072BC</field>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">colors</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="lists_create_with">
+                                                        <mutation items="4"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="colour_picker">
+                                                                <field name="COLOUR">#3333ff</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD1">
+                                                            <block type="colour_picker">
+                                                                <field name="COLOUR">#ff0000</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD2">
+                                                            <block type="colour_picker">
+                                                                <field name="COLOUR">#ffcc00</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD3">
+                                                            <block type="colour_picker">
+                                                                <field name="COLOUR">#33cc00</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="loops_for_each">
+                                                        <field name="VAR">color</field>
+                                                        <value name="ITER">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">colors</field>
+                                                            </block>
+                                                        </value>
+                                                        <statement name="DO">
+                                                            <block type="turtle_colour">
+                                                                <field name="VAR">t</field>
+                                                                <value name="COLOUR">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">color</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="turtle_move">
+                                                                        <field name="VAR">t</field>
+                                                                        <field name="DIR">forward</field>
+                                                                        <value name="VALUE">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">100</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="turtle_turn">
+                                                                                <field name="VAR">t</field>
+                                                                                <field name="DIR">left</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">90</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </statement>
+                                                        <next>
+                                                            <block type="turtle_done"></block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

@@ -1,0 +1,90 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">This represents a fraction n1/d1.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Add an int to each.</field>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">n1</field>
+                        <field name="OP">EQUALS</field>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">d1</field>
+                                <field name="OP">EQUALS</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Make another fraction using 2 variables.</field>
+                                        <next>
+                                            <block type="general_comment">
+                                                <field name="TEXT">Call the first n2 and the second d2.</field>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="13" y="313">
+        <field name="TEXT">Fill in the blanks (n1, n2, ??)</field>
+        <next>
+            <block type="strings_print_py3_commas">
+                <mutation items="5"></mutation>
+                <value name="ADD1">
+                    <block type="strings">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+                <value name="ADD3">
+                    <block type="strings">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+                <next>
+                    <block type="strings_print_py3_commas">
+                        <mutation items="5"></mutation>
+                        <value name="ADD0">
+                            <block type="strings">
+                                <field name="TEXT">-</field>
+                            </block>
+                        </value>
+                        <value name="ADD1">
+                            <block type="strings">
+                                <field name="TEXT">x</field>
+                            </block>
+                        </value>
+                        <value name="ADD2">
+                            <block type="strings">
+                                <field name="TEXT">-</field>
+                            </block>
+                        </value>
+                        <value name="ADD3">
+                            <block type="strings">
+                                <field name="TEXT">=</field>
+                            </block>
+                        </value>
+                        <value name="ADD4">
+                            <block type="strings">
+                                <field name="TEXT">--</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Copy and paste the first print block.</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Change the n's to d's</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

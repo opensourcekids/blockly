@@ -1,0 +1,116 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="turtle_import" x="38" y="37">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">t</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="turtle_turtle"></block>
+                </value>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">A list is a collection of date.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Python lists have [ ] around and commas separating things.</field>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">a_list</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="lists_create_with">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">123</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                    <block type="logic_boolean">
+                                                        <field name="BOOL">TRUE</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="strings_print">
+                                                <value name="TEXT">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">a_list</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="strings_print">
+                                                        <value name="TEXT">
+                                                            <block type="builtins_type">
+                                                                <value name="VALUE">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">a_list</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="general_comment">
+                                                                <field name="TEXT">Click the blue button on the block to add more to the list</field>
+                                                                <next>
+                                                                    <block type="variables_set">
+                                                                        <field name="VAR">another_list</field>
+                                                                        <field name="OP">EQUALS</field>
+                                                                        <value name="VALUE">
+                                                                            <block type="lists_create_with">
+                                                                                <mutation items="5"></mutation>
+                                                                                <value name="ADD0">
+                                                                                    <block type="strings">
+                                                                                        <field name="TEXT">dog</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="ADD1">
+                                                                                    <block type="numbers_float">
+                                                                                        <field name="NUM">0.0</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="ADD2">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">0</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="ADD3">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">a_list</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="ADD4">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">t</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="strings_print">
+                                                                                <value name="TEXT">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">another_list</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

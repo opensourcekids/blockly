@@ -1,0 +1,361 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="fractions_import" x="-63" y="-13">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">f</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="fractions_Fraction">
+                        <value name="NUMERATOR">
+                            <block type="numbers_int">
+                                <field name="NUM">7</field>
+                            </block>
+                        </value>
+                        <value name="DENOMINATOR">
+                            <block type="numbers_int">
+                                <field name="NUM">5</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="procedures_callnoreturn">
+                        <mutation name="fract_as_parts">
+                            <arg name="fract"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                            <block type="variables_get">
+                                <field name="VAR">f</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="strings_print">
+                                <value name="TEXT">
+                                    <block type="procedures_callreturn">
+                                        <mutation name="check_if_improper">
+                                            <arg name="frac"></arg>
+                                        </mutation>
+                                        <value name="ARG0">
+                                            <block type="variables_get">
+                                                <field name="VAR">f</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defnoreturn" x="388" y="-13">
+        <mutation>
+            <arg name="fract"></arg>
+        </mutation>
+        <field name="NAME">fract_as_parts</field>
+        <statement name="STACK">
+            <block type="variables_set">
+                <field name="VAR">string</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="strings_concatenate">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                            <block type="strings_cast_str">
+                                <value name="CAST">
+                                    <block type="variables_get">
+                                        <field name="VAR">f</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <value name="ADD1">
+                            <block type="strings">
+                                <field name="TEXT">=</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="loops_for_each">
+                        <field name="VAR">numerator</field>
+                        <value name="ITER">
+                            <block type="builtins_range_with">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="fractions_num_denom">
+                                        <field name="VAR">f</field>
+                                        <field name="WHAT">numerator</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO">
+                            <block type="variables_set">
+                                <field name="VAR">string</field>
+                                <field name="OP">ADD</field>
+                                <value name="VALUE">
+                                    <block type="strings_cast_str">
+                                        <value name="CAST">
+                                            <block type="numbers_arithmetic">
+                                                <field name="OP">DIVIDE</field>
+                                                <value name="A">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">f</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="fractions_num_denom">
+                                                        <field name="VAR">f</field>
+                                                        <field name="WHAT">numerator</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="controls_if">
+                                        <value name="IF0">
+                                            <block type="logic_compare">
+                                                <field name="OP">LT</field>
+                                                <value name="A">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">numerator</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="numbers_arithmetic">
+                                                        <field name="OP">MINUS</field>
+                                                        <value name="A">
+                                                            <block type="fractions_num_denom">
+                                                                <field name="VAR">f</field>
+                                                                <field name="WHAT">numerator</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="B">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">1</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <statement name="DO0">
+                                            <block type="variables_set">
+                                                <field name="VAR">string</field>
+                                                <field name="OP">ADD</field>
+                                                <value name="VALUE">
+                                                    <block type="strings">
+                                                        <field name="TEXT">+</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="strings_print">
+                                <value name="TEXT">
+                                    <block type="variables_get">
+                                        <field name="VAR">string</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defreturn" x="-62" y="213">
+        <mutation>
+            <arg name="frac"></arg>
+        </mutation>
+        <field name="NAME">check_if_improper</field>
+        <statement name="STACK">
+            <block type="variables_set">
+                <field name="VAR">answer</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="lists_create_empty"></block>
+                </value>
+                <next>
+                    <block type="controls_if">
+                        <value name="IF0">
+                            <block type="logic_compare">
+                                <field name="OP">GT</field>
+                                <value name="A">
+                                    <block type="variables_get">
+                                        <field name="VAR">frac</field>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="numbers_int">
+                                        <field name="NUM">1</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO0">
+                            <block type="lists_append">
+                                <value name="LIST">
+                                    <block type="variables_get">
+                                        <field name="VAR">answer</field>
+                                    </block>
+                                </value>
+                                <value name="ITEM">
+                                    <block type="logic_boolean">
+                                        <field name="BOOL">TRUE</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">whole</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="numbers_arithmetic">
+                                                <field name="OP">DIVIDE</field>
+                                                <value name="A">
+                                                    <block type="fractions_num_denom">
+                                                        <field name="VAR">f</field>
+                                                        <field name="WHAT">numerator</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="fractions_num_denom">
+                                                        <field name="VAR">f</field>
+                                                        <field name="WHAT">denominator</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="lists_append">
+                                                <value name="LIST">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">answer</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ITEM">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">whole</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="lists_append">
+                                                        <value name="LIST">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">answer</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ITEM">
+                                                            <block type="numbers_arithmetic">
+                                                                <field name="OP">MINUS</field>
+                                                                <value name="A">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">frac</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">whole</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="lists_append">
+                                                                <value name="LIST">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">answer</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ITEM">
+                                                                    <block type="strings_concatenate">
+                                                                        <mutation items="3"></mutation>
+                                                                        <value name="ADD0">
+                                                                            <block type="strings_cast_str">
+                                                                                <value name="CAST">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">whole</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                            <block type="strings">
+                                                                                <field name="TEXT"></field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="ADD2">
+                                                                            <block type="strings_cast_str">
+                                                                                <value name="CAST">
+                                                                                    <block type="numbers_arithmetic">
+                                                                                        <field name="OP">MINUS</field>
+                                                                                        <value name="A">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">frac</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">whole</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="strings_print_commas">
+                                                                        <mutation items="2"></mutation>
+                                                                        <value name="ADD0">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">whole</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                            <block type="numbers_arithmetic">
+                                                                                <field name="OP">MINUS</field>
+                                                                                <value name="A">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">frac</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">whole</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+        </statement>
+        <value name="RETURN">
+            <block type="variables_get">
+                <field name="VAR">answer</field>
+            </block>
+        </value>
+    </block>
+</xml>

@@ -1,0 +1,108 @@
+<xml id="defaultblocks" style="display: none">
+    <block type="variables_set" id="1" inline="true" x="0" y="0">
+        <field name="VAR">t</field>
+        <value name="VALUE">
+            <block type="turtle_turtle" id="2"></block>
+        </value>
+        <next>
+            <block type="turtle_shape" id="3">
+                <field name="VAR">t</field>
+                <field name="IMAGE">turtle</field>
+                <next>
+                    <block type="turtle_speed" id="4">
+                        <field name="VAR">t</field>
+                        <field name="SPEED">6</field>
+                        <next>
+                            <block type="turtle_move" id="7" inline="true">
+                                <field name="VAR">t</field>
+                                <field name="DIR">forward</field>
+                                <value name="VALUE">
+                                    <block type="numbers_int" id="8">
+                                        <field name="NUM">100</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="turtle_turn" id="9" inline="true">
+                                        <field name="VAR">t</field>
+                                        <field name="DIR">left</field>
+                                        <value name="VALUE">
+                                            <block type="numbers_int" id="10">
+                                                <field name="NUM">90</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="turtle_move" id="13" inline="true">
+                                                <field name="VAR">t</field>
+                                                <field name="DIR">forward</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int" id="14">
+                                                        <field name="NUM">100</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="turtle_turn" id="15" inline="true">
+                                                        <field name="VAR">t</field>
+                                                        <field name="DIR">left</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_int" id="16">
+                                                                <field name="NUM">90</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="turtle_move" id="19" inline="true">
+                                                                <field name="VAR">t</field>
+                                                                <field name="DIR">forward</field>
+                                                                <value name="VALUE">
+                                                                    <block type="numbers_int" id="20">
+                                                                        <field name="NUM">100</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="turtle_turn" id="21" inline="true">
+                                                                        <field name="VAR">t</field>
+                                                                        <field name="DIR">left</field>
+                                                                        <value name="VALUE">
+                                                                            <block type="numbers_int" id="22">
+                                                                                <field name="NUM">90</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="turtle_move" id="25" inline="true">
+                                                                                <field name="VAR">t</field>
+                                                                                <field name="DIR">forward</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="numbers_int" id="26">
+                                                                                        <field name="NUM">100</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="turtle_turn" id="27" inline="true">
+                                                                                        <field name="VAR">t</field>
+                                                                                        <field name="DIR">left</field>
+                                                                                        <value name="VALUE">
+                                                                                            <block type="numbers_int" id="28">
+                                                                                                <field name="NUM">90</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

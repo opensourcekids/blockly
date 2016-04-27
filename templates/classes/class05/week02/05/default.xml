@@ -1,0 +1,207 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">Run this to see what this does.</field>
+        <next>
+            <block type="turtle_import">
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">t</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="turtle_turtle"></block>
+                        </value>
+                        <next>
+                            <block type="turtle_shape">
+                                <field name="VAR">t</field>
+                                <field name="IMAGE">turtle</field>
+                                <next>
+                                    <block type="turtle_hide_show">
+                                        <field name="VAR">t</field>
+                                        <field name="WHAT">hideturtle</field>
+                                        <next>
+                                            <block type="turtle_speed">
+                                                <field name="VAR">t</field>
+                                                <field name="SPEED">0</field>
+                                                <next>
+                                                    <block type="general_comment">
+                                                        <field name="TEXT">Change this for different shapes (&lt; 10).</field>
+                                                        <next>
+                                                            <block type="variables_set">
+                                                                <field name="VAR">number_of_sides</field>
+                                                                <field name="OP">EQUALS</field>
+                                                                <value name="VALUE">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">3</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="general_comment">
+                                                                        <field name="TEXT">What happens when you change this? Start by increasing by 1.</field>
+                                                                        <next>
+                                                                            <block type="variables_set">
+                                                                                <field name="VAR">times_around</field>
+                                                                                <field name="OP">EQUALS</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">1</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="loops_for_each">
+                                                                                        <field name="VAR">i</field>
+                                                                                        <value name="ITER">
+                                                                                            <block type="builtins_range_with">
+                                                                                                <mutation items="1"></mutation>
+                                                                                                <value name="ADD0">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">times_around</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <statement name="DO">
+                                                                                            <block type="loops_for_each">
+                                                                                                <field name="VAR">item</field>
+                                                                                                <value name="ITER">
+                                                                                                    <block type="builtins_range_with">
+                                                                                                        <mutation items="1"></mutation>
+                                                                                                        <value name="ADD0">
+                                                                                                            <block type="variables_get">
+                                                                                                                <field name="VAR">number_of_sides</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <statement name="DO">
+                                                                                                    <block type="general_comment">
+                                                                                                        <field name="TEXT">Does this have to be 100?</field>
+                                                                                                        <next>
+                                                                                                            <block type="turtle_circle">
+                                                                                                                <field name="VAR">t</field>
+                                                                                                                <value name="VALUE">
+                                                                                                                    <block type="numbers_int">
+                                                                                                                        <field name="NUM">50</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <next>
+                                                                                                                    <block type="turtle_move">
+                                                                                                                        <field name="VAR">t</field>
+                                                                                                                        <field name="DIR">forward</field>
+                                                                                                                        <value name="VALUE">
+                                                                                                                            <block type="numbers_int">
+                                                                                                                                <field name="NUM">50</field>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                        <next>
+                                                                                                                            <block type="turtle_dot">
+                                                                                                                                <field name="VAR">t</field>
+                                                                                                                                <value name="DIAMETER">
+                                                                                                                                    <block type="numbers_int">
+                                                                                                                                        <field name="NUM">10</field>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                                <value name="COLOUR">
+                                                                                                                                    <block type="colour_picker">
+                                                                                                                                        <field name="COLOUR">#00cccc</field>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                                <next>
+                                                                                                                                    <block type="turtle_move">
+                                                                                                                                        <field name="VAR">t</field>
+                                                                                                                                        <field name="DIR">forward</field>
+                                                                                                                                        <value name="VALUE">
+                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                <field name="NUM">25</field>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <next>
+                                                                                                                                            <block type="turtle_dot">
+                                                                                                                                                <field name="VAR">t</field>
+                                                                                                                                                <value name="DIAMETER">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">10</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="COLOUR">
+                                                                                                                                                    <block type="colour_picker">
+                                                                                                                                                        <field name="COLOUR">#ff6600</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <next>
+                                                                                                                                                    <block type="turtle_turn">
+                                                                                                                                                        <field name="VAR">t</field>
+                                                                                                                                                        <field name="DIR">left</field>
+                                                                                                                                                        <value name="VALUE">
+                                                                                                                                                            <block type="numbers_arithmetic">
+                                                                                                                                                                <field name="OP">DIVIDE</field>
+                                                                                                                                                                <value name="A">
+                                                                                                                                                                    <block type="numbers_float">
+                                                                                                                                                                        <field name="NUM">360.0</field>
+                                                                                                                                                                    </block>
+                                                                                                                                                                </value>
+                                                                                                                                                                <value name="B">
+                                                                                                                                                                    <block type="variables_get">
+                                                                                                                                                                        <field name="VAR">number_of_sides</field>
+                                                                                                                                                                    </block>
+                                                                                                                                                                </value>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </next>
+                                                                                                                                            </block>
+                                                                                                                                        </next>
+                                                                                                                                    </block>
+                                                                                                                                </next>
+                                                                                                                            </block>
+                                                                                                                        </next>
+                                                                                                                    </block>
+                                                                                                                </next>
+                                                                                                            </block>
+                                                                                                        </next>
+                                                                                                    </block>
+                                                                                                </statement>
+                                                                                                <next>
+                                                                                                    <block type="turtle_turn">
+                                                                                                        <field name="VAR">t</field>
+                                                                                                        <field name="DIR">left</field>
+                                                                                                        <value name="VALUE">
+                                                                                                            <block type="numbers_arithmetic">
+                                                                                                                <field name="OP">DIVIDE</field>
+                                                                                                                <value name="A">
+                                                                                                                    <block type="numbers_float">
+                                                                                                                        <field name="NUM">360.0</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <value name="B">
+                                                                                                                    <block type="variables_get">
+                                                                                                                        <field name="VAR">times_around</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </statement>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

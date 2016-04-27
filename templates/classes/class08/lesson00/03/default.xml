@@ -1,0 +1,47 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="12" y="13">
+        <field name="TEXT">This is brings the turtle library into the program.</field>
+        <next>
+            <block type="turtle_import"></block>
+        </next>
+    </block>
+    <block type="general_comment" x="12" y="88">
+        <field name="TEXT">These set up create a turtle and set her basic properties.</field>
+        <next>
+            <block type="variables_set">
+                <field name="VAR">t</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="turtle_turtle"></block>
+                </value>
+                <next>
+                    <block type="turtle_shape">
+                        <field name="VAR">t</field>
+                        <field name="IMAGE">turtle</field>
+                        <next>
+                            <block type="turtle_hide_show">
+                                <field name="VAR">t</field>
+                                <field name="WHAT">showturtle</field>
+                                <next>
+                                    <block type="turtle_speed">
+                                        <field name="VAR">t</field>
+                                        <field name="SPEED">3</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="13" y="263">
+        <field name="TEXT">Here is where we make the turtle do things.</field>
+    </block>
+    <block type="general_comment" x="13" y="313">
+        <field name="TEXT">This makes sure our window stays open.</field>
+        <next>
+            <block type="turtle_done"></block>
+        </next>
+    </block>
+</xml>

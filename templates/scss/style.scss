@@ -1,0 +1,149 @@
+$background-color: white;
+$flyout-background: white;
+$flyout-header-color: #452632;
+$nav-link-color: white;
+$header-color: #E2F7CE;
+$base-text-color: #333;
+$breakpoint: 50em;
+$transition-duration: .2s;
+$bar-height: .2em;
+$bar-width: 1em;
+
+@mixin transition($item) {
+    -webkit-transition: $item 0.2s ease-in-out;  
+    -moz-transition: $item 0.2s ease-in-out;
+    -ms-transition: $item 0.2s ease-in-out;
+    -o-transition: $item 0.2s ease-in-out;
+    transition: $item 0.2s ease-in-out;
+}
+
+.clearfix:after {    
+    content: "";
+    clear: both;
+    display: table;   
+}
+
+
+
+
+
+
+
+// General layout
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+.wrapper {
+    background: $background-color;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100%;
+}
+
+.content {
+  padding: 2em;
+}
+
+.header {
+  background-color: $header-color;
+  height: auto;
+  padding: .5em;
+  h1 {
+    display: inline-block;
+    font-size: 1.6em;
+    margin: 0;
+    padding: 0 .5em;
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+.col-50 {
+  padding: 1em;
+  width: 100%;
+  @media (min-width: $breakpoint){
+    float: left;
+    padding: 1em;
+    width: 50%;
+  }
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  //@include transition(opacity);
+  transition: opacity .2s ease-in-out 1s;
+  &.active {
+    opacity: 1;
+    display: block;
+  }
+}
+
+.flyout {
+  background-color: $flyout-background;
+  bottom: 0;
+  height: 100%;
+  max-width: 280px;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translate3d(100%, 0, 0);
+  width: 80%; 
+  @include transition(transform);
+  //display: flex; //can use if newer browser
+  //flex-direction: column; //can use if newer browser
+  &.active {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.flyout-header {
+  background-color: $flyout-header-color;
+  color: white;
+  padding: 1em;
+  h4 {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.flyout-body {
+  overflow-y: auto; //use in conjunction with display:flex on .flyout
+  padding: 1em;
+  flex: 0 1 0;
+ 
+}
+
+.flyout-close {
+  cursor: pointer;
+  float: right;
+}
+
+.btn {
+  background-color: $flyout-header-color;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: .5em;
+}

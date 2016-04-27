@@ -1,0 +1,29 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">Make a variable "computer" and put a randint(1, 20) into it.</field>
+    </block>
+    <block type="general_comment" x="38" y="113">
+        <field name="TEXT">Make a variable called "did_you_win". It should be False at the beginning.</field>
+    </block>
+    <block type="general_comment" x="38" y="188">
+        <field name="TEXT">You will need a FOR LOOP with a range(5) in it to give 5 tries at guessing.</field>
+    </block>
+    <block type="general_comment" x="113" y="263">
+        <field name="TEXT">Inside the loop:</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Make a variable "user" and put a raw_input into it.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Put an int() block from Numbers menu into "user".</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Put a string into int() that says, "Guess a number between 1 and 20: "</field>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

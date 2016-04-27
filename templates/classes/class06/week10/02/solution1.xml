@@ -1,0 +1,67 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="12" y="13">
+        <next>
+            <block type="explorerhat_import">
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">motor</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="explorerhat_motor">
+                                <field name="DROP_PINS">one</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="loops_for_each">
+                                <field name="VAR">item</field>
+                                <value name="ITER">
+                                    <block type="builtins_range_with">
+                                        <mutation items="3"></mutation>
+                                        <value name="ADD0">
+                                            <block type="numbers_int">
+                                                <field name="NUM">-100</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD1">
+                                            <block type="numbers_int">
+                                                <field name="NUM">100</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD2">
+                                            <block type="numbers_int">
+                                                <field name="NUM">20</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO">
+                                    <block type="explorerhat_motor_speed">
+                                        <value name="EXP_HAT">
+                                            <block type="variables_get">
+                                                <field name="VAR">motor</field>
+                                            </block>
+                                        </value>
+                                        <value name="SPEED">
+                                            <block type="numbers_int">
+                                                <field name="NUM">50</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="time_sleep">
+                                                <value name="amount_of_time">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">3</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

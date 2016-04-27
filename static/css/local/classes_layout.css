@@ -1,0 +1,211 @@
+/* Start Blockly CSS Here*/
+.blocklySvg {
+}
+/* End Blockly CSS Here*/
+
+.outer {
+    padding-left: 20px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+
+/* See http://simurai.com/blog/2011/07/26/webkit-scrollbar */
+/* Overwrite the default to keep the scrollbar always visible */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.18);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.nav-tabs {
+    width: 440px;
+    height: 30px;
+    border-bottom: 1px solid #2856B7;
+    margin: 0px;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    width: 220px;
+    padding-top: 5px;
+    color: #2856B7;
+    background-color: #FFFFFF;
+    border: 1px solid #2856B7;
+    border-bottom-color: transparent;
+    height: 30px;
+    margin: 0px;
+}
+
+.nav-tabs > li:not(.active) > a,
+.nav-tabs > li:not(.active) > a:hover,
+.nav-tabs > li:not(.active) > a:focus {
+    width: 220px;
+    padding-top: 5px;
+    height: 30px;
+    margin: 0px;
+}
+
+ul.nav {
+    margin: 0px;
+    margin-bottom: 0 !important;
+}
+
+.tab-content {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+/* See http://stackoverflow.com/questions/10374171/how-to-make-twitter-bootstraps-pre-blocks-scroll-horizontally
+*  for horizontal scrolling fix.
+*/
+pre {
+    tab-size: 4;
+
+    width: 440px;
+
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+    /*padding-left: 0px;*/
+    /*padding-right: 20px;*/
+    /*padding-top: 0px;*/
+    /*padding-bottom: 0px;*/
+
+    font-weight: normal;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 110%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+pre code {
+    overflow-wrap: normal;
+    white-space: pre;
+}
+
+pre.code_out {
+    background-color: #FFFFFF;
+    height: 100%;
+    border: none;
+}
+
+pre.output {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    height: 100%;
+    font-size: 14px;
+}
+
+#btns {
+    position: absolute;
+    z-index: 5;
+    top: 40px;
+    width: 150px;
+    margin-left: -30px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#btns > div {
+    position: relative;
+}
+
+textarea {
+    height: 10px;
+    width: 10px;
+    visibility: hidden;
+}
+
+.nav {
+    width: auto;
+}
+
+#panel_output {
+    background-color: #000000;
+}
+
+#code_title {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14pt;
+    color: #0072bc;
+}
+
+#output_title {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14pt;
+    color: #ffffff;
+}
+
+
+
+
+#code2 {
+    text-align: left;
+}
+
+#output {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.sidebar-right > .toggler[order=two] {
+    border-right: 0px solid #fff;
+}
+
+.sidebar-right > .toggler[order=three] {
+    font-weight: bolder;
+    border-right: 0px solid #000075;
+    background-color: #000075;
+    padding-left: 5px;
+}
+
+iframe:focus {
+    outline: none;
+}
+
+iframe[seamless] {
+    display: none;
+}
+
+#panel_terminal {
+    /*background-color: #000075;*/
+}
+
+#help >  {
+    margin-right: 40px;
+}
+
+#code_panel {
+    margin-left: -10px;
+    margin-right: 40px;
+}
+
+.public {
+    font-size: 24pt;
+    font-family: "Lucida Console", Monaco, monospace;
+    vertical-align: middle;
+    font-weight: bold;
+    padding-left: 7px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #0072bc;
+}
+
+.terminado-conatainer {
+
+}

@@ -1,0 +1,83 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="12" y="13">
+        <next>
+            <block type="explorerhat_import">
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">pot</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="explorerhat_analog">
+                                <field name="DROP_PINS">one</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">motor</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="explorerhat_motor">
+                                        <field name="DROP_PINS">one</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="loops_while">
+                                        <value name="BOOL">
+                                            <block type="logic_boolean">
+                                                <field name="BOOL">TRUE</field>
+                                            </block>
+                                        </value>
+                                        <statement name="DO">
+                                            <block type="variables_set">
+                                                <field name="VAR">power</field>
+                                                <field name="OP">EQUALS</field>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="explorerhat_analog_read" x="238" y="188">
+        <value name="EXP_HAT">
+            <block type="variables_get">
+                <field name="VAR">pot</field>
+            </block>
+        </value>
+    </block>
+    <block type="strings_print_py3_commas" x="238" y="263">
+        <mutation items="1"></mutation>
+        <value name="ADD0">
+            <block type="strings_format_with">
+                <mutation items="1"></mutation>
+                <field name="STR">Power at {}%.</field>
+                <value name="ADD0">
+                    <block type="variables_get">
+                        <field name="VAR">power</field>
+                    </block>
+                </value>
+            </block>
+        </value>
+        <next>
+            <block type="time_sleep">
+                <value name="amount_of_time">
+                    <block type="numbers_float">
+                        <field name="NUM">1.0</field>
+                    </block>
+                </value>
+            </block>
+        </next>
+    </block>
+    <block type="strings_print_py3_commas" x="237" y="387">
+        <mutation items="1"></mutation>
+        <value name="ADD0">
+            <block type="strings">
+                <field name="TEXT">Too fast! ABORT!</field>
+            </block>
+        </value>
+    </block>
+</xml>

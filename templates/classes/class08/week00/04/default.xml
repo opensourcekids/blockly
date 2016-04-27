@@ -1,0 +1,37 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="turtle_import" x="13" y="13">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">t</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="turtle_turtle"></block>
+                </value>
+                <next>
+                    <block type="turtle_shape">
+                        <field name="VAR">t</field>
+                        <field name="IMAGE">turtle</field>
+                        <next>
+                            <block type="turtle_hide_show">
+                                <field name="VAR">t</field>
+                                <field name="WHAT">showturtle</field>
+                                <next>
+                                    <block type="turtle_speed">
+                                        <field name="VAR">t</field>
+                                        <field name="SPEED">8</field>
+                                        <next>
+                                            <block type="general_comment">
+                                                <field name="TEXT">Here is where we make the turtle do things.</field>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="turtle_done" x="13" y="263"></block>
+</xml>

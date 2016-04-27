@@ -1,0 +1,70 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">1. Click the blue button, drag 1 ELIF and 1 ELSE into the IF in the popup.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">2. We will put comparison block next to the IF and ELIF.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">3. The IF has an == comparison.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">4. The ELIF will have an &gt;= comparison.</field>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">my_thing_to_compare</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="numbers_arithmetic">
+                                                <field name="OP">DIVIDE</field>
+                                                <value name="A">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">100</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">17</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="controls_if">
+                                                <value name="IF0">
+                                                    <block type="logic_compare">
+                                                        <field name="OP">EQ</field>
+                                                        <value name="A">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">my_thing_to_compare</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="B">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">5</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                    <block type="strings_print_py3_commas">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="strings">
+                                                                <field name="TEXT">Got it right!!!</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </statement>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

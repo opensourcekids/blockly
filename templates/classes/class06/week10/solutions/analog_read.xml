@@ -1,0 +1,29 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="explorerhat_import" x="38" y="12">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">hat</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="explorerhat_analog">
+                        <field name="DROP_PINS">one</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="strings_print_py3_commas">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="explorerhat_analog_read">
+                                <value name="EXP_HAT">
+                                    <block type="variables_get">
+                                        <field name="VAR">hat</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

@@ -1,0 +1,189 @@
+{# _PyBlocks/templates/classes/class02/week05/04/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% endblock %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% endblock %}
+
+{% block middle %}
+    But I Wanted an Octdecagon!!
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% endblock %}#}
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}false{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{% block panel %}
+    <div id="panel" xmlns="http://www.w3.org/1999/html">
+        <div style="padding: 30px">
+            <h2 align="center" style="color: #0072bc;">Fun Facts</h2>
+
+            <p>Polygon names are derived from Greek (after 4 sides).</p>
+            <table cellpadding="10">
+                <tr>
+                    <th><center>Number of sides</center></th>
+                    <th><center>Name</center></th>
+                </tr>
+                <tr>
+                    <td>
+                        <center>3</center>
+                    </td>
+                    <td>
+                        <center>triangle or trigon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>4</center>
+                    </td>
+                    <td>
+                        <center>quadrilateral or tetragon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>5</center>
+                    </td>
+                    <td>
+                        <center>pentagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>6</center>
+                    </td>
+                    <td>
+                        <center>hexagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>7</center>
+                    </td>
+                    <td>
+                        <center>heptagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>8</center>
+                    </td>
+                    <td>
+                        <center>octagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>9</center>
+                    </td>
+                    <td>
+                        <center>enneagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>10</center>
+                    </td>
+                    <td>
+                        <center>decagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>11</center>
+                    </td>
+                    <td>
+                        <center>hendecagon</center>
+                    </td>
+                </tr>
+                <tr></center>
+                    <td>
+                        <center>12</center>
+                    </td>
+                    <td>
+                        <center>dodecagon
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>13</center>
+                    </td>
+                    <td>
+                        <center>triskaidecagon or tridecagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>14</center>
+                    </td>
+                    <td>
+                        <center>tetrakaidecagon or tetradecagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>15</center>
+                    </td>
+                    <td>
+                        <center>pendedecagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>16</center>
+                    </td>
+                    <td>
+                        <center>hexdecagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>17</center>
+                    </td>
+                    <td>
+                        <center>heptdecagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>18</center>
+                    </td>
+                    <td>
+                        <center>octdecagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>19</center>
+                    </td>
+                    <td>
+                        <center>enneadecagon</center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>20</center>
+                    </td>
+                    <td>
+                        <center>icosagon</center>
+                    </td>
+                </tr>
+            </table>
+            <p>After about 6 sides mathematicians usually call them n-gons, where n is the number of sides.</p>
+        </div>
+    </div>
+{% endblock %}

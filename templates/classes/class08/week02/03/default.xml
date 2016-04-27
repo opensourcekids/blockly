@@ -1,0 +1,71 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">List are useful, but so far, we still need to add each item.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">What if we want to print the numbers 0-99. Try it.</field>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">big_list</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="lists_create_with">
+                                <mutation items="5"></mutation>
+                                <value name="ADD0">
+                                    <block type="numbers_int">
+                                        <field name="NUM">0</field>
+                                    </block>
+                                </value>
+                                <value name="ADD1">
+                                    <block type="numbers_int">
+                                        <field name="NUM">1</field>
+                                    </block>
+                                </value>
+                                <value name="ADD2">
+                                    <block type="numbers_int">
+                                        <field name="NUM">2</field>
+                                    </block>
+                                </value>
+                                <value name="ADD3">
+                                    <block type="numbers_int">
+                                        <field name="NUM">3</field>
+                                    </block>
+                                </value>
+                                <value name="ADD4">
+                                    <block type="numbers_int">
+                                        <field name="NUM">4</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">STOP! That's going to take awhile.</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Replace "big_list with a range() block (Builtin menu).</field>
+                                        <next>
+                                            <block type="loops_for_each">
+                                                <field name="VAR">number</field>
+                                                <value name="ITER">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">big_list</field>
+                                                    </block>
+                                                </value>
+                                                <statement name="DO">
+                                                    <block type="general_comment">
+                                                        <field name="TEXT">Print the variable "number".</field>
+                                                    </block>
+                                                </statement>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

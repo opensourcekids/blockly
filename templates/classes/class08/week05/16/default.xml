@@ -1,0 +1,49 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="fractions_import2" x="38" y="37">
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Add these fractions. Print the answer.</field>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">f1</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="fractions_Fraction">
+                                <value name="NUMERATOR">
+                                    <block type="numbers_int">
+                                        <field name="NUM">1</field>
+                                    </block>
+                                </value>
+                                <value name="DENOMINATOR">
+                                    <block type="numbers_int">
+                                        <field name="NUM">8</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">f2</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="fractions_Fraction">
+                                        <value name="NUMERATOR">
+                                            <block type="numbers_int">
+                                                <field name="NUM">2</field>
+                                            </block>
+                                        </value>
+                                        <value name="DENOMINATOR">
+                                            <block type="numbers_int">
+                                                <field name="NUM">3</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

@@ -1,0 +1,20 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="12" y="13">
+        <field name="TEXT">1. A little about libraries.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">2. How to control an LED: pin number</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">3. How to control an LED: create an LED object</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">4. How to make the LED do things: on/off, blink</field>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

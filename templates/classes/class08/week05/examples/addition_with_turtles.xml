@@ -1,0 +1,1197 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="turtle_import" x="50" y="40">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">t</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="turtle_turtle"></block>
+                </value>
+                <next>
+                    <block type="turtle_shape">
+                        <field name="VAR">t</field>
+                        <field name="IMAGE">turtle</field>
+                        <next>
+                            <block type="turtle_speed">
+                                <field name="VAR">t</field>
+                                <field name="SPEED">0</field>
+                                <next>
+                                    <block type="turtle_fillcolor">
+                                        <field name="VAR">t</field>
+                                        <value name="COLOUR">
+                                            <block type="colour_picker">
+                                                <field name="COLOUR">#ffcc66</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">fractions</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="lists_create_with">
+                                                        <mutation items="2"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="lists_create_with">
+                                                                <mutation items="2"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">3</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">5</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD1">
+                                                            <block type="lists_create_with">
+                                                                <mutation items="2"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">1</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">2</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">times</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">2</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="variables_set">
+                                                                <field name="VAR">side_length</field>
+                                                                <field name="OP">EQUALS</field>
+                                                                <value name="VALUE">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">100</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="controls_if">
+                                                                        <value name="IF0">
+                                                                            <block type="logic_compare">
+                                                                                <field name="OP">GT</field>
+                                                                                <value name="A">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">times</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">1</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <statement name="DO0">
+                                                                            <block type="procedures_callnoreturn">
+                                                                                <mutation name="new_position">
+                                                                                    <arg name="x"></arg>
+                                                                                    <arg name="y"></arg>
+                                                                                </mutation>
+                                                                                <value name="ARG0">
+                                                                                    <block type="numbers_arithmetic">
+                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                        <value name="A">
+                                                                                            <block type="numbers_int">
+                                                                                                <field name="NUM">-150</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">times</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="ARG1">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">0</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </statement>
+                                                                        <next>
+                                                                            <block type="variables_set">
+                                                                                <field name="VAR">start_pos</field>
+                                                                                <field name="OP">EQUALS</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="turtle_location">
+                                                                                        <field name="VAR">t</field>
+                                                                                        <field name="WHAT">position</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="loops_for_each">
+                                                                                        <field name="VAR">item</field>
+                                                                                        <value name="ITER">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">fractions</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <statement name="DO">
+                                                                                            <block type="procedures_callnoreturn">
+                                                                                                <mutation name="rect">
+                                                                                                    <arg name="length1"></arg>
+                                                                                                    <arg name="length2"></arg>
+                                                                                                </mutation>
+                                                                                                <value name="ARG0">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">side_length</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <value name="ARG1">
+                                                                                                    <block type="numbers_arithmetic">
+                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                        <value name="A">
+                                                                                                            <block type="variables_get">
+                                                                                                                <field name="VAR">side_length</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <value name="B">
+                                                                                                            <block type="numbers_int">
+                                                                                                                <field name="NUM">2</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                    <block type="procedures_callnoreturn">
+                                                                                                        <mutation name="make_fract">
+                                                                                                            <arg name="width"></arg>
+                                                                                                            <arg name="height"></arg>
+                                                                                                            <arg name="how_many"></arg>
+                                                                                                            <arg name="fract"></arg>
+                                                                                                            <arg name="fill"></arg>
+                                                                                                        </mutation>
+                                                                                                        <value name="ARG0">
+                                                                                                            <block type="variables_get">
+                                                                                                                <field name="VAR">side_length</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <value name="ARG1">
+                                                                                                            <block type="numbers_arithmetic">
+                                                                                                                <field name="OP">MULTIPLY</field>
+                                                                                                                <value name="A">
+                                                                                                                    <block type="variables_get">
+                                                                                                                        <field name="VAR">side_length</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <value name="B">
+                                                                                                                    <block type="numbers_int">
+                                                                                                                        <field name="NUM">2</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <value name="ARG2">
+                                                                                                            <block type="general_create_with">
+                                                                                                                <mutation items="1"></mutation>
+                                                                                                                <value name="STRING">
+                                                                                                                    <block type="variables_get">
+                                                                                                                        <field name="VAR">item</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <value name="ADD0">
+                                                                                                                    <block type="numbers_int">
+                                                                                                                        <field name="NUM">0</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <value name="ARG3">
+                                                                                                            <block type="general_create_with">
+                                                                                                                <mutation items="1"></mutation>
+                                                                                                                <value name="STRING">
+                                                                                                                    <block type="variables_get">
+                                                                                                                        <field name="VAR">item</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <value name="ADD0">
+                                                                                                                    <block type="numbers_int">
+                                                                                                                        <field name="NUM">1</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <value name="ARG4">
+                                                                                                            <block type="logic_boolean">
+                                                                                                                <field name="BOOL">TRUE</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <next>
+                                                                                                            <block type="procedures_callnoreturn">
+                                                                                                                <mutation name="divide">
+                                                                                                                    <arg name="leng"></arg>
+                                                                                                                    <arg name="how_many"></arg>
+                                                                                                                </mutation>
+                                                                                                                <value name="ARG0">
+                                                                                                                    <block type="variables_get">
+                                                                                                                        <field name="VAR">side_length</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <value name="ARG1">
+                                                                                                                    <block type="numbers_int">
+                                                                                                                        <field name="NUM">1</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <next>
+                                                                                                                    <block type="procedures_callnoreturn">
+                                                                                                                        <mutation name="new_position">
+                                                                                                                            <arg name="x"></arg>
+                                                                                                                            <arg name="y"></arg>
+                                                                                                                        </mutation>
+                                                                                                                        <value name="ARG0">
+                                                                                                                            <block type="numbers_arithmetic">
+                                                                                                                                <field name="OP">ADD</field>
+                                                                                                                                <value name="A">
+                                                                                                                                    <block type="numbers_int">
+                                                                                                                                        <field name="NUM">150</field>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                                <value name="B">
+                                                                                                                                    <block type="general_create_with">
+                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                        <value name="STRING">
+                                                                                                                                            <block type="variables_get">
+                                                                                                                                                <field name="VAR">start_pos</field>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="ADD0">
+                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                <field name="NUM">0</field>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                        <value name="ARG1">
+                                                                                                                            <block type="general_create_with">
+                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                <value name="STRING">
+                                                                                                                                    <block type="variables_get">
+                                                                                                                                        <field name="VAR">start_pos</field>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                                <value name="ADD0">
+                                                                                                                                    <block type="numbers_int">
+                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                    </block>
+                                                                                                                </next>
+                                                                                                            </block>
+                                                                                                        </next>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </statement>
+                                                                                        <next>
+                                                                                            <block type="procedures_callnoreturn">
+                                                                                                <mutation name="new_position">
+                                                                                                    <arg name="x"></arg>
+                                                                                                    <arg name="y"></arg>
+                                                                                                </mutation>
+                                                                                                <value name="ARG0">
+                                                                                                    <block type="general_create_with">
+                                                                                                        <mutation items="1"></mutation>
+                                                                                                        <value name="STRING">
+                                                                                                            <block type="variables_get">
+                                                                                                                <field name="VAR">start_pos</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <value name="ADD0">
+                                                                                                            <block type="numbers_int">
+                                                                                                                <field name="NUM">0</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <value name="ARG1">
+                                                                                                    <block type="numbers_arithmetic">
+                                                                                                        <field name="OP">MINUS</field>
+                                                                                                        <value name="A">
+                                                                                                            <block type="numbers_arithmetic">
+                                                                                                                <field name="OP">MINUS</field>
+                                                                                                                <value name="A">
+                                                                                                                    <block type="general_create_with">
+                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                        <value name="STRING">
+                                                                                                                            <block type="variables_get">
+                                                                                                                                <field name="VAR">start_pos</field>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                        <value name="ADD0">
+                                                                                                                            <block type="numbers_int">
+                                                                                                                                <field name="NUM">1</field>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <value name="B">
+                                                                                                                    <block type="numbers_arithmetic">
+                                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                                        <value name="A">
+                                                                                                                            <block type="variables_get">
+                                                                                                                                <field name="VAR">side_length</field>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                        <value name="B">
+                                                                                                                            <block type="numbers_int">
+                                                                                                                                <field name="NUM">2</field>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <value name="B">
+                                                                                                            <block type="numbers_int">
+                                                                                                                <field name="NUM">50</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                    <block type="variables_set">
+                                                                                                        <field name="VAR">start_pos</field>
+                                                                                                        <field name="OP">EQUALS</field>
+                                                                                                        <value name="VALUE">
+                                                                                                            <block type="turtle_location">
+                                                                                                                <field name="VAR">t</field>
+                                                                                                                <field name="WHAT">position</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <next>
+                                                                                                            <block type="variables_set">
+                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                <field name="OP">EQUALS</field>
+                                                                                                                <value name="VALUE">
+                                                                                                                    <block type="lists_create_with">
+                                                                                                                        <mutation items="2"></mutation>
+                                                                                                                        <value name="ADD0">
+                                                                                                                            <block type="lists_create_with" collapsed="true">
+                                                                                                                                <mutation items="2"></mutation>
+                                                                                                                                <value name="ADD0">
+                                                                                                                                    <block type="numbers_arithmetic">
+                                                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                                                        <value name="A">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="general_create_with">
+                                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                                        <value name="STRING">
+                                                                                                                                                            <block type="variables_get">
+                                                                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <value name="ADD0">
+                                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                                <field name="NUM">0</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">0</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="B">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="general_create_with">
+                                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                                        <value name="STRING">
+                                                                                                                                                            <block type="variables_get">
+                                                                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <value name="ADD0">
+                                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                                <field name="NUM">1</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                                <value name="ADD1">
+                                                                                                                                    <block type="numbers_arithmetic">
+                                                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                                                        <value name="A">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="general_create_with">
+                                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                                        <value name="STRING">
+                                                                                                                                                            <block type="variables_get">
+                                                                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <value name="ADD0">
+                                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                                <field name="NUM">0</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="B">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="general_create_with">
+                                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                                        <value name="STRING">
+                                                                                                                                                            <block type="variables_get">
+                                                                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <value name="ADD0">
+                                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                                <field name="NUM">1</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                        <value name="ADD1">
+                                                                                                                            <block type="lists_create_with">
+                                                                                                                                <mutation items="2"></mutation>
+                                                                                                                                <value name="ADD0">
+                                                                                                                                    <block type="numbers_arithmetic">
+                                                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                                                        <value name="A">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="general_create_with">
+                                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                                        <value name="STRING">
+                                                                                                                                                            <block type="variables_get">
+                                                                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <value name="ADD0">
+                                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                                <field name="NUM">1</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">0</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="B">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="general_create_with">
+                                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                                        <value name="STRING">
+                                                                                                                                                            <block type="variables_get">
+                                                                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <value name="ADD0">
+                                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                                <field name="NUM">0</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                                <value name="ADD1">
+                                                                                                                                    <block type="numbers_arithmetic">
+                                                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                                                        <value name="A">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="general_create_with">
+                                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                                        <value name="STRING">
+                                                                                                                                                            <block type="variables_get">
+                                                                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <value name="ADD0">
+                                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                                <field name="NUM">1</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="B">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="general_create_with">
+                                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                                        <value name="STRING">
+                                                                                                                                                            <block type="variables_get">
+                                                                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <value name="ADD0">
+                                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                                <field name="NUM">0</field>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <next>
+                                                                                                                    <block type="loops_for_each">
+                                                                                                                        <field name="VAR">item</field>
+                                                                                                                        <value name="ITER">
+                                                                                                                            <block type="variables_get">
+                                                                                                                                <field name="VAR">fractions</field>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                        <statement name="DO">
+                                                                                                                            <block type="procedures_callnoreturn">
+                                                                                                                                <mutation name="rect">
+                                                                                                                                    <arg name="length1"></arg>
+                                                                                                                                    <arg name="length2"></arg>
+                                                                                                                                </mutation>
+                                                                                                                                <value name="ARG0">
+                                                                                                                                    <block type="variables_get">
+                                                                                                                                        <field name="VAR">side_length</field>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                                <value name="ARG1">
+                                                                                                                                    <block type="numbers_arithmetic">
+                                                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                                                        <value name="A">
+                                                                                                                                            <block type="variables_get">
+                                                                                                                                                <field name="VAR">side_length</field>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="B">
+                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                <field name="NUM">2</field>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                                <next>
+                                                                                                                                    <block type="procedures_callnoreturn">
+                                                                                                                                        <mutation name="make_fract">
+                                                                                                                                            <arg name="width"></arg>
+                                                                                                                                            <arg name="height"></arg>
+                                                                                                                                            <arg name="how_many"></arg>
+                                                                                                                                            <arg name="fract"></arg>
+                                                                                                                                            <arg name="fill"></arg>
+                                                                                                                                        </mutation>
+                                                                                                                                        <value name="ARG0">
+                                                                                                                                            <block type="variables_get">
+                                                                                                                                                <field name="VAR">side_length</field>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="ARG1">
+                                                                                                                                            <block type="numbers_arithmetic">
+                                                                                                                                                <field name="OP">MULTIPLY</field>
+                                                                                                                                                <value name="A">
+                                                                                                                                                    <block type="variables_get">
+                                                                                                                                                        <field name="VAR">side_length</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="B">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">2</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="ARG2">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="variables_get">
+                                                                                                                                                        <field name="VAR">item</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">0</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="ARG3">
+                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="STRING">
+                                                                                                                                                    <block type="variables_get">
+                                                                                                                                                        <field name="VAR">item</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <value name="ARG4">
+                                                                                                                                            <block type="logic_boolean">
+                                                                                                                                                <field name="BOOL">TRUE</field>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <next>
+                                                                                                                                            <block type="procedures_callnoreturn">
+                                                                                                                                                <mutation name="divide">
+                                                                                                                                                    <arg name="leng"></arg>
+                                                                                                                                                    <arg name="how_many"></arg>
+                                                                                                                                                </mutation>
+                                                                                                                                                <value name="ARG0">
+                                                                                                                                                    <block type="variables_get">
+                                                                                                                                                        <field name="VAR">side_length</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="ARG1">
+                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                                <next>
+                                                                                                                                                    <block type="procedures_callnoreturn">
+                                                                                                                                                        <mutation name="new_position">
+                                                                                                                                                            <arg name="x"></arg>
+                                                                                                                                                            <arg name="y"></arg>
+                                                                                                                                                        </mutation>
+                                                                                                                                                        <value name="ARG0">
+                                                                                                                                                            <block type="numbers_arithmetic">
+                                                                                                                                                                <field name="OP">ADD</field>
+                                                                                                                                                                <value name="A">
+                                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                                        <field name="NUM">150</field>
+                                                                                                                                                                    </block>
+                                                                                                                                                                </value>
+                                                                                                                                                                <value name="B">
+                                                                                                                                                                    <block type="general_create_with">
+                                                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                                                        <value name="STRING">
+                                                                                                                                                                            <block type="variables_get">
+                                                                                                                                                                                <field name="VAR">start_pos</field>
+                                                                                                                                                                            </block>
+                                                                                                                                                                        </value>
+                                                                                                                                                                        <value name="ADD0">
+                                                                                                                                                                            <block type="numbers_int">
+                                                                                                                                                                                <field name="NUM">0</field>
+                                                                                                                                                                            </block>
+                                                                                                                                                                        </value>
+                                                                                                                                                                    </block>
+                                                                                                                                                                </value>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <value name="ARG1">
+                                                                                                                                                            <block type="general_create_with">
+                                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                                <value name="STRING">
+                                                                                                                                                                    <block type="variables_get">
+                                                                                                                                                                        <field name="VAR">start_pos</field>
+                                                                                                                                                                    </block>
+                                                                                                                                                                </value>
+                                                                                                                                                                <value name="ADD0">
+                                                                                                                                                                    <block type="numbers_int">
+                                                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                                                    </block>
+                                                                                                                                                                </value>
+                                                                                                                                                            </block>
+                                                                                                                                                        </value>
+                                                                                                                                                    </block>
+                                                                                                                                                </next>
+                                                                                                                                            </block>
+                                                                                                                                        </next>
+                                                                                                                                    </block>
+                                                                                                                                </next>
+                                                                                                                            </block>
+                                                                                                                        </statement>
+                                                                                                                    </block>
+                                                                                                                </next>
+                                                                                                            </block>
+                                                                                                        </next>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defnoreturn" x="813" y="13">
+        <mutation>
+            <arg name="length"></arg>
+        </mutation>
+        <field name="NAME">square</field>
+        <statement name="STACK">
+            <block type="loops_for_each">
+                <field name="VAR">item</field>
+                <value name="ITER">
+                    <block type="builtins_range_with">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="numbers_int">
+                                <field name="NUM">4</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO">
+                    <block type="turtle_move">
+                        <field name="VAR">t</field>
+                        <field name="DIR">forward</field>
+                        <value name="VALUE">
+                            <block type="variables_get">
+                                <field name="VAR">length</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="turtle_turn">
+                                <field name="VAR">t</field>
+                                <field name="DIR">left</field>
+                                <value name="VALUE">
+                                    <block type="numbers_int">
+                                        <field name="NUM">90</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defnoreturn" collapsed="true" x="813" y="213">
+        <mutation>
+            <arg name="leng"></arg>
+            <arg name="how_many"></arg>
+        </mutation>
+        <field name="NAME">divide</field>
+        <statement name="STACK">
+            <block type="controls_if">
+                <value name="IF0">
+                    <block type="logic_compare">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                            <block type="variables_get">
+                                <field name="VAR">how_many</field>
+                            </block>
+                        </value>
+                        <value name="B">
+                            <block type="numbers_int">
+                                <field name="NUM">1</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO0">
+                    <block type="turtle_turn">
+                        <field name="VAR">t</field>
+                        <field name="DIR">right</field>
+                        <value name="VALUE">
+                            <block type="numbers_int">
+                                <field name="NUM">90</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="procedures_callnoreturn">
+                                <mutation name="make_fract">
+                                    <arg name="width"></arg>
+                                    <arg name="height"></arg>
+                                    <arg name="how_many"></arg>
+                                    <arg name="fract"></arg>
+                                    <arg name="fill"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="variables_get">
+                                        <field name="VAR">leng</field>
+                                    </block>
+                                </value>
+                                <value name="ARG2">
+                                    <block type="variables_get">
+                                        <field name="VAR">how_many</field>
+                                    </block>
+                                </value>
+                                <value name="ARG3">
+                                    <block type="variables_get">
+                                        <field name="VAR">how_many</field>
+                                    </block>
+                                </value>
+                                <value name="ARG4">
+                                    <block type="logic_boolean">
+                                        <field name="BOOL">FALSE</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defnoreturn" collapsed="true" x="813" y="288">
+        <mutation>
+            <arg name="length1"></arg>
+            <arg name="length2"></arg>
+        </mutation>
+        <field name="NAME">rect</field>
+        <statement name="STACK">
+            <block type="loops_for_each">
+                <field name="VAR">item</field>
+                <value name="ITER">
+                    <block type="builtins_range_with">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="numbers_int">
+                                <field name="NUM">2</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO">
+                    <block type="turtle_move">
+                        <field name="VAR">t</field>
+                        <field name="DIR">forward</field>
+                        <value name="VALUE">
+                            <block type="variables_get">
+                                <field name="VAR">length1</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="turtle_turn">
+                                <field name="VAR">t</field>
+                                <field name="DIR">left</field>
+                                <value name="VALUE">
+                                    <block type="numbers_int">
+                                        <field name="NUM">90</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="turtle_move">
+                                        <field name="VAR">t</field>
+                                        <field name="DIR">forward</field>
+                                        <value name="VALUE">
+                                            <block type="variables_get">
+                                                <field name="VAR">length2</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="turtle_turn">
+                                                <field name="VAR">t</field>
+                                                <field name="DIR">left</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">90</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defnoreturn" collapsed="true" x="813" y="337">
+        <mutation>
+            <arg name="width"></arg>
+            <arg name="height"></arg>
+            <arg name="how_many"></arg>
+            <arg name="fract"></arg>
+            <arg name="fill"></arg>
+        </mutation>
+        <field name="NAME">make_fract</field>
+        <statement name="STACK">
+            <block type="loops_for_each">
+                <field name="VAR">item</field>
+                <value name="ITER">
+                    <block type="builtins_range_with">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="variables_get">
+                                <field name="VAR">fract</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO">
+                    <block type="controls_if">
+                        <value name="IF0">
+                            <block type="logic_operation">
+                                <field name="OP">AND</field>
+                                <value name="A">
+                                    <block type="logic_compare">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                            <block type="variables_get">
+                                                <field name="VAR">item</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="variables_get">
+                                                <field name="VAR">how_many</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="variables_get">
+                                        <field name="VAR">fill</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO0">
+                            <block type="turtle_fill">
+                                <field name="VAR">t</field>
+                                <field name="WHAT">begin_fill</field>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="procedures_callnoreturn">
+                                <mutation name="rect">
+                                    <arg name="length1"></arg>
+                                    <arg name="length2"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="variables_get">
+                                        <field name="VAR">width</field>
+                                    </block>
+                                </value>
+                                <value name="ARG1">
+                                    <block type="numbers_arithmetic">
+                                        <field name="OP">DIVIDE</field>
+                                        <value name="A">
+                                            <block type="variables_get">
+                                                <field name="VAR">height</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="variables_get">
+                                                <field name="VAR">fract</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="controls_if">
+                                        <value name="IF0">
+                                            <block type="logic_operation">
+                                                <field name="OP">AND</field>
+                                                <value name="A">
+                                                    <block type="logic_compare">
+                                                        <field name="OP">LT</field>
+                                                        <value name="A">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">item</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="B">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">how_many</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">fill</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <statement name="DO0">
+                                            <block type="turtle_fill">
+                                                <field name="VAR">t</field>
+                                                <field name="WHAT">end_fill</field>
+                                            </block>
+                                        </statement>
+                                        <next>
+                                            <block type="turtle_turn">
+                                                <field name="VAR">t</field>
+                                                <field name="DIR">left</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">90</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="turtle_move">
+                                                        <field name="VAR">t</field>
+                                                        <field name="DIR">forward</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_arithmetic">
+                                                                <field name="OP">DIVIDE</field>
+                                                                <value name="A">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">height</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">fract</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="turtle_turn">
+                                                                <field name="VAR">t</field>
+                                                                <field name="DIR">right</field>
+                                                                <value name="VALUE">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">90</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defnoreturn" collapsed="true" x="813" y="388">
+        <mutation>
+            <arg name="x"></arg>
+            <arg name="y"></arg>
+        </mutation>
+        <field name="NAME">new_position</field>
+        <statement name="STACK">
+            <block type="turtle_pen">
+                <field name="VAR">t</field>
+                <field name="PEN">penup</field>
+                <next>
+                    <block type="turtle_position">
+                        <mutation items="2"></mutation>
+                        <field name="VAR">t</field>
+                        <field name="WHAT">setposition</field>
+                        <value name="ADD0">
+                            <block type="variables_get">
+                                <field name="VAR">x</field>
+                            </block>
+                        </value>
+                        <value name="ADD1">
+                            <block type="variables_get">
+                                <field name="VAR">y</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="turtle_pen">
+                                <field name="VAR">t</field>
+                                <field name="PEN">pendown</field>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>

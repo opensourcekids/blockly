@@ -1,0 +1,83 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">This is a demonstration of the motor.speed(#.#) method.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Run the program.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Why did the motor behave the way it did?</field>
+                        <next>
+                            <block type="time_import">
+                                <next>
+                                    <block type="explorerhat_import">
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">motor</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="explorerhat_motor">
+                                                        <field name="DROP_PINS">one</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="loops_for_each">
+                                                        <field name="VAR">s</field>
+                                                        <value name="ITER">
+                                                            <block type="builtins_range_with">
+                                                                <mutation items="3"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">-100</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">100</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD2">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">20</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <statement name="DO">
+                                                            <block type="explorerhat_motor_direction_speed">
+                                                                <field name="DROP_DIRECTION">speed</field>
+                                                                <value name="EXP_HAT">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">motor</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="SPEED">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">s</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="time_sleep">
+                                                                        <value name="amount_of_time">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">2</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </statement>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

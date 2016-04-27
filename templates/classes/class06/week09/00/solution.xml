@@ -1,0 +1,33 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="gpiozero_import_stepper" x="13" y="12">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">s</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="gpiozero_stepper"></block>
+                </value>
+                <next>
+                    <block type="gpiozero_stepper_forward_backward">
+                        <field name="OP">forward</field>
+                        <value name="STEPPER">
+                            <block type="variables_get">
+                                <field name="VAR">s</field>
+                            </block>
+                        </value>
+                        <value name="DELAY">
+                            <block type="numbers_int">
+                                <field name="NUM">10</field>
+                            </block>
+                        </value>
+                        <value name="STEPS">
+                            <block type="numbers_int">
+                                <field name="NUM">1</field>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

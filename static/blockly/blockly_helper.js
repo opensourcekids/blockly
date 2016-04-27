@@ -123,6 +123,7 @@ function auto_save_and_restore_blocks() {
 }
 
 function initLoadEvent() {
+    // console.log("in initLoadEvent() in blockly_helper");
     var loadInput = document.getElementById('load');
     loadInput.addEventListener('change', load, false);
     document.getElementById('fakeload').onclick = function () {

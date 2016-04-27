@@ -1,0 +1,95 @@
+{# _PyBlocks/templates/classes/class03/week01/00/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% endblock %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% endblock %}
+
+{% block middle %}
+    PyBlocks Recap
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% endblock %}#}
+{#True if Skulpt interpreter is used instead of server-side interpreter.#}
+{% block no_skulpt %}false{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{% block panel %}
+    <div id="panel">
+        <div style="padding: 30px">
+            {#            <h2 align="center" style="color: #0072bc;">Hello!</h2>#}
+            {#            <p>I am the helpful side panel. Click <span class="glyphicon glyphicon-question-sign"></span> to open and close me.</p>#}
+            {#            <br/>#}
+            <h2 align="center" style="color: #0072bc;">Welcome to PyBlocks</h2>
+
+            <p>PyBlocks uses colorful blocks to write programs instead of typing.
+
+            <p>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Blocks</li>
+                <ul>
+                    <li>Blocks are used to write a program.</li>
+                    <li>Blocks are stored in the menu.</li>
+                </ul>
+                <li>Menu</li>
+                <ul>
+                    <li>The gray menu on the left.</li>
+                    <li>Some menus have menus inside.</li>
+                    <li>Labels group the blocks by category.</li>
+                    <li>Clicking a label shows the blocks inside.</li>
+                    <li>Click a block to place it onto the workspace.</li>
+                </ul>
+                {#                <br>#}
+                <li>Workspace</li>
+                <ul>
+                    <li>This is the large white area to the right of the menu.</li>
+                    <li>All PyBlocks programming happens here.</li>
+                </ul>
+                {#                <br/>#}
+                <li>Python Code Area</li>
+                <ul>
+                    <li>Underneath this panel is the Python Code Area.</li>
+                    <li>It is accessed by clicking on the Code tab.</li>
+                    <li>Python code is generated here whenever the workspace changes.</li>
+                </ul>
+                {#                <br/>#}
+                <li>Output Area</li>
+                <ul>
+                    <li>Underneath this panel is the Ouput Area.</li>
+                    <li>It is accessed by clicking on the Output tab.</li>
+                    <li>The program runs when the Output tab is clicked.</li>
+                    <li>Only printable output shows up here.</li>
+                </ul>
+                {#                <br/>#}
+                <li>Canvas</li>
+                <ul>
+                    <li>Pops up when a graphical program like Turtles runs.</li>
+                    <li>The ouput to the program is shown here.</li>
+                    <li>To exit, click the close button or the shaded area.</li>
+                </ul>
+            </ul>
+            {##}
+            {#            </ul>#}
+            {#            <h2 align="center" style="color: #0072bc;">New Blocks</h2>#}
+            {#            <ul class="backgrd_detail" style="line-height:25px;">#}
+            {#                <li>Loops</li>#}
+            {#                <li>Range</li>#}
+            {##}
+            {##}
+            {#            </ul>#}
+        </div>
+    </div>
+{% endblock %}

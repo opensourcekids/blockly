@@ -1,0 +1,283 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">I am hiring you to finish my Battleship Game</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">You need to finish 3 things.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">1. Make a nice title.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">2. Complete the function that creates the board.</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">3. Complete the function to print the board.</field>
+                                        <next>
+                                            <block type="general_comment">
+                                                <field name="TEXT">4. Fill in the missing parts.</field>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defreturn" x="457" y="13">
+        <field name="NAME">board_setup</field>
+        <statement name="STACK">
+            <block type="variables_set">
+                <field name="VAR">game_board</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="lists_create_empty"></block>
+                </value>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">size</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="numbers_cast_int">
+                                <value name="CAST">
+                                    <block type="general_input">
+                                        <value name="INPUT">
+                                            <block type="strings">
+                                                <field name="TEXT">How many rows and columns should the board have?</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="loops_for_each">
+                                <field name="VAR">x</field>
+                                <value name="ITER">
+                                    <block type="builtins_range_with">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="variables_get">
+                                                <field name="VAR">size</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO">
+                                    <block type="lists_append">
+                                        <value name="LIST">
+                                            <block type="variables_get">
+                                                <field name="VAR">game_board</field>
+                                            </block>
+                                        </value>
+                                        <value name="ITEM">
+                                            <block type="numbers_arithmetic">
+                                                <field name="OP">MULTIPLY</field>
+                                                <value name="A">
+                                                    <block type="lists_create_with">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="strings">
+                                                                <field name="TEXT">0</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">3</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </statement>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+        <value name="RETURN">
+            <block type="variables_get">
+                <field name="VAR">game_board</field>
+            </block>
+        </value>
+    </block>
+    <block type="general_comment" x="13" y="213">
+        <field name="TEXT">Create a title here.</field>
+        <next>
+            <block type="strings_print_py3_commas">
+                <mutation items="1"></mutation>
+                <value name="ADD0">
+                    <block type="numbers_arithmetic">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                            <block type="strings">
+                                <field name="TEXT">*</field>
+                            </block>
+                        </value>
+                        <value name="B">
+                            <block type="numbers_int">
+                                <field name="NUM">26</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="strings_print_py3_commas">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="strings">
+                                <field name="TEXT">* Let's Play Battleship! *</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="strings_print_py3_commas">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="numbers_arithmetic">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                            <block type="strings">
+                                                <field name="TEXT">*</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="numbers_int">
+                                                <field name="NUM">26</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="strings">
+                                                <field name="TEXT"></field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">board</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="procedures_callreturn">
+                                                        <mutation name="board_setup"></mutation>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defnoreturn" x="457" y="338">
+        <mutation>
+            <arg name="b"></arg>
+        </mutation>
+        <field name="NAME">print_board</field>
+    </block>
+    <block type="procedures_defreturn" collapsed="true" x="457" y="513">
+        <mutation statements="false">
+            <arg name="bd"></arg>
+        </mutation>
+        <field name="NAME">board_size</field>
+        <value name="RETURN">
+            <block type="builtins_length">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">bd</field>
+                    </block>
+                </value>
+            </block>
+        </value>
+    </block>
+    <block type="procedures_defreturn" collapsed="true" x="457" y="563">
+        <mutation statements="false">
+            <arg name="bd"></arg>
+        </mutation>
+        <field name="NAME">rand_row</field>
+        <value name="RETURN">
+            <block type="random_int">
+                <value name="FROM">
+                    <block type="numbers_int">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="TO">
+                    <block type="numbers_arithmetic">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                            <block type="builtins_length">
+                                <value name="VALUE">
+                                    <block type="variables_get">
+                                        <field name="VAR">board</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <value name="B">
+                            <block type="numbers_int">
+                                <field name="NUM">1</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </value>
+    </block>
+    <block type="procedures_defreturn" collapsed="true" x="457" y="688">
+        <mutation statements="false">
+            <arg name="bd"></arg>
+        </mutation>
+        <field name="NAME">rand_column</field>
+        <value name="RETURN">
+            <block type="random_int">
+                <value name="FROM">
+                    <block type="numbers_int">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="TO">
+                    <block type="numbers_arithmetic">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                            <block type="builtins_length">
+                                <value name="VALUE">
+                                    <block type="general_create_with">
+                                        <mutation items="1"></mutation>
+                                        <value name="INPUT">
+                                            <block type="variables_get">
+                                                <field name="VAR">board</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD0">
+                                            <block type="numbers_int">
+                                                <field name="NUM">0</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <value name="B">
+                            <block type="numbers_int">
+                                <field name="NUM">1</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </value>
+    </block>
+</xml>

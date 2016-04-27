@@ -1,0 +1,322 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="fractions_import2" x="38" y="38">
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Add these fractions. Print the answer.</field>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">f1</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="fractions_Fraction">
+                                <value name="NUMERATOR">
+                                    <block type="numbers_int">
+                                        <field name="NUM">1</field>
+                                    </block>
+                                </value>
+                                <value name="DENOMINATOR">
+                                    <block type="numbers_int">
+                                        <field name="NUM">8</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">f2</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="fractions_Fraction">
+                                        <value name="NUMERATOR">
+                                            <block type="numbers_int">
+                                                <field name="NUM">2</field>
+                                            </block>
+                                        </value>
+                                        <value name="DENOMINATOR">
+                                            <block type="numbers_int">
+                                                <field name="NUM">3</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">s1</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="strings_format_with">
+                                                <mutation items="3"></mutation>
+                                                <field name="STR">{:&gt;5}{:&gt;3}{:&gt;5}</field>
+                                                <value name="ADD0">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">f1</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                    <block type="strings">
+                                                        <field name="TEXT">x</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD2">
+                                                    <block type="fractions_Fraction">
+                                                        <value name="NUMERATOR">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">3</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="DENOMINATOR">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">3</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="strings_print">
+                                                <value name="TEXT">
+                                                    <block type="strings_format_with">
+                                                        <mutation items="2"></mutation>
+                                                        <field name="STR">({} = {:&gt;6})</field>
+                                                        <value name="ADD0">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">s1</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD1">
+                                                            <block type="numbers_arithmetic">
+                                                                <field name="OP">MULTIPLY</field>
+                                                                <value name="A">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">f1</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                    <block type="fractions_Fraction">
+                                                                        <value name="NUMERATOR">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">3</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="DENOMINATOR">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">3</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">s2</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="strings_format_with">
+                                                                <mutation items="3"></mutation>
+                                                                <field name="STR">{:&gt;5}{:&gt;3}{:&gt;5}</field>
+                                                                <value name="ADD0">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">f2</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                    <block type="strings">
+                                                                        <field name="TEXT">x</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD2">
+                                                                    <block type="fractions_Fraction">
+                                                                        <value name="NUMERATOR">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">8</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="DENOMINATOR">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">8</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="strings_print">
+                                                                <value name="TEXT">
+                                                                    <block type="strings_format_with">
+                                                                        <mutation items="2"></mutation>
+                                                                        <field name="STR">+ ({} = {:&gt;6})</field>
+                                                                        <value name="ADD0">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">s2</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                            <block type="numbers_arithmetic">
+                                                                                <field name="OP">MULTIPLY</field>
+                                                                                <value name="A">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">f2</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                    <block type="fractions_Fraction">
+                                                                                        <value name="NUMERATOR">
+                                                                                            <block type="numbers_int">
+                                                                                                <field name="NUM">8</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="DENOMINATOR">
+                                                                                            <block type="numbers_int">
+                                                                                                <field name="NUM">8</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="strings_print">
+                                                                        <value name="TEXT">
+                                                                            <block type="numbers_arithmetic">
+                                                                                <field name="OP">MULTIPLY</field>
+                                                                                <value name="A">
+                                                                                    <block type="strings">
+                                                                                        <field name="TEXT">=</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">27</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="variables_set">
+                                                                                <field name="VAR">p1</field>
+                                                                                <field name="OP">EQUALS</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="numbers_arithmetic">
+                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                        <value name="A">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">f1</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                            <block type="fractions_Fraction">
+                                                                                                <value name="NUMERATOR">
+                                                                                                    <block type="numbers_int">
+                                                                                                        <field name="NUM">3</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <value name="DENOMINATOR">
+                                                                                                    <block type="numbers_int">
+                                                                                                        <field name="NUM">3</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="variables_set">
+                                                                                        <field name="VAR">p2</field>
+                                                                                        <field name="OP">EQUALS</field>
+                                                                                        <value name="VALUE">
+                                                                                            <block type="numbers_arithmetic">
+                                                                                                <field name="OP">MULTIPLY</field>
+                                                                                                <value name="A">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">f2</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                    <block type="fractions_Fraction">
+                                                                                                        <value name="NUMERATOR">
+                                                                                                            <block type="numbers_int">
+                                                                                                                <field name="NUM">8</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <value name="DENOMINATOR">
+                                                                                                            <block type="numbers_int">
+                                                                                                                <field name="NUM">8</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                            <block type="strings_print">
+                                                                                                <next>
+                                                                                                    <block type="strings_print">
+                                                                                                        <value name="TEXT">
+                                                                                                            <block type="strings_format_with">
+                                                                                                                <mutation items="4"></mutation>
+                                                                                                                <field name="STR">{:&gt;5}{:&gt;3}{:&gt;5} = {:&gt;6}</field>
+                                                                                                                <value name="ADD0">
+                                                                                                                    <block type="variables_get">
+                                                                                                                        <field name="VAR">f1</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <value name="ADD1">
+                                                                                                                    <block type="strings">
+                                                                                                                        <field name="TEXT">+</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <value name="ADD2">
+                                                                                                                    <block type="variables_get">
+                                                                                                                        <field name="VAR">f2</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <value name="ADD3">
+                                                                                                                    <block type="numbers_arithmetic">
+                                                                                                                        <field name="OP">ADD</field>
+                                                                                                                        <value name="A">
+                                                                                                                            <block type="variables_get">
+                                                                                                                                <field name="VAR">f1</field>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                        <value name="B">
+                                                                                                                            <block type="variables_get">
+                                                                                                                                <field name="VAR">f2</field>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

@@ -1,0 +1,81 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" id="1" inline="true" x="24" y="11">
+        <field name="VAR">t</field>
+        <value name="VALUE">
+            <block type="turtle_turtle" id="2"></block>
+        </value>
+        <next>
+            <block type="turtle_shape" id="3">
+                <field name="VAR">t</field>
+                <field name="IMAGE">turtle</field>
+                <next>
+                    <block type="turtle_speed" id="4">
+                        <field name="VAR">t</field>
+                        <field name="SPEED">8</field>
+                        <next>
+                            <block type="procedures_callnoreturn" id="22" inline="true">
+                                <mutation name="func_name">
+                                    <arg name="length"></arg>
+                                    <arg name="angle"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="numbers_int" id="68">
+                                        <field name="NUM">200</field>
+                                    </block>
+                                </value>
+                                <value name="ARG1">
+                                    <block type="numbers_int" id="69">
+                                        <field name="NUM">90</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block><block type="procedures_defnoreturn" id="5" x="328" y="46">
+    <mutation>
+        <arg name="length"></arg>
+        <arg name="angle"></arg>
+    </mutation>
+    <field name="NAME">func_name</field>
+    <statement name="STACK">
+        <block type="loops_for_each" id="6" inline="true">
+            <field name="VAR">item</field>
+            <value name="ITER">
+                <block type="builtins_range_with" id="7" inline="true">
+                    <mutation items="1"></mutation>
+                    <value name="ADD0">
+                        <block type="numbers_int" id="8">
+                            <field name="NUM">4</field>
+                        </block>
+                    </value>
+                </block>
+            </value>
+            <statement name="DO">
+                <block type="turtle_move" id="9" inline="true">
+                    <field name="VAR">t</field>
+                    <field name="DIR">forward</field>
+                    <value name="VALUE">
+                        <block type="variables_get" id="51">
+                            <field name="VAR">length</field>
+                        </block>
+                    </value>
+                    <next>
+                        <block type="turtle_turn" id="11" inline="true">
+                            <field name="VAR">t</field>
+                            <field name="DIR">left</field>
+                            <value name="VALUE">
+                                <block type="variables_get" id="33">
+                                    <field name="VAR">angle</field>
+                                </block>
+                            </value>
+                        </block>
+                    </next>
+                </block>
+            </statement>
+        </block>
+    </statement>
+    </block>
+</xml>

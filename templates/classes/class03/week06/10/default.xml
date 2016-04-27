@@ -1,0 +1,105 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="37">
+        <field name="TEXT">This should look familiar.</field>
+        <next>
+            <block type="fractions_import2">
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">f1</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="fractions_Fraction">
+                                <value name="NUMERATOR">
+                                    <block type="numbers_int">
+                                        <field name="NUM">4</field>
+                                    </block>
+                                </value>
+                                <value name="DENOMINATOR">
+                                    <block type="numbers_int">
+                                        <field name="NUM">5</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">f2</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="fractions_Fraction">
+                                        <value name="NUMERATOR">
+                                            <block type="numbers_int">
+                                                <field name="NUM">3</field>
+                                            </block>
+                                        </value>
+                                        <value name="DENOMINATOR">
+                                            <block type="numbers_int">
+                                                <field name="NUM">8</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">product</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="numbers_arithmetic">
+                                                <field name="OP">MULTIPLY</field>
+                                                <value name="A">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">f1</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">f2</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="general_comment">
+                                                <field name="TEXT">Can this product be reduced? If so, which block?</field>
+                                                <next>
+                                                    <block type="strings_print_py3_commas">
+                                                        <mutation items="5"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">f1</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD1">
+                                                            <block type="strings">
+                                                                <field name="TEXT">x</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD2">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">f2</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD3">
+                                                            <block type="strings">
+                                                                <field name="TEXT">=</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD4">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">product</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

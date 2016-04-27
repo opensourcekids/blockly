@@ -1,0 +1,589 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="turtle_import" x="13" y="13">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">t</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="turtle_turtle"></block>
+                </value>
+                <next>
+                    <block type="turtle_shape">
+                        <field name="VAR">t</field>
+                        <field name="IMAGE">turtle</field>
+                        <next>
+                            <block type="turtle_speed">
+                                <field name="VAR">t</field>
+                                <field name="SPEED">10</field>
+                                <next>
+                                    <block type="turtle_fillcolor">
+                                        <field name="VAR">t</field>
+                                        <value name="COLOUR">
+                                            <block type="colour_picker">
+                                                <field name="COLOUR">#ffcc66</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">num</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">5</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">denom</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">5</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="variables_set">
+                                                                <field name="VAR">side_length</field>
+                                                                <field name="OP">EQUALS</field>
+                                                                <value name="VALUE">
+                                                                    <block type="numbers_arithmetic">
+                                                                        <field name="OP">MULTIPLY</field>
+                                                                        <value name="A">
+                                                                            <block type="numbers_arithmetic">
+                                                                                <field name="OP">DIVIDE</field>
+                                                                                <value name="A">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">100</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">denom</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">denom</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="procedures_callnoreturn">
+                                                                        <mutation name="square">
+                                                                            <arg name="length"></arg>
+                                                                        </mutation>
+                                                                        <value name="ARG0">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">side_length</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="procedures_callnoreturn">
+                                                                                <mutation name="make_fract">
+                                                                                    <arg name="r_length"></arg>
+                                                                                    <arg name="how_many"></arg>
+                                                                                    <arg name="fract"></arg>
+                                                                                    <arg name="fill"></arg>
+                                                                                </mutation>
+                                                                                <value name="ARG0">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">side_length</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="ARG1">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">num</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="ARG2">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">denom</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="ARG3">
+                                                                                    <block type="logic_boolean">
+                                                                                        <field name="BOOL">TRUE</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="procedures_callnoreturn">
+                                                                                        <mutation name="divide">
+                                                                                            <arg name="leng"></arg>
+                                                                                            <arg name="how_many"></arg>
+                                                                                        </mutation>
+                                                                                        <value name="ARG0">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">side_length</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="ARG1">
+                                                                                            <block type="numbers_int">
+                                                                                                <field name="NUM">1</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defnoreturn" x="313" y="12">
+        <mutation>
+            <arg name="length"></arg>
+        </mutation>
+        <field name="NAME">square</field>
+        <statement name="STACK">
+            <block type="loops_for_each">
+                <field name="VAR">item</field>
+                <value name="ITER">
+                    <block type="builtins_range_with">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="numbers_int">
+                                <field name="NUM">4</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO">
+                    <block type="turtle_move">
+                        <field name="VAR">t</field>
+                        <field name="DIR">forward</field>
+                        <value name="VALUE">
+                            <block type="variables_get">
+                                <field name="VAR">length</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="turtle_turn">
+                                <field name="VAR">t</field>
+                                <field name="DIR">left</field>
+                                <value name="VALUE">
+                                    <block type="numbers_int">
+                                        <field name="NUM">90</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defnoreturn" collapsed="true" x="13" y="463">
+        <mutation>
+            <arg name="leng"></arg>
+            <arg name="how_many"></arg>
+        </mutation>
+        <field name="NAME">divide</field>
+        <statement name="STACK">
+            <block type="controls_if">
+                <value name="IF0">
+                    <block type="logic_compare">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                            <block type="variables_get">
+                                <field name="VAR">how_many</field>
+                            </block>
+                        </value>
+                        <value name="B">
+                            <block type="numbers_int">
+                                <field name="NUM">1</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO0">
+                    <block type="turtle_turn">
+                        <field name="VAR">t</field>
+                        <field name="DIR">right</field>
+                        <value name="VALUE">
+                            <block type="numbers_int">
+                                <field name="NUM">90</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="procedures_callnoreturn">
+                                <mutation name="make_fract">
+                                    <arg name="r_length"></arg>
+                                    <arg name="how_many"></arg>
+                                    <arg name="fract"></arg>
+                                    <arg name="fill"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="variables_get">
+                                        <field name="VAR">leng</field>
+                                    </block>
+                                </value>
+                                <value name="ARG1">
+                                    <block type="variables_get">
+                                        <field name="VAR">how_many</field>
+                                    </block>
+                                </value>
+                                <value name="ARG2">
+                                    <block type="variables_get">
+                                        <field name="VAR">how_many</field>
+                                    </block>
+                                </value>
+                                <value name="ARG3">
+                                    <block type="logic_boolean">
+                                        <field name="BOOL">FALSE</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defnoreturn" collapsed="true" x="313" y="463">
+        <mutation>
+            <arg name="length1"></arg>
+            <arg name="length2"></arg>
+        </mutation>
+        <field name="NAME">rectangle</field>
+        <statement name="STACK">
+            <block type="loops_for_each">
+                <field name="VAR">item</field>
+                <value name="ITER">
+                    <block type="builtins_range_with">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="numbers_int">
+                                <field name="NUM">2</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO">
+                    <block type="turtle_move">
+                        <field name="VAR">t</field>
+                        <field name="DIR">forward</field>
+                        <value name="VALUE">
+                            <block type="variables_get">
+                                <field name="VAR">length1</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="turtle_turn">
+                                <field name="VAR">t</field>
+                                <field name="DIR">left</field>
+                                <value name="VALUE">
+                                    <block type="numbers_int">
+                                        <field name="NUM">90</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="turtle_move">
+                                        <field name="VAR">t</field>
+                                        <field name="DIR">forward</field>
+                                        <value name="VALUE">
+                                            <block type="variables_get">
+                                                <field name="VAR">length2</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="turtle_turn">
+                                                <field name="VAR">t</field>
+                                                <field name="DIR">left</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">90</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </statement>
+    </block>
+    <block type="procedures_defnoreturn" collapsed="true" x="613" y="463">
+        <mutation>
+            <arg name="r_length"></arg>
+            <arg name="how_many"></arg>
+            <arg name="fract"></arg>
+            <arg name="fill"></arg>
+        </mutation>
+        <field name="NAME">make_fract</field>
+        <statement name="STACK">
+            <block type="loops_for_each">
+                <field name="VAR">item</field>
+                <value name="ITER">
+                    <block type="builtins_range_with">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="variables_get">
+                                <field name="VAR">fract</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO">
+                    <block type="controls_if">
+                        <value name="IF0">
+                            <block type="logic_operation">
+                                <field name="OP">AND</field>
+                                <value name="A">
+                                    <block type="logic_compare">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                            <block type="variables_get">
+                                                <field name="VAR">item</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="variables_get">
+                                                <field name="VAR">how_many</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="variables_get">
+                                        <field name="VAR">fill</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO0">
+                            <block type="turtle_fill">
+                                <field name="VAR">t</field>
+                                <field name="WHAT">begin_fill</field>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="controls_if">
+                                <value name="IF0">
+                                    <block type="variables_get">
+                                        <field name="VAR">fill</field>
+                                    </block>
+                                </value>
+                                <statement name="DO0">
+                                    <block type="turtle_write" collapsed="true">
+                                        <field name="VAR">t</field>
+                                        <field name="MOVES">True</field>
+                                        <field name="ALIGN">right</field>
+                                        <field name="FONT">Courier New</field>
+                                        <field name="FONTSIZE">12</field>
+                                        <field name="FONTSTYLE">normal</field>
+                                        <value name="TEXT">
+                                            <block type="strings_concatenate">
+                                                <mutation items="3"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="strings">
+                                                        <field name="TEXT">1/</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                    <block type="strings_cast_str">
+                                                        <value name="CAST">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">fract</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD2">
+                                                    <block type="strings">
+                                                        <field name="TEXT">--&gt;</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </statement>
+                                <next>
+                                    <block type="procedures_callnoreturn">
+                                        <mutation name="rectangle">
+                                            <arg name="length1"></arg>
+                                            <arg name="length2"></arg>
+                                        </mutation>
+                                        <value name="ARG0">
+                                            <block type="variables_get">
+                                                <field name="VAR">r_length</field>
+                                            </block>
+                                        </value>
+                                        <value name="ARG1">
+                                            <block type="numbers_arithmetic">
+                                                <field name="OP">DIVIDE</field>
+                                                <value name="A">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">r_length</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">fract</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="controls_if">
+                                                <value name="IF0">
+                                                    <block type="logic_operation">
+                                                        <field name="OP">AND</field>
+                                                        <value name="A">
+                                                            <block type="logic_compare">
+                                                                <field name="OP">LT</field>
+                                                                <value name="A">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">item</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">how_many</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <value name="B">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">fill</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                    <block type="turtle_fill">
+                                                        <field name="VAR">t</field>
+                                                        <field name="WHAT">end_fill</field>
+                                                    </block>
+                                                </statement>
+                                                <next>
+                                                    <block type="turtle_turn">
+                                                        <field name="VAR">t</field>
+                                                        <field name="DIR">left</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">90</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="turtle_move">
+                                                                <field name="VAR">t</field>
+                                                                <field name="DIR">forward</field>
+                                                                <value name="VALUE">
+                                                                    <block type="numbers_arithmetic">
+                                                                        <field name="OP">DIVIDE</field>
+                                                                        <value name="A">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">r_length</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">fract</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="turtle_turn">
+                                                                        <field name="VAR">t</field>
+                                                                        <field name="DIR">right</field>
+                                                                        <value name="VALUE">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">90</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <next>
+                    <block type="controls_if">
+                        <value name="IF0">
+                            <block type="variables_get">
+                                <field name="VAR">fill</field>
+                            </block>
+                        </value>
+                        <statement name="DO0">
+                            <block type="turtle_write">
+                                <field name="VAR">t</field>
+                                <field name="MOVES">True</field>
+                                <field name="ALIGN">right</field>
+                                <field name="FONT">Courier New</field>
+                                <field name="FONTSIZE">12</field>
+                                <field name="FONTSTYLE">bold</field>
+                                <value name="TEXT">
+                                    <block type="strings_concatenate">
+                                        <mutation items="5"></mutation>
+                                        <value name="ADD0">
+                                            <block type="strings">
+                                                <field name="TEXT">"</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD1">
+                                            <block type="strings_cast_str">
+                                                <value name="CAST">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">how_many</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <value name="ADD2">
+                                            <block type="strings">
+                                                <field name="TEXT">/</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD3">
+                                            <block type="strings_cast_str">
+                                                <value name="CAST">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">fract</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <value name="ADD4">
+                                            <block type="strings">
+                                                <field name="TEXT">"</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>

@@ -1,0 +1,197 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="strings_print" id="10" inline="true" x="-21" y="-6">
+        <value name="TEXT">
+            <block type="numbers_arithmetic" id="17" inline="true">
+                <field name="OP">ADD</field>
+                <value name="A">
+                    <block type="numbers_int" id="24">
+                        <field name="NUM">12</field>
+                    </block>
+                </value>
+                <value name="B">
+                    <block type="numbers_int" id="31">
+                        <field name="NUM">30</field>
+                    </block>
+                </value>
+            </block>
+        </value>
+        <next>
+            <block type="strings_print" id="32" inline="true">
+                <value name="TEXT">
+                    <block type="numbers_arithmetic" id="33" inline="true">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                            <block type="numbers_int" id="34">
+                                <field name="NUM">76</field>
+                            </block>
+                        </value>
+                        <value name="B">
+                            <block type="numbers_int" id="35">
+                                <field name="NUM">34</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="strings_print" id="36" inline="true">
+                        <value name="TEXT">
+                            <block type="numbers_arithmetic" id="37" inline="true">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                    <block type="numbers_int" id="38">
+                                        <field name="NUM">14</field>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="numbers_int" id="39">
+                                        <field name="NUM">8</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="strings_print" id="40" inline="true">
+                                <value name="TEXT">
+                                    <block type="numbers_arithmetic" id="41" inline="true">
+                                        <field name="OP">DIVIDE</field>
+                                        <value name="A">
+                                            <block type="numbers_int" id="42">
+                                                <field name="NUM">15</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="numbers_int" id="43">
+                                                <field name="NUM">4</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print" id="52" inline="true">
+                                        <value name="TEXT">
+                                            <block type="numbers_arithmetic" id="53" inline="true">
+                                                <field name="OP">DIVIDE</field>
+                                                <value name="A">
+                                                    <block type="numbers_float" id="62">
+                                                        <field name="NUM">15.0</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="numbers_float" id="63">
+                                                        <field name="NUM">4.0</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="strings_print" id="64" inline="true">
+                                                <value name="TEXT">
+                                                    <block type="numbers_arithmetic" id="65" inline="true">
+                                                        <field name="OP">DIVIDE</field>
+                                                        <value name="A">
+                                                            <block type="numbers_float" id="66">
+                                                                <field name="NUM">15.0</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="B">
+                                                            <block type="numbers_int" id="68">
+                                                                <field name="NUM">4</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="strings_print" id="44" inline="true">
+                                                        <value name="TEXT">
+                                                            <block type="numbers_arithmetic" id="45" inline="true">
+                                                                <field name="OP">POWER</field>
+                                                                <value name="A">
+                                                                    <block type="numbers_int" id="46">
+                                                                        <field name="NUM">2</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                    <block type="numbers_int" id="47">
+                                                                        <field name="NUM">32</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="strings_print" id="48" inline="true">
+                                                                <value name="TEXT">
+                                                                    <block type="numbers_arithmetic" id="49" inline="true">
+                                                                        <field name="OP">MODULUS</field>
+                                                                        <value name="A">
+                                                                            <block type="numbers_int" id="50">
+                                                                                <field name="NUM">17</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                            <block type="numbers_int" id="51">
+                                                                                <field name="NUM">6</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="strings_print_commas" id="84" inline="true">
+                                                                        <mutation items="4"></mutation>
+                                                                        <value name="ADD0">
+                                                                            <block type="strings" id="78">
+                                                                                <field name="TEXT">15 / 4 =</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                            <block type="numbers_arithmetic" id="70" inline="true">
+                                                                                <field name="OP">DIVIDE</field>
+                                                                                <value name="A">
+                                                                                    <block type="numbers_int" id="71">
+                                                                                        <field name="NUM">15</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                    <block type="numbers_int" id="72">
+                                                                                        <field name="NUM">4</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="ADD2">
+                                                                            <block type="strings" id="94">
+                                                                                <field name="TEXT">R</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="ADD3">
+                                                                            <block type="numbers_arithmetic" id="91" inline="true">
+                                                                                <field name="OP">MODULUS</field>
+                                                                                <value name="A">
+                                                                                    <block type="numbers_int" id="92">
+                                                                                        <field name="NUM">15</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                    <block type="numbers_int" id="93">
+                                                                                        <field name="NUM">4</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

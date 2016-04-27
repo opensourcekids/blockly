@@ -1,0 +1,84 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" id="X)8OA2yZ@=puxb6;Ff_I" x="38" y="13">
+        <field name="TEXT">This is SnapPy Code.</field>
+        <next>
+            <block type="general_comment" id="5w7wk]5e!J{N`Tk};z{E">
+                <field name="TEXT">Click here to begin coding.</field>
+                <next>
+                    <block type="loops_while" id="!J.Y[^`U=pq)T,Rllu_j">
+                        <value name="BOOL">
+                            <block type="logic_boolean" id="]*R,3Uf}#S%yKO0|v{yE">
+                                <field name="BOOL">TRUE</field>
+                            </block>
+                        </value>
+                        <statement name="DO">
+                            <block type="variables_set" id=")m4q2]L%Fk/jFt1=i{T:">
+                                <field name="VAR">users_answer</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="general_input" id="[Y5tQ?TMF_R#S@kA?a9/">
+                                        <value name="INPUT">
+                                            <block type="strings" id="R^=/)nouY)c8X+}nYYFB">
+                                                <field name="TEXT">Do you want to code?</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="controls_if" id="bJT5*pUcJR+ch?Rp2VGr">
+                                        <mutation else="1"></mutation>
+                                        <value name="IF0">
+                                            <block type="logic_compare" id="3?g,3B28TZk*R2pL(}z(">
+                                                <field name="OP">EQ</field>
+                                                <value name="A">
+                                                    <block type="strings_changeCase" id="zhaJDa^uquSrtkCCk6IZ">
+                                                        <field name="CASE">UPPERCASE</field>
+                                                        <value name="TEXT">
+                                                            <block type="variables_get" id="%Uuh_np*m4]XRw9!u??S">
+                                                                <field name="VAR">users_answer</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="strings" id="#LrE?Tc6:4%![b1K0@:a">
+                                                        <field name="TEXT">YES</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <statement name="DO0">
+                                            <block type="strings_print_py3_commas" id="T@;a-Tlmw}rIPJ{_vZc~">
+                                                <mutation items="1"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="strings" id="2[,],oLO;/X*Rn3ZV~B1">
+                                                        <field name="TEXT">YIPPIE!!!</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="loops_break_continue" id="fZzF{pUfop%69q{e{Gfh">
+                                                        <field name="WHAT">break</field>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                        <statement name="ELSE">
+                                            <block type="strings_print_py3_commas" id="|+t]Pm4rG6/eeFDgZ(L%">
+                                                <mutation items="1"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="strings" id="IeqMV26QnTuo{c%V,~vx">
+                                                        <field name="TEXT">Awwww. Are you sure?</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

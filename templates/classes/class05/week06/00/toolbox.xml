@@ -1,0 +1,127 @@
+<xml id="toolbox" style="display: none">
+    <category name="Variables" custom="VARIABLE"></category>
+    <category name="Numbers">
+        <block type="numbers_int"></block>
+        <block type="numbers_float"></block>
+        <block type="numbers_arithmetic"></block>
+        <block type="numbers_cast_int"></block>
+        <block type="numbers_cast_float"></block>
+        <block type="numbers_to_base"></block>
+    </category>
+    <category name="Strings">
+        <block type="strings"></block>
+        <block type="strings_print_py3_commas"></block>
+        <block type="strings_print_py3_commas">
+            <mutation items="1"></mutation>
+            <value name="ADD0">
+                <block type="strings">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+        <block type="strings_print_py3_commas">
+            <mutation items="2"></mutation>
+            <value name="ADD1">
+                <block type="strings_end">
+                    <value name="END">
+                        <block type="strings_specials">
+                            <field name="CHAR"></field>
+                        </block>
+                    </value>
+                </block>
+            </value>
+        </block>
+        <block type="strings_format_with"></block>
+        <block type="strings_concatenate"></block>
+        <block type="strings_join"></block>
+        <block type="strings_split"></block>
+        <block type="strings_cast_str"></block>
+        <block type="strings_end">
+            <value name="END">
+                <block type="strings_specials">
+                    <field name="CHAR"></field>
+                </block>
+            </value>
+        </block>
+        <block type="strings_specials"></block>
+        {#        <block type="strings_changeCase"></block>#}
+        {#        <block type="strings_find"></block>#}
+        {#        <block type="strings_startswith_endswith"></block>#}
+        {#        <block type="strings_strips"></block>#}
+        {#        <block type="strings_print"></block>#}
+        {#        <block type="strings_print_commas"></block>#}
+    </category>
+    <category name="Booleans">
+        <block type="logic_boolean"></block>
+        <block type="logic_compare"></block>
+        <block type="logic_operation"></block>
+        <block type="controls_if"></block>
+    </category>
+    <category name="Lists">
+        <block type="lists_create_empty"></block>
+        <block type="lists_create_with"></block>
+        <block type="lists_append"></block>
+        <block type="lists_extend"></block>
+        <block type="lists_insert"></block>
+        <block type="lists_remove"></block>
+        <block type="lists_index"></block>
+    </category>
+    <category name="Built-Ins">
+        <block type="builtins_length"></block>
+        <block type="builtins_range_with">
+            <value name="ADD0">
+                <block type="numbers_int">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="builtins_type"></block>
+    </category>
+    <category name="General">
+        <block type="general_comment"></block>
+        <block type="general_create_with">
+            <value name="ADD0">
+                <block type="numbers_int">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="general_input"></block>
+        <block type="general_equals"></block>
+
+    </category>
+    <sep></sep>
+    <category name="Conditionals">
+        <block type="controls_if"></block>
+        <block type="controls_if">
+            <mutation else="1"></mutation>
+        </block>
+        <block type="controls_if">
+            <mutation elseif="1" else="1"></mutation>
+        </block>
+    </category>
+    <category name="Loops">
+        <block type="loops_for_each"></block>
+        <block type="loops_while"></block>
+        <block type="loops_break_continue"></block>
+    </category>
+    <category name="Functions" custom="PROCEDURE"></category>
+    <sep></sep>
+    <category name="Libraries">
+        <category name="random">
+            <block type="random_int">
+                <value name="FROM">
+                    <block type="numbers_int">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+                <value name="TO">
+                    <block type="numbers_int">
+                        <field name="NUM">100</field>
+                    </block>
+                </value>
+            </block>
+            <block type="random_float"></block>
+        </category>
+    </category>
+</xml>

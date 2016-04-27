@@ -1,0 +1,169 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">Import the time and GPIOZero libraries.</field>
+        <next>
+            <block type="signal_import">
+                <next>
+                    <block type="gpiozero_import">
+                        <mutation items="2"></mutation>
+                        <value name="LIB0">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">LED</field>
+                            </block>
+                        </value>
+                        <value name="LIB1">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">Button</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">red_light</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="gpiozero_led">
+                                        <mutation items="1"></mutation>
+                                        <field name="CLASS">LED</field>
+                                        <value name="ADD0">
+                                            <block type="gpiozero_pins">
+                                                <field name="pin_number">17</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">green_light</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="gpiozero_led">
+                                                <mutation items="1"></mutation>
+                                                <field name="CLASS">LED</field>
+                                                <value name="ADD0">
+                                                    <block type="gpiozero_pins">
+                                                        <field name="pin_number">22</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">button_for_red</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="gpiozero_button">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="gpiozero_pins">
+                                                                <field name="pin_number">23</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">button_for_green</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="gpiozero_button">
+                                                                <mutation items="1"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="gpiozero_pins">
+                                                                        <field name="pin_number">24</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="gpiozero_button_when_pressed">
+                                                                <value name="Button">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">button_for_red</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="VALUE">
+                                                                    <block type="gpiozero_led_on_off_out">
+                                                                        <field name="OP">on</field>
+                                                                        <value name="LED">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">red_light</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="gpiozero_button_when_released">
+                                                                        <value name="Button">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">button_for_red</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="VALUE">
+                                                                            <block type="gpiozero_led_on_off_out">
+                                                                                <field name="OP">off</field>
+                                                                                <value name="LED">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">red_light</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="gpiozero_button_when_pressed">
+                                                                                <value name="Button">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">button_for_green</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="VALUE">
+                                                                                    <block type="gpiozero_led_on_off_out">
+                                                                                        <field name="OP">on</field>
+                                                                                        <value name="LED">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">green_light</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="gpiozero_button_when_released">
+                                                                                        <value name="Button">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">button_for_green</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="VALUE">
+                                                                                            <block type="gpiozero_led_on_off_out">
+                                                                                                <field name="OP">off</field>
+                                                                                                <value name="LED">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">green_light</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                            <block type="signal_pause"></block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

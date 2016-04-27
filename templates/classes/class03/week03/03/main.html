@@ -1,0 +1,47 @@
+{# _PyBlocks/templates/classes/class02/week05/04/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% endblock %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% endblock %}
+
+{% block middle %}
+    Exploring Angles
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% endblock %}#}
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}false{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{% block panel %}
+    <div id="panel">
+        <div style="padding: 30px">
+            <h2 align="center" style="color: #0072bc;">Background</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>The code in the workspace generates a pink "compass" and a line by using functions.</li>
+                <li>By using the draw_angle function, you can draw any angle on the screen.</li>
+            </ul>
+            <h2 align="center" style="color: #0072bc;">Challenges</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Can you determine what the init function does?</li>
+                <li>What does the draw_angle function do?</li>
+                <li>Make the draw_angle function print out the kind of angle drawn (acute, obtuse, right).</li>
+                <li>Use the draw_angle function to make a square.</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

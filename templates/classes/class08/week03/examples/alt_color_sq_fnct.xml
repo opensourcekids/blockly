@@ -1,0 +1,178 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" id="17" inline="true" x="4" y="-1">
+        <field name="VAR">t</field>
+        <value name="VALUE">
+            <block type="turtle_turtle" id="18"></block>
+        </value>
+        <next>
+            <block type="turtle_shape" id="19">
+                <field name="VAR">t</field>
+                <field name="IMAGE">turtle</field>
+                <next>
+                    <block type="turtle_hide_show" id="135">
+                        <field name="VAR">t</field>
+                        <field name="WHAT">hideturtle</field>
+                        <next>
+                            <block type="turtle_speed" id="20">
+                                <field name="VAR">t</field>
+                                <field name="SPEED">0</field>
+                                <next>
+                                    <block type="loops_for_each" id="21" inline="true">
+                                        <field name="VAR">item</field>
+                                        <value name="ITER">
+                                            <block type="builtins_range_with" id="22" inline="true">
+                                                <mutation items="1"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="numbers_int" id="23">
+                                                        <field name="NUM">2</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <statement name="DO">
+                                            <block type="procedures_callnoreturn" id="24" inline="true">
+                                                <mutation name="make_square">
+                                                    <arg name="length"></arg>
+                                                    <arg name="angle"></arg>
+                                                    <arg name="color"></arg>
+                                                </mutation>
+                                                <value name="ARG0">
+                                                    <block type="numbers_int" id="25">
+                                                        <field name="NUM">200</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ARG1">
+                                                    <block type="numbers_int" id="26">
+                                                        <field name="NUM">90</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ARG2">
+                                                    <block type="colour_picker" id="98">
+                                                        <field name="COLOUR">#33cc00</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="turtle_turn" id="27" inline="true">
+                                                        <field name="VAR">t</field>
+                                                        <field name="DIR">left</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_float" id="28">
+                                                                <field name="NUM">90.0</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="procedures_callnoreturn" id="124" inline="true">
+                                                                <mutation name="make_square">
+                                                                    <arg name="length"></arg>
+                                                                    <arg name="angle"></arg>
+                                                                    <arg name="color"></arg>
+                                                                </mutation>
+                                                                <value name="ARG0">
+                                                                    <block type="numbers_int" id="125">
+                                                                        <field name="NUM">200</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ARG1">
+                                                                    <block type="numbers_int" id="126">
+                                                                        <field name="NUM">90</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ARG2">
+                                                                    <block type="colour_picker" id="127">
+                                                                        <field name="COLOUR">#ffcc66</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="turtle_turn" id="128" inline="true">
+                                                                        <field name="VAR">t</field>
+                                                                        <field name="DIR">left</field>
+                                                                        <value name="VALUE">
+                                                                            <block type="numbers_float" id="129">
+                                                                                <field name="NUM">90.0</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defnoreturn" id="29" x="5" y="357">
+        <mutation>
+            <arg name="length"></arg>
+            <arg name="angle"></arg>
+            <arg name="color"></arg>
+        </mutation>
+        <field name="NAME">make_square</field>
+        <statement name="STACK">
+            <block type="turtle_colour" id="59" inline="true">
+                <field name="VAR">t</field>
+                <value name="COLOUR">
+                    <block type="variables_get" id="78">
+                        <field name="VAR">color</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="turtle_fill" id="121">
+                        <field name="VAR">t</field>
+                        <field name="WHAT">begin_fill</field>
+                        <next>
+                            <block type="loops_for_each" id="30" inline="true">
+                                <field name="VAR">item</field>
+                                <value name="ITER">
+                                    <block type="builtins_range_with" id="31" inline="true">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="numbers_int" id="32">
+                                                <field name="NUM">4</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO">
+                                    <block type="turtle_move" id="33" inline="true">
+                                        <field name="VAR">t</field>
+                                        <field name="DIR">forward</field>
+                                        <value name="VALUE">
+                                            <block type="variables_get" id="34">
+                                                <field name="VAR">length</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="turtle_turn" id="35" inline="true">
+                                                <field name="VAR">t</field>
+                                                <field name="DIR">left</field>
+                                                <value name="VALUE">
+                                                    <block type="variables_get" id="36">
+                                                        <field name="VAR">angle</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                                <next>
+                                    <block type="turtle_fill" id="122">
+                                        <field name="VAR">t</field>
+                                        <field name="WHAT">end_fill</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>

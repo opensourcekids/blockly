@@ -1,0 +1,45 @@
+{# _PyBlocks/templates/classes/class02/week05/04/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% endblock %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% endblock %}
+
+{% block middle %}
+    Feel the Power of Loops (Buah, hu, hu)
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% endblock %}#}
+{#True if Skulpt interpreter is used instead of server-side interpreter.#}
+{% block no_skulpt %}false{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{% block panel %}
+    <div id="panel">
+        <div style="padding: 30px">
+            <h2 align="center" style="color: #0072bc;">Question</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Last week we made a square in 4 colors using<img src="/static/img/turtle/turtles_color.png" height="40px">.</li>
+                <br/>
+                <li>This is what it looked like:</li>
+                <br/>
+                <p align="center"><img src="/static/img/turtle/turtle_example_colored_square.png" height="150px"></p>
+                <br/>
+                <li>How could we change the program to use loops?</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

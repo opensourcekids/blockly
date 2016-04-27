@@ -1,0 +1,197 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="38" y="38">
+        <next>
+            <block type="gpiozero_import">
+                <mutation items="1"></mutation>
+                <value name="LIB0">
+                    <block type="gpiozero_libraries">
+                        <field name="LIB">LED</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">led</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="gpiozero_rgbled">
+                                <value name="ADD0">
+                                    <block type="gpiozero_pins">
+                                        <field name="pin_number">17</field>
+                                    </block>
+                                </value>
+                                <value name="ADD1">
+                                    <block type="gpiozero_pins">
+                                        <field name="pin_number">27</field>
+                                    </block>
+                                </value>
+                                <value name="ADD2">
+                                    <block type="gpiozero_pins">
+                                        <field name="pin_number">22</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="gpiozero_led_rgb_value_in">
+                                <value name="LED">
+                                    <block type="variables_get">
+                                        <field name="VAR">led</field>
+                                    </block>
+                                </value>
+                                <value name="VALUE">
+                                    <block type="tuple_create_with">
+                                        <mutation items="3"></mutation>
+                                        <value name="ADD0">
+                                            <block type="numbers_float">
+                                                <field name="NUM">0</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD1">
+                                            <block type="numbers_float">
+                                                <field name="NUM">1</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD2">
+                                            <block type="numbers_float">
+                                                <field name="NUM">1</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print_commas">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                            <block type="strings">
+                                                <field name="TEXT">value =</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD1">
+                                            <block type="gpiozero_led_rgb_value_out">
+                                                <value name="LED">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">led</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="time_sleep">
+                                                <value name="amount_of_time">
+                                                    <block type="numbers_float">
+                                                        <field name="NUM">2</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="gpiozero_led_rgb_in">
+                                                        <field name="COLOR">.green</field>
+                                                        <value name="LED">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">led</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_float">
+                                                                <field name="NUM">0.50</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="strings_print_commas">
+                                                                <mutation items="2"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="strings">
+                                                                        <field name="TEXT">value =</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                    <block type="gpiozero_led_rgb_value_out">
+                                                                        <value name="LED">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">led</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="time_sleep">
+                                                                        <value name="amount_of_time">
+                                                                            <block type="numbers_float">
+                                                                                <field name="NUM">2</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="gpiozero_led_rgb_in">
+                                                                                <field name="COLOR">.blue</field>
+                                                                                <value name="LED">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">led</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="VALUE">
+                                                                                    <block type="numbers_float">
+                                                                                        <field name="NUM">0</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="gpiozero_led_rgb_in">
+                                                                                        <field name="COLOR">.red</field>
+                                                                                        <value name="LED">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">led</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="VALUE">
+                                                                                            <block type="numbers_float">
+                                                                                                <field name="NUM">0.8</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                            <block type="strings_print_commas">
+                                                                                                <mutation items="2"></mutation>
+                                                                                                <value name="ADD0">
+                                                                                                    <block type="strings">
+                                                                                                        <field name="TEXT">value =</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <value name="ADD1">
+                                                                                                    <block type="gpiozero_led_rgb_value_out">
+                                                                                                        <value name="LED">
+                                                                                                            <block type="variables_get">
+                                                                                                                <field name="VAR">led</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                    <block type="time_sleep">
+                                                                                                        <value name="amount_of_time">
+                                                                                                            <block type="numbers_float">
+                                                                                                                <field name="NUM">2</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

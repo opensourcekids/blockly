@@ -1,0 +1,292 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="13" y="13">
+        <next>
+            <block type="gpiozero_import">
+                <mutation items="2"></mutation>
+                <value name="LIB0">
+                    <block type="gpiozero_libraries">
+                        <field name="LIB">LED</field>
+                    </block>
+                </value>
+                <value name="LIB1">
+                    <block type="gpiozero_libraries">
+                        <field name="LIB">Button</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">led</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="gpiozero_led">
+                                <mutation items="1"></mutation>
+                                <field name="CLASS">LED</field>
+                                <value name="ADD0">
+                                    <block type="gpiozero_pins">
+                                        <field name="pin_number">18</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">player_1</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="gpiozero_button">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="gpiozero_pins">
+                                                <field name="pin_number">23</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">player_2</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="gpiozero_button">
+                                                <mutation items="1"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="gpiozero_pins">
+                                                        <field name="pin_number">24</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">time</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="random_int">
+                                                        <value name="FROM">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">5</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="TO">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">10</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="time_sleep">
+                                                        <value name="amount_of_time">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">time</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="gpiozero_led_on_off_toggle">
+                                                                <field name="OP">on()</field>
+                                                                <value name="LED">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">led</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="loops_while">
+                                                                        <value name="BOOL">
+                                                                            <block type="logic_boolean">
+                                                                                <field name="BOOL">TRUE</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <statement name="DO">
+                                                                            <block type="controls_if">
+                                                                                <value name="IF0">
+                                                                                    <block type="gpiozero_button_is_pressed">
+                                                                                        <value name="Button">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">player_1</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <statement name="DO0">
+                                                                                    <block type="strings_print">
+                                                                                        <value name="TEXT">
+                                                                                            <block type="strings">
+                                                                                                <field name="TEXT">Player 1 wins the round.</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                            <block type="loops_break_continue">
+                                                                                                <field name="WHAT">break</field>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </statement>
+                                                                                <next>
+                                                                                    <block type="controls_if">
+                                                                                        <value name="IF0">
+                                                                                            <block type="gpiozero_button_is_pressed">
+                                                                                                <value name="Button">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">player_2</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <statement name="DO0">
+                                                                                            <block type="strings_print">
+                                                                                                <value name="TEXT">
+                                                                                                    <block type="strings">
+                                                                                                        <field name="TEXT">Player 2 wins the round.</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                    <block type="loops_break_continue">
+                                                                                                        <field name="WHAT">break</field>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </statement>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </statement>
+                                                                        <next>
+                                                                            <block type="gpiozero_led_on_off_toggle">
+                                                                                <field name="OP">off()</field>
+                                                                                <value name="LED">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">led</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="variables_set" x="488" y="13">
+        <field name="VAR">p1_score</field>
+        <field name="OP">EQUALS</field>
+        <value name="VALUE">
+            <block type="numbers_int">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
+    <block type="variables_set" x="488" y="88">
+        <field name="VAR">p2_score</field>
+        <field name="OP">EQUALS</field>
+        <value name="VALUE">
+            <block type="numbers_int">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
+    <block type="variables_set" x="488" y="163">
+        <field name="VAR">p1_score</field>
+        <field name="OP">ADD</field>
+        <value name="VALUE">
+            <block type="numbers_int">
+                <field name="NUM">1</field>
+            </block>
+        </value>
+    </block>
+    <block type="variables_set" x="488" y="238">
+        <field name="VAR">p2_score</field>
+        <field name="OP">ADD</field>
+        <value name="VALUE">
+            <block type="numbers_int">
+                <field name="NUM">1</field>
+            </block>
+        </value>
+    </block>
+    <block type="loops_for_each" x="488" y="313">
+        <field name="VAR">game</field>
+        <value name="ITER">
+            <block type="builtins_range_with">
+                <mutation items="1"></mutation>
+                <value name="ADD0">
+                    <block type="numbers_int">
+                        <field name="NUM">5</field>
+                    </block>
+                </value>
+            </block>
+        </value>
+    </block>
+    <block type="controls_if" x="488" y="438">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+            <block type="logic_compare">
+                <field name="OP">GT</field>
+            </block>
+        </value>
+        <statement name="DO0">
+            <block type="strings_print_commas">
+                <mutation items="1"></mutation>
+                <value name="ADD0">
+                    <block type="strings">
+                        <field name="TEXT">Player 1 wins the game!</field>
+                    </block>
+                </value>
+            </block>
+        </statement>
+        <statement name="ELSE">
+            <block type="strings_print_commas">
+                <mutation items="1"></mutation>
+                <value name="ADD0">
+                    <block type="strings">
+                        <field name="TEXT">Player 2 wins the game!</field>
+                    </block>
+                </value>
+            </block>
+        </statement>
+        <next>
+            <block type="strings_print_commas">
+                <mutation items="6"></mutation>
+                <value name="ADD0">
+                    <block type="strings">
+                        <field name="TEXT">Final Score:</field>
+                    </block>
+                </value>
+                <value name="ADD1">
+                    <block type="strings">
+                        <field name="TEXT">Player 1</field>
+                    </block>
+                </value>
+                <value name="ADD2">
+                    <block type="variables_get">
+                        <field name="VAR">p1_score</field>
+                    </block>
+                </value>
+                <value name="ADD3">
+                    <block type="strings">
+                        <field name="TEXT">,</field>
+                    </block>
+                </value>
+                <value name="ADD4">
+                    <block type="strings">
+                        <field name="TEXT">Player 2</field>
+                    </block>
+                </value>
+                <value name="ADD5">
+                    <block type="variables_get">
+                        <field name="VAR">p2_score</field>
+                    </block>
+                </value>
+            </block>
+        </next>
+    </block>
+</xml>

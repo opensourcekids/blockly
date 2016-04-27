@@ -1,0 +1,151 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" id="15" inline="true" x="-2" y="-5">
+        <field name="VAR">t</field>
+        <value name="VALUE">
+            <block type="turtle_turtle" id="16"></block>
+        </value>
+        <next>
+            <block type="turtle_shape" id="17">
+                <field name="VAR">t</field>
+                <field name="IMAGE">turtle</field>
+                <next>
+                    <block type="turtle_speed" id="18">
+                        <field name="VAR">t</field>
+                        <field name="SPEED">5</field>
+                        <next>
+                            <block type="procedures_callnoreturn" id="140" inline="true">
+                                <mutation name="forward_turn">
+                                    <arg name="distance"></arg>
+                                    <arg name="angle"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="numbers_int" id="152">
+                                        <field name="NUM">100</field>
+                                    </block>
+                                </value>
+                                <value name="ARG1">
+                                    <block type="numbers_int" id="153">
+                                        <field name="NUM">90</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="turtle_circle" id="49" inline="true">
+                                        <field name="VAR">t</field>
+                                        <value name="VALUE">
+                                            <block type="numbers_int" id="50">
+                                                <field name="NUM">50</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="procedures_callnoreturn" id="154" inline="true">
+                                                <mutation name="forward_turn">
+                                                    <arg name="distance"></arg>
+                                                    <arg name="angle"></arg>
+                                                </mutation>
+                                                <value name="ARG0">
+                                                    <block type="numbers_int" id="155">
+                                                        <field name="NUM">45</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ARG1">
+                                                    <block type="numbers_int" id="156">
+                                                        <field name="NUM">34</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="turtle_dot" id="65" inline="true">
+                                                        <field name="VAR">t</field>
+                                                        <value name="DIAMETER">
+                                                            <block type="numbers_int" id="66">
+                                                                <field name="NUM">10</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="COLOUR">
+                                                            <block type="colour_picker" id="67">
+                                                                <field name="COLOUR">#ff0000</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="procedures_callnoreturn" id="157" inline="true">
+                                                                <mutation name="forward_turn">
+                                                                    <arg name="distance"></arg>
+                                                                    <arg name="angle"></arg>
+                                                                </mutation>
+                                                                <value name="ARG0">
+                                                                    <block type="numbers_int" id="158">
+                                                                        <field name="NUM">99</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ARG1">
+                                                                    <block type="numbers_int" id="159">
+                                                                        <field name="NUM">67</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="turtle_stamp" id="82">
+                                                                        <field name="VAR">t</field>
+                                                                        <next>
+                                                                            <block type="procedures_callnoreturn" id="160" inline="true">
+                                                                                <mutation name="forward_turn">
+                                                                                    <arg name="distance"></arg>
+                                                                                    <arg name="angle"></arg>
+                                                                                </mutation>
+                                                                                <value name="ARG0">
+                                                                                    <block type="numbers_int" id="161">
+                                                                                        <field name="NUM">125</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="ARG1">
+                                                                                    <block type="numbers_int" id="162">
+                                                                                        <field name="NUM">90</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defnoreturn" id="91" x="-5" y="468">
+        <mutation>
+            <arg name="distance"></arg>
+            <arg name="angle"></arg>
+        </mutation>
+        <field name="NAME">forward_turn</field>
+        <statement name="STACK">
+            <block type="turtle_move" id="19" inline="true">
+                <field name="VAR">t</field>
+                <field name="DIR">forward</field>
+                <value name="VALUE">
+                    <block type="variables_get" id="134">
+                        <field name="VAR">distance</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="turtle_turn" id="21" inline="true">
+                        <field name="VAR">t</field>
+                        <field name="DIR">left</field>
+                        <value name="VALUE">
+                            <block type="variables_get" id="125">
+                                <field name="VAR">angle</field>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>

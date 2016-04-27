@@ -1,0 +1,397 @@
+{# PyBly/templates/classes/classes_layout.html #}
+
+<!DOCTYPE html>
+<html style="height: 80%">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ current_class }}:{{ current_week }}:step{{ current_step }}</title>
+
+    {# START Skulpt scripts#}
+    <script type="text/javascript" src="{{ static_url('js/libraries/skulpt.min.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/libraries/skulpt-stdlib.js') }}"></script>
+    {# END Skulpt scripts#}
+
+    {# This makes sure our app looks for static files at app/static/favicon.ico and not the default app/favicon.ico.#}
+    <link rel="shortcut icon" href="../../static/img/favicon.ico">
+
+    {# Formerly course_js assets#}
+    <script type="text/javascript" src="{{ static_url('js/libraries/jquery-2.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/libraries/bootstrap-3.3.5.min.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/libraries/prettify.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/libraries/socket.io-0.9.16.js') }}"></script>
+
+    {# Formerly course_css assets#}
+    <link rel="stylesheet" href="../../static/css/libraries/bootstrap-3.3.5.css">
+    <link rel="stylesheet" href="../../static/css/libraries/tomorrow.css">
+    <link rel="stylesheet" href="../../static/css/local/classes_layout.css">
+
+    {# START Variables #}
+    <script>
+        var NO_SKULPT = {% block no_skulpt %}{% end %};
+        var modal_template = false;
+        {# {% block isModalIntro %}{% end %}; #}
+        var isBlockly = {% block isBlockly %}{% end %};
+        var default_python_code = {% block python_start_text %}{% end %};
+    </script>
+    {# END Variables #}
+
+    {# This script imports a file containing ALL of the Blockly import scripts. #}
+
+    {# <script type="text/javascript" src="{{ static_url('js/local/blockly_sources.js') }}"></script>#}
+    <script src="/static/blockly/blockly_uncompressed.js"></script>
+    <script src="{{ static_url('blockly/msg/messages.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/loops.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/text.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/lists.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/colour.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/variables.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/procedures.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/loops.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/lists.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/colour.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/variables.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/procedures.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/rpi.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/rpi.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/gpio.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/gpio.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/tuple.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/tuple.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/dict.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/dict.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/numbers.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/numbers.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/str.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/str.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/bool.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/bool.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/builtins.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/builtins.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/turtle.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/turtle.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/general.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/general.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/time.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/time.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/math.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/math.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/random.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/random.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/os.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/os.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/sys.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/sys.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/objects.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/objects.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/pibrella.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/pibrella.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/piliter.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/piliter.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/datetime.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/datetime.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/methods.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/methods.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/fractions.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/fractions.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/gpiozero.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/gpiozero.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/signal.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/signal.js') }}"></script>
+    <script src="{{ static_url('blockly/blocks/explorerhat.js') }}"></script>
+    <script src="{{ static_url('blockly/generators/python/explorerhat.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('blockly/Blob.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('blockly/spin.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('blockly/FileSaver.min.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('blockly/blockly_helper.js') }}"></script>
+
+    {#    Uncomment these for compressed version#}
+
+{#        <script src="/static/blockly/blockly_compressed.js"></script>#}
+{#        <script src="/static/blockly/blocks_compressed.js"></script>#}
+{#        <script src="/static/blockly/python_compressed.js"></script>#}
+{#        <script src="/static/blockly/msg/js/en.js"></script>#}
+{#        <script type="text/javascript" src="/static/blockly/Blob.js"></script>#}
+{#        <script type="text/javascript" src="/static/blockly/spin.js"></script>#}
+{#        <script type="text/javascript" src="/static/blockly/FileSaver.min.js"></script>#}
+{#        <script type="text/javascript" src="/static/blockly/blockly_helper.js"></script>#}
+
+    {# START CodeMirror #}
+    <link rel="stylesheet" href="../../static/css/libraries/codemirror.css">
+    <link rel="stylesheet" href="../../static/css/libraries/idle.css">
+
+    <script type="text/javascript" src="{{ static_url('js/libraries/codemirror/codemirror.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/libraries/codemirror/addons/selection/active-line.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/libraries/codemirror/addons/edit/matchbrackets.js') }}"></script>
+
+    <script>
+        if (isBlockly == false) {
+            var editor = CodeMirror.fromTextArea(document.getElementById("python_code"), {
+                mode: {
+                    name: "python",
+                    version: 3,
+                    singleLineStringErrors: false
+                },
+                lineNumbers: true,
+                indentUnit: 4,
+                matchBrackets: true
+            });
+        }
+    </script>
+    <script type="text/javascript" src="{{ static_url('js/libraries/codemirror/mode/python.js') }}"></script>
+    {# END CodeMirror #}
+
+    {# START BootSide Slidout Pane   #}
+    <link rel="stylesheet" href="../../static/css/libraries/bootside.css">
+    <script type="text/javascript" src="{{ static_url('js/libraries/bootside.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/local/slideout_panel.js') }}"></script>
+    {#End BootSide #}
+
+    <script type="text/javascript" src="{{ static_url('js/local/run_skulpt.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/local/python_execution.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/local/local_blockly.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/local/app_code.js') }}"></script>
+    <script type="text/javascript" src="{{ static_url('js/local/modals.js') }}"></script>
+
+    <script src="{{ static('js/local/index.js') }}"></script>
+    <script src="{{ xstatic('termjs', 'term.js') }}"></script>
+    <script>
+        // This script sets up the terminal in the output tab.
+        var TERM;
+        var myOS = detectOS();
+        var display_needed = {% block display_needed %}{% end %}
+
+        window.addEventListener('load', function () {
+
+{#            if (NO_SKULPT == true) {#}
+{#                make_term();#}
+{#            }#}
+        }, false);
+
+        function make_term() {
+            var containers = document.getElementsByClassName('terminado-container');
+            if (containers.length >=1) {
+                $('.terminal').remove();
+            }
+            var container, rows, cols, protocol, ws_url;
+
+            for (var i = 0; i < containers.length; i++) {
+                container = containers[i];
+                rows = 40; // parseInt(container.dataset.rows);
+                cols = 70; // parseInt(container.dataset.cols);
+                protocol = (window.location.protocol.indexOf("https") === 0) ? "wss" : "ws";
+                ws_url = protocol + "://" + window.location.host + container.dataset.wsUrl;
+
+                TERM = make_terminal(container, {rows: rows, cols: cols}, ws_url);
+            }
+        }
+
+        function sendToTerminal(absolute_path_to_file) {
+
+            TERM.term.showCursor();
+            console.log(myOS);
+            if (myOS == "MacOS"){
+                TERM.term.handler("python3 " + absolute_path_to_file + "; exit\n");
+            }
+            else if (myOS == "Raspberry Pi" && display_needed == true){
+                TERM.term.handler('export DISPLAY=:0 && python3 ' + absolute_path_to_file + "; exit\r");
+            }
+            else {
+                TERM.term.handler("python3 " + absolute_path_to_file + "; exit\r");
+            }
+        }
+
+        // From: http://stackoverflow.com/questions/11219582/how-to-detect-my-browser-version-and-operating-system-using-javascript
+        function detectOS() {
+            // This script sets OSName variable as follows:
+            // "Windows"    for all versions of Windows
+            // "MacOS"      for all versions of Macintosh OS
+            // "Linux"      for all versions of Linux
+            // "UNIX"       for all other UNIX flavors
+            // "Unknown OS" indicates failure to detect the OS
+            console.log(navigator.platform);
+            var OSName="Unknown OS";
+            if (navigator.platform == 'Linux armv7l') OSName="Raspberry Pi";
+            if (navigator.platform == 'Linux armv8l') OSName="Raspberry Pi";
+{#            if (navigator.platform == 'Windows') OSName="Windows";#}
+            if (navigator.platform == "MacIntel") OSName="MacOS";
+{#            if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";#}
+{#            if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";#}
+
+            return OSName;
+        }
+
+
+    </script>
+    <script>
+        // This script sets up the websocket for the run button.
+        $(document).ready(function () {
+            var ws, protocol, ws_url;
+            var code_as_text;
+
+            $("#run_button").click(function (evt) {
+
+                    code_as_text = run_code();
+                    make_term();
+                    if (NO_SKULPT == true) {
+                        if (isBlockly) {
+                            // Create a websocket instance.
+                            ws = new WebSocket("ws://" + window.location.host + "/ws");
+
+                            // Handle incoming websocket message callback
+                            ws.onmessage = function (evt) {
+                                sendToTerminal(evt.data);
+                            };
+
+                            // Close Websocket callback
+                            ws.onclose = function (evt) {
+                                console.log("***Connection Closed***");
+                            };
+
+                            // Open Websocket callback
+                            ws.onopen = function (evt) {
+                                console.log("***Connection Opened***");
+                                ws.send(code_as_text);
+                            };
+                        }
+                    }
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        li.L0, li.L1, li.L2, li.L3,
+        li.L5, li.L6, li.L7, li.L8 {
+            list-style-type: decimal !important
+        }
+        .CodeMirror {
+            border: 0px solid black;
+            font-size: 14px
+        }
+    </style>
+</head>
+
+<body style="height: 100%; margin-top: 10px;">
+
+<div class="outer container" style="height: 100%; width: 100%;">
+    <!-- Modal Popup for Output Canvas -->
+    <div class="modal fade" id="modal-output" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                {% include 'canvas.html' %}
+                <div align="center" style="padding-top:10px;padding-bottom:10px;">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="canvasClose()">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This div holds the header, navigator, lesson summary-->
+    <table class="" style="height:70px;">
+        <td class='logo' style="width:75px;">
+            <a href="/">
+                <img class="media-object" src="/static/img/logo_newmexicode_no_words.png" alt="logo" height="75">
+            </a>
+        </td>
+        <td>
+            <div style="padding-left: 10px;">
+                <p>
+                    {% set class_menu = '/dir' + current_class[5:] %}
+                    <a class='home' href={{ class_menu }}>MENU/WEEK {{ current_week[4:] }}/STEP {{ current_step }}:{% block middle %}{% end %}</a>
+                </p>
+
+                <nav>
+                    <ul class="pagination navbar">
+                        {% if int(current_step) == 0 %}
+                        {% set state = "disabled" %}
+                        {% set calc_href = '/'.join(["", current_class, current_week, '00#']) %}
+                        {% else %}
+                        {% set state = "enabled" %}
+                        {% set previous = int(current_step) - 1 %}
+                        {% set calc_href = '/'.join(["", current_class, current_week, '%02d' % previous]) %}
+                        {% end %}
+                        <li class="{{ state }}">
+                            <a href="{{ calc_href }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        {% for n in total_steps %}
+                        {% if int(current_step) == n %}
+                        {% set act = "active" %}
+
+                        {% else %}
+                        {% set act = "inactive" %}
+
+                        {% end %}
+                        <li class= {{ act }}>
+                            <a href="/{{ current_class }}/{{ current_week }}/{{ '%02d' % n }}">{{ n }}</a></li>
+                        {% end %}
+
+                        {% if int(current_step) == (total_steps[-1]) %}
+                        {% set state = "disabled" %}
+
+                        {% set calc_href = '/'.join(["", current_class, current_week, ''.join([current_step, "#" ])]) %}
+                        {% else %}
+                        {% set state = "enabled" %}
+                        {% set next = int(current_step) + 1 %}
+                        {% set calc_href = '/'.join(["", current_class, current_week, '%02d' % next]) %}
+                        {% end %}
+                        <li class="{{ state }}">
+                            <a href="{{ calc_href }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </td>
+    </table>
+
+    <div class="row" style="height: 100%;width: 100%;">
+        {% block code_output_area %}{% end %}
+        {% block code_area %}{% end %}
+    </div>
+
+    {% block panel %}{% end %}
+</div>
+
+<div id="content_blocks" style="position: absolute"> <!--  class="content"  onmousemove="generate_code()">-->
+    <table style="position:absolute;margin-top:-15px; margin-left:500px; width:190px;">
+        <tr>
+            <td>
+                <textarea id="python_code" name="my_code" type="text" class="content" readonly="true" wrap="off" style="display:none;"></textarea>
+                <div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-noboard btn-sm" onclick="discard()">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-noboard btn-sm" onclick="save()">
+                            <span class="glyphicon glyphicon-download"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-noboard btn-sm" id="fakeload">
+                            <span class="glyphicon glyphicon-upload"></span>
+                        </button>
+                        <button id="run_button" type="submit" class="btn btn-default btn-noboard btn-sm">
+                            <span class="glyphicon glyphicon-play"></span>
+                        </button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <input type="file" id="load" style="display: none;">
+</div>
+
+<footer style="font-size: 12px;margin-top:10px;" class="footer">
+    <p align="center">&copy; Open Source Kids 2015</p>
+</footer>
+
+{% block details_and_toolbox %}{% end %}
+
+<script src="/static/js/local_codemirror.js"></script>
+</body>
+</html>

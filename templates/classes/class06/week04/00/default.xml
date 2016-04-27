@@ -1,0 +1,25 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">A conditional is set of statements that run depending</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">on whether a CONDITION is True or False.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">1. Grab an IF-STATEMENT from the Conditionals Menu (top one).</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">2. Place an EQUALITY block in the IF (Boolean Menu).</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">3. Place a print() with text inside of the IF.</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

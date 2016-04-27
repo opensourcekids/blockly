@@ -1,0 +1,25 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">Luckily for us, Python has a data structure to handle groups of data.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">This data type is called a list. Look in the Lists menu.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">You use list in everyday life: groceries, homework, chores, etc.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Python lists are the same; they hold groups of related (or not) data.</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Let's build some lists and print them:</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

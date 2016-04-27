@@ -1,0 +1,20 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="38">
+        <field name="TEXT">How do you convert a mixed number to an improper fraction?</field>
+        <next>
+            <block type="variables_set">
+                <field name="VAR">mixed_number</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="general_input">
+                        <value name="INPUT">
+                            <block type="strings">
+                                <field name="TEXT">Enter a mixed number (X X/X):  </field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </next>
+    </block>
+</xml>

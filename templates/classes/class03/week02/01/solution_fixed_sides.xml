@@ -1,0 +1,57 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" id="30" inline="true" x="12" y="-5">
+        <field name="VAR">t</field>
+        <value name="VALUE">
+            <block type="turtle_turtle" id="31"></block>
+        </value>
+        <next>
+            <block type="turtle_shape" id="32">
+                <field name="VAR">t</field>
+                <field name="IMAGE">turtle</field>
+                <next>
+                    <block type="turtle_speed" id="33">
+                        <field name="VAR">t</field>
+                        <field name="SPEED">3</field>
+                        <next>
+                            <block type="loops_for_each" id="41" inline="true">
+                                <field name="VAR">side</field>
+                                <value name="ITER">
+                                    <block type="builtins_range_with" id="57" inline="true">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="numbers_int" id="58">
+                                                <field name="NUM">4</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO">
+                                    <block type="turtle_move" id="45" inline="true">
+                                        <field name="VAR">t</field>
+                                        <field name="DIR">forward</field>
+                                        <value name="VALUE">
+                                            <block type="numbers_int" id="46">
+                                                <field name="NUM">100</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="turtle_turn" id="47" inline="true">
+                                                <field name="VAR">t</field>
+                                                <field name="DIR">left</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int" id="48">
+                                                        <field name="NUM">90</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

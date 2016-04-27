@@ -1,0 +1,56 @@
+{# _PyBlocks/templates/classes/class02/week05/04/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% endblock %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% endblock %}
+
+{% block middle %}
+    Exploration 3: Adding Color
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% endblock %}#}
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}false{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{% block panel %}
+    <div id="panel">
+        <div style="padding: 30px">
+            <h2 align="center" style="color: #0072bc;">What to Do</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>This exercise adds color choices.</li>
+                <li>The tan screen blocks let you change the background color.</li>
+                <li>The color list lets you change the color of each side.</li>
+                <li>Change number of sides to see what happens.</li>
+                <li>Try different color combos: red & blue; red & yellow; blue & yellow.</li>
+                <li>Change anything.</li>
+            </ul>
+            <h2 align="center" style="color: red;">WARNING</h2>
+            <ul class="backgrd_detail" style="line-height:25px; color:red;">
+                <li>YOUR PROGRAM MUST FINISH BEFORE RUNNING AGAIN.</li>
+                <li>IF THE RANGE IS TOO BIG YOU WILL WAIT FOREVER!</li>
+                <li>NOT MAKE THE RANGE > 1000!!</li>
+                <li>YOU"VE BEEN WARNED!!!</li>
+            </ul>
+            <h2 align="center" style="color: #0072bc;">Think About It</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Why do you get an error when sides > 6?</li>
+                <li>What would you need to do to allow for more sides?</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

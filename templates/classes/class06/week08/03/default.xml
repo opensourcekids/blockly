@@ -1,0 +1,222 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" x="12" y="13">
+        <field name="VAR">a</field>
+        <field name="OP">EQUALS</field>
+        <value name="VALUE">
+            <block type="numbers_int">
+                <field name="NUM">2</field>
+            </block>
+        </value>
+        <next>
+            <block type="variables_set">
+                <field name="VAR">b</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="numbers_int">
+                        <field name="NUM">4</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="procedures_callnoreturn">
+                        <mutation name="pretty_addition">
+                            <arg name="x"></arg>
+                            <arg name="y"></arg>
+                            <arg name="as_bin"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                            <block type="variables_get">
+                                <field name="VAR">a</field>
+                            </block>
+                        </value>
+                        <value name="ARG1">
+                            <block type="variables_get">
+                                <field name="VAR">b</field>
+                            </block>
+                        </value>
+                        <value name="ARG2">
+                            <block type="logic_boolean">
+                                <field name="BOOL">TRUE</field>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defnoreturn" collapsed="true" x="513" y="13">
+        <mutation>
+            <arg name="x"></arg>
+            <arg name="y"></arg>
+            <arg name="as_bin"></arg>
+        </mutation>
+        <field name="NAME">pretty_addition</field>
+        <statement name="STACK">
+            <block type="strings_print_py3_commas">
+                <mutation items="1"></mutation>
+                <next>
+                    <block type="controls_if">
+                        <mutation else="1"></mutation>
+                        <value name="IF0">
+                            <block type="variables_get">
+                                <field name="VAR">as_bin</field>
+                            </block>
+                        </value>
+                        <statement name="DO0">
+                            <block type="strings_print_py3_commas">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="strings_format_with">
+                                        <mutation items="1"></mutation>
+                                        <field name="STR">  {:&gt;08b}</field>
+                                        <value name="ADD0">
+                                            <block type="variables_get">
+                                                <field name="VAR">x</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="strings_format_with">
+                                                <mutation items="1"></mutation>
+                                                <field name="STR">+ {:&gt;08b}</field>
+                                                <value name="ADD0">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">y</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="strings_print_py3_commas">
+                                                <mutation items="1"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="strings_format_with">
+                                                        <mutation items="1"></mutation>
+                                                        <field name="STR">{:&gt;10}</field>
+                                                        <value name="ADD0">
+                                                            <block type="strings">
+                                                                <field name="TEXT">----------</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="strings_print_py3_commas">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="strings_format_with">
+                                                                <mutation items="1"></mutation>
+                                                                <field name="STR">  {:&gt;08b}</field>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_arithmetic">
+                                                                        <field name="OP">ADD</field>
+                                                                        <value name="A">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">x</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">y</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                        <statement name="ELSE">
+                            <block type="strings_print_py3_commas">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="strings_format_with">
+                                        <mutation items="1"></mutation>
+                                        <field name="STR">{:&gt;4}</field>
+                                        <value name="ADD0">
+                                            <block type="variables_get">
+                                                <field name="VAR">x</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="strings_format_with">
+                                                <mutation items="1"></mutation>
+                                                <field name="STR">+{:&gt;3}</field>
+                                                <value name="ADD0">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">y</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="strings_print_py3_commas">
+                                                <mutation items="1"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="strings_format_with">
+                                                        <mutation items="1"></mutation>
+                                                        <field name="STR">{:&gt;4}</field>
+                                                        <value name="ADD0">
+                                                            <block type="strings">
+                                                                <field name="TEXT">----</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="strings_print_py3_commas">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="strings_format_with">
+                                                                <mutation items="1"></mutation>
+                                                                <field name="STR">{:&gt;4}</field>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_arithmetic">
+                                                                        <field name="OP">ADD</field>
+                                                                        <value name="A">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">x</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">y</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="strings_print_py3_commas">
+                                <mutation items="1"></mutation>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>

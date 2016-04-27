@@ -1,0 +1,64 @@
+{# _PyBlocks/templates/classes/class02/week05/04/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% endblock %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% endblock %}
+
+{% block middle %}
+    Loop Review
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% endblock %}#}
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}false{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{% block panel %}
+    <div id="panel">
+        <div style="padding: 30px">
+            <h2 align="center" style="color: #0072bc;">Python Loops</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Loops are a way to take long repeated tasks and make them <b>shorter</b> and more <b>reusable</b>.
+                </li>
+                <li>Python has two kinds of loops: For Loops and While Loops.</li>
+                <img src="/static/img/loops/loops_for.png" height="70px">
+                <img src="/static/img/loops/loops_while.png" height="70px">
+                </li>
+                <br/>
+                <li>For Loop</li>
+                <ul>
+                    <li>Needs an iterable, which is an object capable of returning its members one at a time. An example is a list.</li>
+
+                    <li>Here is an example:</li>
+                    <ul>
+                        <img src="/static/img/loops/loops_example.png" height="80px">&nbsp;<br/>
+                        In English, this says...<br/>
+                        For each item in the list [0, 1, 2] print the item.
+                    </ul>
+                    <li>Block of organized, reusable code that is used to perform a single, related action.</li>
+                    <li>High degree of code reuseablility.</li>
+                    <li>As you already know, Python gives you many built-in functions like print(), etc.</li>
+                    <li>Functions you define are called user-defined functions.</li>
+                    <ul>
+                        <li>This variable does not need to be set first.</li>
+                        <li>The for loop creates the variable.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

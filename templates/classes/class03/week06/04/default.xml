@@ -1,0 +1,46 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="fractions_import2" x="38" y="38">
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Let's do one more.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Make f1 = 1/6.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Make f2 = 2/4.</field>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">f1</field>
+                                        <field name="OP">EQUALS</field>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">f2</field>
+                                                <field name="OP">EQUALS</field>
+                                                <next>
+                                                    <block type="general_comment">
+                                                        <field name="TEXT">Print the sum of these fractions.</field>
+                                                        <next>
+                                                            <block type="strings_print_py3_commas">
+                                                                <mutation items="1"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_arithmetic">
+                                                                        <field name="OP">ADD</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

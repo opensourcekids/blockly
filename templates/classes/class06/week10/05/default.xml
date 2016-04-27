@@ -1,0 +1,143 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="12" y="13">
+        <next>
+            <block type="explorerhat_import">
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">pot</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="explorerhat_analog">
+                                <field name="DROP_PINS">one</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">motor</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="explorerhat_motor">
+                                        <field name="DROP_PINS">one</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="loops_while">
+                                        <value name="BOOL">
+                                            <block type="logic_boolean">
+                                                <field name="BOOL">TRUE</field>
+                                            </block>
+                                        </value>
+                                        <statement name="DO">
+                                            <block type="variables_set">
+                                                <field name="VAR">power</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_cast_int">
+                                                        <value name="CAST">
+                                                            <block type="numbers_arithmetic">
+                                                                <field name="OP">MULTIPLY</field>
+                                                                <value name="A">
+                                                                    <block type="explorerhat_analog_read">
+                                                                        <value name="EXP_HAT">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">pot</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">20</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="explorerhat_motor_direction_speed">
+                                                        <field name="DROP_DIRECTION">forward</field>
+                                                        <value name="EXP_HAT">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">motor</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="SPEED">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">power</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="controls_if">
+                                                                <mutation else="1"></mutation>
+                                                                <value name="IF0">
+                                                                    <block type="logic_compare">
+                                                                        <field name="OP">LTE</field>
+                                                                        <value name="A">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">power</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">90</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <statement name="DO0">
+                                                                    <block type="strings_print_py3_commas">
+                                                                        <mutation items="1"></mutation>
+                                                                        <value name="ADD0">
+                                                                            <block type="strings_format_with">
+                                                                                <mutation items="1"></mutation>
+                                                                                <field name="STR">I'm giving' it everything I can Cap'n. POWER = {}%</field>
+                                                                                <value name="ADD0">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">power</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="time_sleep">
+                                                                                <value name="amount_of_time">
+                                                                                    <block type="numbers_float">
+                                                                                        <field name="NUM">0.1</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </statement>
+                                                                <statement name="ELSE">
+                                                                    <block type="strings_print_py3_commas">
+                                                                        <mutation items="1"></mutation>
+                                                                        <value name="ADD0">
+                                                                            <block type="strings">
+                                                                                <field name="TEXT">Too much power! ABORT...ABORT!</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="loops_break_continue">
+                                                                                <field name="WHAT">break</field>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </statement>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

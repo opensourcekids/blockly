@@ -1,0 +1,38 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">These purple blocks ith the # are comment blocks.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Write a program to show datatypes and variables.</field>
+            </block>
+        </next>
+    </block>
+    <block type="variables_set" x="35" y="110">
+        <field name="VAR">boolean</field>
+        <field name="OP">EQUALS</field>
+        <next>
+            <block type="strings_print">
+                <value name="TEXT">
+                    <block type="variables_get">
+                        <field name="VAR">boolean</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">integer</field>
+                        <field name="OP">EQUALS</field>
+                        <next>
+                            <block type="strings_print">
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Create a variable named string. Add a string block and print the variable.</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

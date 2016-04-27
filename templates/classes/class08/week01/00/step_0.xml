@@ -1,0 +1,93 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">We are going to look at what variables do in a program.</field>
+        <next>
+            <block type="variables_set">
+                <field name="VAR">a</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="numbers_int">
+                        <field name="NUM">4</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="strings_print">
+                        <value name="TEXT">
+                            <block type="strings_format_with">
+                                <mutation items="1"></mutation>
+                                <field name="STR">a = {}</field>
+                                <value name="ADD0">
+                                    <block type="variables_get">
+                                        <field name="VAR">a</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">b</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="variables_get">
+                                        <field name="VAR">a</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print">
+                                        <value name="TEXT">
+                                            <block type="strings_format_with">
+                                                <mutation items="2"></mutation>
+                                                <field name="STR">a = {}; b = {}</field>
+                                                <value name="ADD0">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">a</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">b</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">a</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">7</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="strings_print">
+                                                        <value name="TEXT">
+                                                            <block type="strings_format_with">
+                                                                <mutation items="2"></mutation>
+                                                                <field name="STR">a = {}; b = {}</field>
+                                                                <value name="ADD0">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">a</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">b</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

@@ -1,0 +1,222 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="fractions_import2" x="38" y="13">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">mixed_number</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="general_input">
+                        <value name="INPUT">
+                            <block type="strings">
+                                <field name="TEXT">Enter a mixed number (# #/#): </field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="strings_print_py3_commas">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="procedures_callreturn">
+                                <mutation name="mixed_to_improper">
+                                    <arg name="mixed"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="variables_get">
+                                        <field name="VAR">mixed_number</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defreturn" collapsed="true" x="663" y="12">
+        <mutation>
+            <arg name="mixed"></arg>
+        </mutation>
+        <field name="NAME">mixed_to_improper</field>
+        <statement name="STACK">
+            <block type="variables_set">
+                <field name="VAR">mixed_split</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="strings_split">
+                        <value name="TEXT">
+                            <block type="variables_get">
+                                <field name="VAR">mixed_number</field>
+                            </block>
+                        </value>
+                        <value name="CHECK">
+                            <block type="strings_specials">
+                                <field name="CHAR">space</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">mixed_whole_part</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="numbers_cast_int">
+                                <value name="CAST">
+                                    <block type="general_create_with">
+                                        <mutation items="1"></mutation>
+                                        <value name="INPUT">
+                                            <block type="variables_get">
+                                                <field name="VAR">mixed_split</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD0">
+                                            <block type="numbers_int">
+                                                <field name="NUM">0</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">fract_part</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="general_create_with">
+                                        <mutation items="1"></mutation>
+                                        <value name="INPUT">
+                                            <block type="variables_get">
+                                                <field name="VAR">mixed_split</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD0">
+                                            <block type="numbers_int">
+                                                <field name="NUM">1</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">fract_split</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="strings_split">
+                                                <value name="TEXT">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">fract_part</field>
+                                                    </block>
+                                                </value>
+                                                <value name="CHECK">
+                                                    <block type="strings">
+                                                        <field name="TEXT">/</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">mixed_numerator</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_cast_int">
+                                                        <value name="CAST">
+                                                            <block type="general_create_with">
+                                                                <mutation items="1"></mutation>
+                                                                <value name="INPUT">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">fract_split</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">0</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">mixed_denominator</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_cast_int">
+                                                                <value name="CAST">
+                                                                    <block type="general_create_with">
+                                                                        <mutation items="1"></mutation>
+                                                                        <value name="INPUT">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">fract_split</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="ADD0">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">1</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="variables_set">
+                                                                <field name="VAR">answer</field>
+                                                                <field name="OP">EQUALS</field>
+                                                                <value name="VALUE">
+                                                                    <block type="numbers_arithmetic">
+                                                                        <field name="OP">ADD</field>
+                                                                        <value name="A">
+                                                                            <block type="fractions_Fraction">
+                                                                                <value name="NUMERATOR">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">mixed_whole_part</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="DENOMINATOR">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">1</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                            <block type="fractions_Fraction">
+                                                                                <value name="NUMERATOR">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">mixed_numerator</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="DENOMINATOR">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">mixed_denominator</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+        <value name="RETURN">
+            <block type="variables_get">
+                <field name="VAR">answer</field>
+            </block>
+        </value>
+    </block>
+</xml>

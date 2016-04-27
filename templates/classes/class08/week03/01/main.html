@@ -1,0 +1,50 @@
+{# _PyBlocks/templates/classes/class02/week05/04/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% endblock %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% endblock %}
+
+{% block middle %}
+    The Unloopable Square
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% endblock %}#}
+{# False if Skulpt interpreter is used instead of server-side interpreter.#}
+{% block no_skulpt %}false{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{% block panel %}
+    <div id="panel">
+        <div style="padding: 30px">
+            <h2 align="center" style="color: #0072bc;">Simplifying without a Loop</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Loops are a way to take long repeated tasks and make them <b>shorter</b> and more <b>reusable</b>.</li>
+                <li>What if you have repetition but a loop won't work, like in the example below?</li>
+                <p align="center"><img src="/static/img/turtle/turtle_unloopable.png" height="300px"></p>
+                <br/>
+            </ul>
+            <h2 align="center" style="color: #0072bc;">Python Functions</h2>
+            <ul>
+                <li>A function is a block of code used to perform one or more actions.</li>
+                <li>They are highly reuseable.</li>
+                <li>print() is a built-in function.</li>
+                <li>Functions you define are called user-defined functions.</li>
+                <li>They are located in the Functions menu to the left.</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

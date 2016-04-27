@@ -1,0 +1,8 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">Create a variable named box. Add an integer block and print the variable.</field>
+    </block>
+    <block type="general_comment" x="38" y="113">
+        <field name="TEXT">Now assign a string to the variable box and print the variable.</field>
+    </block>
+</xml>

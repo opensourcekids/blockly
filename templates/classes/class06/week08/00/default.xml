@@ -1,0 +1,28 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">QUESTION: What are the arabic numerals and how do we use them to count?</field>
+    </block>
+    <block type="general_comment" x="38" y="88">
+        <field name="TEXT">To begin our exploration, you will need a FOR-Loop with a range(10)</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Name your loop variable number.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Put a print() inside the loop.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Put a Built-Ins =&gt; format block inside the print.</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Put the number variable inside the format block.</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

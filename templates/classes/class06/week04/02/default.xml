@@ -1,0 +1,18 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">The Libraries -&gt; random has functions for randomly making numbers.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">These pick a number in the range you say.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">RANDINT(A, B) choses a number from A to B, including B.</field>
+                        <next>
+                            <block type="strings_print"></block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

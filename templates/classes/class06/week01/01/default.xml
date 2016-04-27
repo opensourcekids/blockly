@@ -1,0 +1,61 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="38" y="37">
+        <next>
+            <block type="gpiozero_import">
+                <mutation items="1"></mutation>
+                <value name="LIB0">
+                    <block type="gpiozero_libraries">
+                        <field name="LIB">LED</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">led</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="gpiozero_led">
+                                <mutation items="1"></mutation>
+                                <field name="CLASS">LED</field>
+                                <value name="ADD0">
+                                    <block type="gpiozero_pins">
+                                        <field name="pin_number">17</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="gpiozero_led_blink">
+                                <mutation items="4"></mutation>
+                                <value name="LED">
+                                    <block type="variables_get">
+                                        <field name="VAR">led</field>
+                                    </block>
+                                </value>
+                                <value name="ADD0">
+                                    <block type="numbers_float">
+                                        <field name="NUM">1</field>
+                                    </block>
+                                </value>
+                                <value name="ADD1">
+                                    <block type="numbers_int">
+                                        <field name="NUM">1</field>
+                                    </block>
+                                </value>
+                                <value name="ADD2">
+                                    <block type="numbers_int">
+                                        <field name="NUM">10</field>
+                                    </block>
+                                </value>
+                                <value name="ADD3">
+                                    <block type="logic_boolean">
+                                        <field name="BOOL">TRUE</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

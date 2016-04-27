@@ -1,0 +1,117 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" x="13" y="63">
+        <field name="VAR">item</field>
+        <field name="OP">EQUALS</field>
+        <value name="VALUE">
+            <block type="dict_create_with">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                    <block type="py_dict_item">
+                        <value name="KEY">
+                            <block type="strings">
+                                <field name="TEXT">f</field>
+                            </block>
+                        </value>
+                        <value name="VALUE">
+                            <block type="lists_create_empty"></block>
+                        </value>
+                    </block>
+                </value>
+                <value name="ADD1">
+                    <block type="py_dict_item">
+                        <value name="KEY">
+                            <block type="strings">
+                                <field name="TEXT">b</field>
+                            </block>
+                        </value>
+                        <value name="VALUE">
+                            <block type="logic_boolean">
+                                <field name="BOOL">TRUE</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </value>
+        <next>
+            <block type="dict_set_key_value">
+                <field name="NAME">'f'</field>
+                <value name="DICT">
+                    <block type="variables_get">
+                        <field name="VAR">item</field>
+                    </block>
+                </value>
+                <value name="VALUE">
+                    <block type="numbers_int">
+                        <field name="NUM">121</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="strings_print">
+                        <value name="TEXT">
+                            <block type="dict_value_from_key">
+                                <field name="NAME">'f'</field>
+                                <value name="DICT">
+                                    <block type="variables_get">
+                                        <field name="VAR">item</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="strings_print">
+                                <value name="TEXT">
+                                    <block type="dict_key_value">
+                                        <field name="NAME">'f'</field>
+                                        <value name="DICT">
+                                            <block type="variables_get">
+                                                <field name="VAR">item</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">another_item</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="dict_copy">
+                                                <value name="DICT">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">item</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="strings_print">
+                                                <value name="TEXT">
+                                                    <block type="dict_clear">
+                                                        <value name="DICT">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">item</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="strings_print">
+                                                        <value name="TEXT">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">another_item</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

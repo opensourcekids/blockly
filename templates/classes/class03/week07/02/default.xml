@@ -1,0 +1,39 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="fractions_import2" x="13" y="38">
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">How do you convert an improper fraction to a mixed number?</field>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">improper_fraction</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="general_input">
+                                <value name="INPUT">
+                                    <block type="strings">
+                                        <field name="TEXT">Enter an improper fraction:  </field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">f</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="fractions_Fraction_as_string">
+                                        <value name="FRACTION">
+                                            <block type="variables_get">
+                                                <field name="VAR">improper_fraction</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

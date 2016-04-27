@@ -1,0 +1,37 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="38" y="13">
+        <next>
+            <block type="gpiozero_import">
+                <mutation items="2"></mutation>
+                <value name="LIB0">
+                    <block type="gpiozero_libraries">
+                        <field name="LIB">LED</field>
+                    </block>
+                </value>
+                <value name="LIB1">
+                    <block type="gpiozero_libraries">
+                        <field name="LIB">Button</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">led</field>
+                        <field name="OP">EQUALS</field>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">player_1</field>
+                                <field name="OP">EQUALS</field>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">player_2</field>
+                                        <field name="OP">EQUALS</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

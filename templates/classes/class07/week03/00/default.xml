@@ -1,0 +1,20 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" id="1" inline="true" x="0" y="0">
+        <field name="VAR">t</field>
+        <value name="VALUE">
+            <block type="turtle_turtle" id="2"></block>
+        </value>
+        <next>
+            <block type="turtle_shape" id="3">
+                <field name="VAR">t</field>
+                <field name="IMAGE">turtle</field>
+                <next>
+                    <block type="turtle_speed" id="4">
+                        <field name="VAR">t</field>
+                        <field name="SPEED">5</field>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

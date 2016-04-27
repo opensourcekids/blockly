@@ -1,0 +1,346 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="strings_from_future_import" x="-62" y="-38">
+        <next>
+            <block type="fractions_import2">
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">f</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="fractions_Fraction">
+                                <value name="NUMERATOR">
+                                    <block type="numbers_int">
+                                        <field name="NUM">5</field>
+                                    </block>
+                                </value>
+                                <value name="DENOMINATOR">
+                                    <block type="numbers_int">
+                                        <field name="NUM">5</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="procedures_callnoreturn">
+                                <mutation name="fract_as_parts">
+                                    <arg name="fract"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                    <block type="variables_get">
+                                        <field name="VAR">f</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print">
+                                        <value name="TEXT">
+                                            <block type="strings_format_with">
+                                                <mutation items="3"></mutation>
+                                                <field name="STR">{} = {} {}</field>
+                                                <value name="ADD0">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">f</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                    <block type="numbers_arithmetic">
+                                                        <field name="OP">DIVIDE</field>
+                                                        <value name="A">
+                                                            <block type="fractions_num_denom">
+                                                                <field name="VAR">f</field>
+                                                                <field name="WHAT">numerator</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="B">
+                                                            <block type="fractions_num_denom">
+                                                                <field name="VAR">f</field>
+                                                                <field name="WHAT">denominator</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD2">
+                                                    <block type="fractions_Fraction">
+                                                        <value name="NUMERATOR">
+                                                            <block type="numbers_arithmetic">
+                                                                <field name="OP">MODULUS</field>
+                                                                <value name="A">
+                                                                    <block type="fractions_num_denom">
+                                                                        <field name="VAR">f</field>
+                                                                        <field name="WHAT">numerator</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                    <block type="fractions_num_denom">
+                                                                        <field name="VAR">f</field>
+                                                                        <field name="WHAT">denominator</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <value name="DENOMINATOR">
+                                                            <block type="fractions_num_denom">
+                                                                <field name="VAR">f</field>
+                                                                <field name="WHAT">denominator</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="procedures_defnoreturn" collapsed="true" x="-62" y="213">
+        <mutation>
+            <arg name="fract"></arg>
+        </mutation>
+        <field name="NAME">fract_as_parts</field>
+        <statement name="STACK">
+            <block type="strings_print_py3_commas">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                    <block type="strings_format_with">
+                        <mutation items="1"></mutation>
+                        <field name="STR">{} =</field>
+                        <value name="ADD0">
+                            <block type="variables_get">
+                                <field name="VAR">fract</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <value name="ADD1">
+                    <block type="strings_end">
+                        <value name="END">
+                            <block type="strings_specials">
+                                <field name="CHAR"></field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="loops_for_each">
+                        <field name="VAR">numerator</field>
+                        <value name="ITER">
+                            <block type="builtins_range_with">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="fractions_num_denom">
+                                        <field name="VAR">fract</field>
+                                        <field name="WHAT">numerator</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO">
+                            <block type="controls_if">
+                                <mutation elseif="1"></mutation>
+                                <value name="IF0">
+                                    <block type="logic_compare">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                            <block type="numbers_arithmetic">
+                                                <field name="OP">MODULUS</field>
+                                                <value name="A">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">numerator</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="fractions_num_denom">
+                                                        <field name="VAR">fract</field>
+                                                        <field name="WHAT">denominator</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="numbers_int">
+                                                <field name="NUM">0</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO0">
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="strings_specials">
+                                                <field name="CHAR"></field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="strings_print_py3_commas">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="strings_specials">
+                                                        <field name="CHAR"></field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                    <block type="strings_end">
+                                                        <value name="END">
+                                                            <block type="strings_specials">
+                                                                <field name="CHAR">\t</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                                <value name="IF1">
+                                    <block type="logic_operation">
+                                        <field name="OP">OR</field>
+                                        <value name="A">
+                                            <block type="logic_compare">
+                                                <field name="OP">EQ</field>
+                                                <value name="A">
+                                                    <block type="numbers_arithmetic">
+                                                        <field name="OP">MODULUS</field>
+                                                        <value name="A">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">numerator</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="B">
+                                                            <block type="fractions_num_denom">
+                                                                <field name="VAR">fract</field>
+                                                                <field name="WHAT">denominator</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">0</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="logic_compare">
+                                                <field name="OP">EQ</field>
+                                                <value name="A">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">numerator</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">0</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                            <block type="strings_format_with">
+                                                <mutation items="1"></mutation>
+                                                <field name="STR">{}</field>
+                                                <value name="ADD0">
+                                                    <block type="fractions_Fraction">
+                                                        <value name="NUMERATOR">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">1</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="DENOMINATOR">
+                                                            <block type="fractions_num_denom">
+                                                                <field name="VAR">fract</field>
+                                                                <field name="WHAT">denominator</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <value name="ADD1">
+                                            <block type="strings_end">
+                                                <value name="END">
+                                                    <block type="strings_specials">
+                                                        <field name="CHAR"></field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="controls_if">
+                                                <value name="IF0">
+                                                    <block type="logic_compare">
+                                                        <field name="OP">LT</field>
+                                                        <value name="A">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">numerator</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="B">
+                                                            <block type="numbers_arithmetic">
+                                                                <field name="OP">MINUS</field>
+                                                                <value name="A">
+                                                                    <block type="fractions_num_denom">
+                                                                        <field name="VAR">fract</field>
+                                                                        <field name="WHAT">numerator</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">1</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                    <block type="strings_print_py3_commas">
+                                                        <mutation items="2"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="strings">
+                                                                <field name="TEXT">+</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="ADD1">
+                                                            <block type="strings_end">
+                                                                <value name="END">
+                                                                    <block type="strings_specials">
+                                                                        <field name="CHAR"></field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </statement>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="strings_print_py3_commas">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="strings_specials">
+                                        <field name="CHAR"></field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>

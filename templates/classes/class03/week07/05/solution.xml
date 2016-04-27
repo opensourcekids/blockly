@@ -1,0 +1,177 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="fractions_import2" x="50" y="40">
+        <next>
+            <block type="fractions_import_mixed">
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Figure the answers then check your work.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Change the numbers to test your knowledge.</field>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">i1</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="random_int">
+                                                <value name="FROM">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">10</field>
+                                                    </block>
+                                                </value>
+                                                <value name="TO">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">30</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">i2</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="random_int">
+                                                        <value name="FROM">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">2</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="TO">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">9</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">improper</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="fractions_Fraction">
+                                                                <value name="NUMERATOR">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">i1</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="DENOMINATOR">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">i2</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="variables_set">
+                                                                <field name="VAR">q</field>
+                                                                <field name="OP">EQUALS</field>
+                                                                <value name="VALUE">
+                                                                    <block type="fractions_Mixed">
+                                                                        <value name="MIX">
+                                                                            <block type="strings_format_with">
+                                                                                <mutation items="1"></mutation>
+                                                                                <field name="STR">What is {} as a mixed number?</field>
+                                                                                <value name="ADD0">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">improper</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="variables_set">
+                                                                        <field name="VAR">answer</field>
+                                                                        <field name="OP">EQUALS</field>
+                                                                        <value name="VALUE">
+                                                                            <block type="fractions_reduce">
+                                                                                <value name="FRACTION">
+                                                                                    <block type="fractions_Mixed">
+                                                                                        <value name="MIX">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">improper</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="controls_if">
+                                                                                <mutation elseif="1" else="1"></mutation>
+                                                                                <value name="IF0">
+                                                                                    <block type="logic_compare">
+                                                                                        <field name="OP">EQ</field>
+                                                                                        <value name="A">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">q</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">answer</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <statement name="DO0">
+                                                                                    <block type="strings_print_py3_commas">
+                                                                                        <mutation items="1"></mutation>
+                                                                                        <value name="ADD0">
+                                                                                            <block type="strings">
+                                                                                                <field name="TEXT">Correct</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </statement>
+                                                                                <value name="IF1">
+                                                                                    <block type="logic_compare">
+                                                                                        <field name="OP">EQ</field>
+                                                                                        <value name="A">
+                                                                                            <block type="fractions_reduce">
+                                                                                                <value name="FRACTION">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">q</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">answer</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <statement name="DO1">
+                                                                                    <block type="strings_print_py3_commas">
+                                                                                        <mutation items="1"></mutation>
+                                                                                        <value name="ADD0">
+                                                                                            <block type="strings">
+                                                                                                <field name="TEXT">Correct</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </statement>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

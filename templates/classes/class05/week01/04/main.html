@@ -1,0 +1,77 @@
+{# _PyBlocks/templates/classes/class05/week00/00/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+
+{# The title of the step. #}
+{% block middle %}
+    Variables Make Things Easier
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}false{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{# Code for side panels.  Leave blank to have no panels.#}
+{% block panel %}
+{#    <div id="panel_terminal">#}
+{#        <div style="padding: 15px">#}
+{#            <h2 id="output_title" align="center">Terminal</h2>#}
+{#            <iframe frameborder=none height="600px" width="98%" src="http://pyterm.opensourcekids.org"></iframe>#}
+{#        </div>#}
+{#    </div>#}
+
+    <div id="panel_output">
+        <div style="padding: 0px">
+            <h2 id="output_title" align="center">Output</h2>
+            <div id="output" style="background: #000000;"> {#  class="tab-pane fade"#}
+                <pre id="log" class="output" width="200px"></pre>
+            </div>
+        </div>
+    </div>
+
+    <div id="panel_code" align="center">
+        <div style="padding: 0px">
+            <div>
+                <h2 id="code_title" style="align: center;">Code
+                    <button type="button" class="btn btn-default btn-noboard btn-large" style="border: none" onclick="save_python()">
+                        <span class="glyphicon glyphicon-save-file" style="color: #0072bc;"></span>
+                        click to save python file
+                    </button>
+                </h2>
+            </div>
+            <div id="code">  {# class="tab-pane fade in active" #}
+                <pre class="code_out prettyprint linenums" height="200px" width="200px" id="code2"></pre>
+                <!--<code id="prettycode" class="prettyprint linenums"></code>-->
+            </div>
+        </div>
+    </div>
+{##}
+{#    <div id="panel_help">#}
+{#        <div style="padding: 15px">#}
+{#            <h2 align="center" style="color: #0072bc;">It's OKAY to Break Things</h2>#}
+{#            <ul class="backgrd_detail" style="line-height:25px;">#}
+{#                <li>If those things are programs, that is.</li>#}
+{#                <li>One of the best ways to learn programming is to redo examples and try to change them to see what happens.</li>#}
+{#                <li>Look what happens when you change one number by just a little...</li>#}
+{#                <p align="center"><img src="/static/img/turtle/square_spiral_2.png" height="200px"></p>#}
+{#                <li>There are 4 numbers. See what you can make!</li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}

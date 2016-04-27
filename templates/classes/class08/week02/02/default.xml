@@ -1,0 +1,61 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">In Python, lists are iterable.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">This means Python knows how to move from 1 item to the next.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">This allows us to LOOP through the list.</field>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">my_list</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="lists_create_with">
+                                        <mutation items="5"></mutation>
+                                        <value name="ADD0">
+                                            <block type="numbers_int">
+                                                <field name="NUM">0</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD1">
+                                            <block type="numbers_int">
+                                                <field name="NUM">1</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD2">
+                                            <block type="numbers_int">
+                                                <field name="NUM">2</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD3">
+                                            <block type="numbers_int">
+                                                <field name="NUM">3</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD4">
+                                            <block type="numbers_int">
+                                                <field name="NUM">4</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Get a FOR loop from the Loops menu.</field>
+                                        <next>
+                                            <block type="general_comment">
+                                                <field name="TEXT">We will use this loop to print out the items in "my_list"</field>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

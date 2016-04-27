@@ -1,0 +1,101 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">Use a WHILE Loop to move the motor when the button is pressed.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">This is how the Pirelli button must be set up:</field>
+                <next>
+                    <block type="gpiozero_import_stepper">
+                        <next>
+                            <block type="gpiozero_import">
+                                <mutation items="1"></mutation>
+                                <value name="LIB0">
+                                    <block type="gpiozero_libraries">
+                                        <field name="LIB">Button</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">btn</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="gpiozero_button">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">11</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                    <block type="logic_boolean">
+                                                        <field name="BOOL">FALSE</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="general_comment">
+                                                <field name="TEXT">Set up the motor and the WHILE Loop.</field>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">s</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="gpiozero_stepper"></block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="loops_while">
+                                                                <value name="BOOL">
+                                                                    <block type="logic_boolean">
+                                                                        <field name="BOOL">TRUE</field>
+                                                                    </block>
+                                                                </value>
+                                                                <statement name="DO">
+                                                                    <block type="controls_if">
+                                                                        <value name="IF0">
+                                                                            <block type="gpiozero_button_is_pressed">
+                                                                                <value name="Button">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">btn</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <statement name="DO0">
+                                                                            <block type="gpiozero_stepper_forward_backward">
+                                                                                <field name="OP">forward</field>
+                                                                                <value name="STEPPER">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">s</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="DELAY">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">10</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="STEPS">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">64</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </statement>
+                                                                    </block>
+                                                                </statement>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

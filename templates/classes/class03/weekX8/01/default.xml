@@ -1,0 +1,73 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="37" y="13">
+        <field name="TEXT">This block will prompt the user to enter their mixed number.</field>
+        <next>
+            <block type="variables_set">
+                <field name="VAR">mixed_number</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="general_input">
+                        <value name="INPUT">
+                            <block type="strings">
+                                <field name="TEXT">Enter a mixed number (# #/#):</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Make variable mixed_split. Split the variable mixed_number on the space.</field>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="38" y="163">
+        <field name="TEXT">Make variable mixed_whole_part. Get the first item in mixed_split.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">To do this get the second block in the general menu. Put mixed_split in.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Get the first item (0) in mixed_split.</field>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="38" y="288">
+        <field name="TEXT">Make variable fact_part. Get the second item in the list.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">To do this get the second block in the general menu. Put mixed_split in.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Get the second item (1) in mixed_split.</field>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="38" y="413">
+        <field name="TEXT">Make variable fract_split. Split the variable fact_split on the /.</field>
+    </block>
+    <block type="general_comment" x="38" y="463">
+        <field name="TEXT">Make variable mixed_numerator. Get the first item (0) in fact_split.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">To do this get the second block in the general menu. Put fract_split in.</field>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="38" y="538">
+        <field name="TEXT">Copy/paste mixed_numerator; name it mixed_denominator.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Get the second item (1) in fact_split.</field>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="38" y="613">
+        <field name="TEXT">Print a few things to test our work.</field>
+    </block>
+</xml>

@@ -1,0 +1,57 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="12" y="13">
+        <field name="TEXT">Import the time and GPIOZero libraries.</field>
+        <next>
+            <block type="time_import">
+                <next>
+                    <block type="gpiozero_import">
+                        <mutation items="2"></mutation>
+                        <value name="LIB0">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">LED</field>
+                            </block>
+                        </value>
+                        <value name="LIB1">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">Button</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Create a 2 button objects.</field>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">button_for_red</field>
+                                        <field name="OP">EQUALS</field>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">button_for_green</field>
+                                                <field name="OP">EQUALS</field>
+                                                <next>
+                                                    <block type="general_comment">
+                                                        <field name="TEXT">Make an infinite while loop.</field>
+                                                        <next>
+                                                            <block type="general_comment">
+                                                                <field name="TEXT">Use a conditional to print a message when a button is pressed.</field>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="strings" x="562" y="288">
+        <field name="TEXT">The red button was pressed.</field>
+    </block>
+    <block type="strings" x="562" y="338">
+        <field name="TEXT">The green button was pressed.</field>
+    </block>
+</xml>

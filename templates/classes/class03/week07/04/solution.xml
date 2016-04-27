@@ -1,0 +1,148 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="fractions_import_mixed" x="13" y="12">
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">How do you convert a mixed number to an improper fraction?</field>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">mixed_number</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="general_input">
+                                <value name="INPUT">
+                                    <block type="strings">
+                                        <field name="TEXT">Enter a mixed number (X X/X):  </field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">m</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="fractions_Mixed">
+                                        <value name="MIX">
+                                            <block type="variables_get">
+                                                <field name="VAR">mixed_number</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="fractions_mixed_as_improper">
+                                                <value name="MIX">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">m</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">whole</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="fractions_mixed_whole_part">
+                                                        <value name="MIX">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">m</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">f</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="fractions_mixed_fraction_part">
+                                                                <value name="MIX">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">m</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="variables_set">
+                                                                <field name="VAR">num</field>
+                                                                <field name="OP">EQUALS</field>
+                                                                <value name="VALUE">
+                                                                    <block type="fractions_num_denom">
+                                                                        <field name="VAR">f</field>
+                                                                        <field name="WHAT">numerator</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="variables_set">
+                                                                        <field name="VAR">denom</field>
+                                                                        <field name="OP">EQUALS</field>
+                                                                        <value name="VALUE">
+                                                                            <block type="fractions_num_denom">
+                                                                                <field name="VAR">f</field>
+                                                                                <field name="WHAT">denominator</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="strings_print_py3_commas">
+                                                                                <mutation items="1"></mutation>
+                                                                                <value name="ADD0">
+                                                                                    <block type="strings_format_with">
+                                                                                        <mutation items="2"></mutation>
+                                                                                        <field name="STR">{}/{}</field>
+                                                                                        <value name="ADD0">
+                                                                                            <block type="numbers_arithmetic">
+                                                                                                <field name="OP">ADD</field>
+                                                                                                <value name="A">
+                                                                                                    <block type="numbers_arithmetic">
+                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                        <value name="A">
+                                                                                                            <block type="variables_get">
+                                                                                                                <field name="VAR">whole</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <value name="B">
+                                                                                                            <block type="variables_get">
+                                                                                                                <field name="VAR">denom</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">num</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="ADD1">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">denom</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

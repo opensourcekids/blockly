@@ -1,0 +1,53 @@
+{# _PyBlocks/templates/classes/class02/week05/04/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% end %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% end %}
+
+{% block middle %}
+    Turtle Graphics Square
+{% end %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% end %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% end %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% end %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% end %}#}
+{#True if Skulpt interpreter is used instead of server-side interpreter.#}
+{% block no_skulpt %}false{% end %}
+
+{% block python_start_text %}''{% end %}
+
+{% block panel %}
+    <div id="panel">
+        <div style="padding: 30px">
+            <h2 align="center" style="color: #0072bc;">Turtle Graphics</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>We will use it to learn more about programming and to make geometric art.
+                    <br/>
+                    <p align="center">
+                        <img src="/static/img/turtle/turtle_makayla1.png" height="150px">
+                        <img src="/static/img/turtle/turtle_india.png" height="125px">
+                        <img src="/static/img/turtle/turtle_jacob.png" height="125px">
+                    </p>
+                </li>
+            </ul>
+            <h2 align="center" style="color: #0072bc;">What We Will Do</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Let's start off by making this:</li>
+                <p align="center"><img src="/static/img/turtle/turtle_example_simple_square.png" height="150px"></p>
+                </li>
+                <li>Do you see any patterns?</li>
+            </ul>
+        </div>
+    </div>
+{% end %}

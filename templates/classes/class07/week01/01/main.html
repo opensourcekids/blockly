@@ -1,0 +1,59 @@
+{# _PyBlocks/templates/classes/class02/week05/04/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% end %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% end %}
+
+{% block middle %}
+    Datatype Review
+{% end %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% end %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% end %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% end %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% end %}#}
+{#True if Skulpt interpreter is used instead of server-side interpreter.#}
+{% block no_skulpt %}false{% end %}
+
+{% block python_start_text %}''{% end %}
+
+{% block panel %}
+    <div id="panel">
+        <div style="padding: 30px">
+            <h2 align="center" style="color: #0072bc;">BACKGROUND</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Computers need to store data.</li>
+                <li>A variable stores a piece of data, and gives it a name.</li>
+                <li>Variables can store any kind of python data.</li>
+                <li>Put an = after a variable when you <strong style="color:red">assign</strong> it.</li>
+            </ul>
+            <h2 align="center" style="color: #0072bc;">TRY IT</h2>
+            <ol class="tryit_detail" style="line-height:25px;">
+                <li>Create a variable named string and attach it to the top of the blocks.</li>
+                <li>Put the correct type of variable block into each print() statement.</li>
+                <li>
+                    Assign
+                    <img src="/static/img/strings/strings_string.png" height="25">
+                    <img src="/static/img/numbers/numbers_int.png" height="25">
+                    <img src="/static/img/booleans/bool_true.png" height="25">
+                    <img src="/static/img/lists/lists_create_closed.png" height="25">
+                    to the correct variables.
+                </li>
+                <li>Why did the variable blocks change color?</li>
+                <li>Type a sentence into <img src="/static/img/strings/strings_string.png" height="25px"></li>
+                <li>Change the number in <img src="/static/img/numbers/numbers_int.png" height="25px"></li>
+                <li>Change <img src="/static/img/booleans/bool_true.png" height="25px"></li>
+            </ol>
+        </div>
+    </div>
+{% end %}

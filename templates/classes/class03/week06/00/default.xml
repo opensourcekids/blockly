@@ -1,0 +1,18 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">Libraries are packages of code made by others and available to all.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Python has a very large collection of libraries.</field>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="13" y="88">
+        <field name="TEXT">Say you want your program to wait 3 seconds before answering a question?</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">You could use the time library.</field>
+            </block>
+        </next>
+    </block>
+</xml>

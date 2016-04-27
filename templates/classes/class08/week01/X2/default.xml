@@ -1,0 +1,50 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" x="13" y="13">
+        <field name="VAR">name</field>
+        <field name="OP">EQUALS</field>
+        <value name="VALUE">
+            <block type="general_input">
+                <value name="INPUT">
+                    <block type="strings">
+                        <field name="TEXT">What is your name?  </field>
+                    </block>
+                </value>
+            </block>
+        </value>
+        <next>
+            <block type="strings_print">
+                <value name="TEXT">
+                    <block type="strings_format_with">
+                        <mutation items="1"></mutation>
+                        <field name="STR">{} eh.</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">name</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="general_input">
+                                <value name="INPUT">
+                                    <block type="strings">
+                                        <field name="TEXT">No, really. What's your name?  </field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="strings_print">
+                                <value name="TEXT">
+                                    <block type="strings_format_with">
+                                        <mutation items="1"></mutation>
+                                        <field name="STR">Hello, {}. If that's really your name.</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

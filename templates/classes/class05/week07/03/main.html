@@ -1,0 +1,71 @@
+{# _PyBlocks/templates/classes/class05/week00/00/main.html_ #}
+
+{% extends "../../../classes_layout_skulpt.html" %}
+
+{# Content of the modal popup that appears on canvas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+
+{# The title of the step. #}
+{% block middle %}
+    Using Buttons to Turn on LEDs
+{% end %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include '../../../code_area_blockly.xml' %}
+{% end %}
+
+{# Blockly related items.#}
+{% block isBlockly %}true{% end %}
+{% block details_and_toolbox %}
+    {% include 'toolbox.xml' %}
+    {% include 'default.xml' %}
+{% end %}
+
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}true{% end %}
+
+{% block python_start_text %}''{% end %}
+
+{# Code for side panels.  Leave blank to have no panels.#}
+{% block panel %}
+
+    <div id="panel_output">
+        <div style="padding: 0px">
+            <h2 id="output_title" align="center">Output</h2>
+
+            <!-- START: Skulpt Code-->
+            <!--<div id="output" style="background: #000000;"> {# class="tab-pane fade"#}-->
+            <!--<pre id="log" class="output" width="200px"></pre>-->
+            <!--</div>-->
+            <!-- End: Skulpt Code-->
+
+            <!-- START: Terminal Code-->
+            <!-- This div is for non-Skulpt operations.  It inserts a terminal.-->
+            <div id="wrapper" style="border: 5px dotted black;">
+                {% module Terminal("/websocket") %}
+            </div>
+        </div> <!-- AJL: This is extra, but DONT REMOVE IT.  Needed to handle teminal.-->
+        <!-- END: Terminal Code-->
+
+        </div>
+    </div>
+
+    <div id="panel_code" align="center">
+        <div id="code_panel" style="padding: 0px">
+            <div>
+                <h2 id="code_title" style="align: center;">Code
+                    <button type="button" class="btn btn-default btn-noboard btn-large" style="border: none" onclick="save_python()">
+                        <span class="glyphicon glyphicon-save-file" style="color: #0072bc;"></span>
+                        click to save python file
+                    </button>
+                </h2>
+            </div>
+            <div id="code">  {# class="tab-pane fade in active" #}
+                <pre class="code_out prettyprint linenums" height="200px" width="200px" id="code2"></pre>
+                <!--<code id="prettycode" class="prettyprint linenums"></code>-->
+            </div>
+        </div>
+    </div>
+
+{% end %}

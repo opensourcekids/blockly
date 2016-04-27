@@ -1,0 +1,92 @@
+{# _PyBlocks/templates/classes/class03/week00/00/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+
+{# The title of the step. #}
+{% block middle %}
+    Quick Review
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}true{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{# Code for side panels.  Leave blank to have no panels.#}
+{% block panel %}
+    {#    <div id="panel_terminal">#}
+    {#        <div style="padding: 15px">#}
+    {#            <h2 id="output_title" align="center">Terminal</h2>#}
+    {#            <iframe frameborder=none height="600px" width="98%" src="http://pyterm.opensourcekids.org"></iframe>#}
+    {#        </div>#}
+    {#    </div>#}
+
+    <div id="panel_output">
+        <div style="padding: 0px">
+            <h2 id="output_title" align="center">Output</h2>
+            <div id="output" style="background: #000000;"> {#  class="tab-pane fade"#}
+                <pre id="log" class="output" width="200px"></pre>
+            </div>
+        </div>
+    </div>
+
+    <div id="panel_code" align="center">
+        <div style="padding: 0px">
+            <div>
+                <h2 id="code_title" style="align: center;">Code
+                    <button type="button" class="btn btn-default btn-noboard btn-large" style="border: none" onclick="save_python()">
+                        <span class="glyphicon glyphicon-save-file" style="color: #0072bc;"></span>
+                        click to save python file
+                    </button>
+                </h2>
+            </div>
+            <div id="code">  {# class="tab-pane fade in active" #}
+                <pre class="code_out prettyprint linenums" height="200px" width="200px" id="code2"></pre>
+                <!--<code id="prettycode" class="prettyprint linenums"></code>-->
+            </div>
+        </div>
+    </div>
+{##}
+{#    <div id="panel_help">#}
+{#        <div style="padding: 30px">#}
+{#            <h2 align="center" style="color: #0072bc;">BACKGROUND</h2>#}
+{#            <ul class="backgrd_detail" style="line-height:25px;">#}
+{#                <li>Computers need to store data.</li>#}
+{#                <li>A variable stores a piece of data, and gives it a name.</li>#}
+{#                <li>Variables can store any kind of python data.</li>#}
+{#                <li>Put an = after a variable when you <strong style="color:red">assign</strong> it.</li>#}
+{#            </ul>#}
+{#            <h2 align="center" style="color: #0072bc;">TRY IT</h2>#}
+{#            <ol class="tryit_detail" style="line-height:25px;">#}
+{#                <li>Create a variable named string and attach it to the bottom of the blocks.</li>#}
+{#                <li>#}
+{#                    Assign#}
+{#                    <img src="/static/img/booleans/bool_true.png" height="25">,#}
+{#                    <img src="/static/img/numbers/numbers_int.png" height="25"> and#}
+{#                    <img src="/static/img/strings/strings_string.png" height="25">#}
+{#                    to the correct variables.#}
+{#                </li>#}
+{#                <li>Why did the variable blocks change color?</li>#}
+{#                <li>Change <img src="/static/img/booleans/bool_true.png" height="25px"></li>#}
+{#                <li>Change the number in <img src="/static/img/numbers/numbers_int.png" height="25px"></li>#}
+{#                <li>Type a sentence into <img src="/static/img/strings/strings_string.png" height="25px"></li>#}
+{#                <li>Put the correct type of variable block into each print() statement.</li>#}
+{#            </ol>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}

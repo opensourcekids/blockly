@@ -1,0 +1,50 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="38" y="38">
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Change LED to RGBLED</field>
+                <next>
+                    <block type="gpiozero_import">
+                        <mutation items="1"></mutation>
+                        <value name="LIB0">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">LED</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Put an RGBLED into the variable. (GPIO -&gt; RGBLED)</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Make the GPIO 5, 6, 13</field>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">rgbled</field>
+                                                <field name="OP">EQUALS</field>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="gpiozero_led_rgb_in" x="263" y="262">
+        <field name="COLOR">.red</field>
+        <value name="VALUE">
+            <block type="numbers_float">
+                <field name="NUM">0.50</field>
+            </block>
+        </value>
+    </block>
+    <block type="time_sleep" x="263" y="337">
+        <value name="amount_of_time">
+            <block type="numbers_int">
+                <field name="NUM">1</field>
+            </block>
+        </value>
+    </block>
+</xml>

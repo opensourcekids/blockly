@@ -1,0 +1,72 @@
+{# _PyBlocks/templates/classes/class05/week00/00/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+
+{# Content of the modal popup that appears on canvas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+
+{# The title of the step. #}
+{% block middle %}
+    GPIO Zero: Changing the Amount of Color in RGBLEDs
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}true{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{# Code for side panels.  Leave blank to have no panels.#}
+{% block panel %}
+{#    <div id="panel_terminal">#}
+{#        <div style="padding: 15px">#}
+{#            <h2 id="output_title" align="center">Terminal</h2>#}
+{#            <iframe frameborder=none height="600px" width="98%" src="http://pyterm.opensourcekids.org"></iframe>#}
+{#        </div>#}
+{#    </div>#}
+
+    <div id="panel_output">
+        <div style="padding: 0px">
+            <h2 id="output_title" align="center">Output</h2>
+            <div id="output" style="background: #000000;"> {#  class="tab-pane fade"#}
+                <pre id="log" class="output" width="200px"></pre>
+            </div>
+        </div>
+    </div>
+
+    <div id="panel_code" align="center">
+        <div id="code_panel" style="padding: 0px">
+            <div>
+                <h2 id="code_title" style="align: center;">Code
+                    <button type="button" class="btn btn-default btn-noboard btn-large" style="border: none" onclick="save_python()">
+                        <span class="glyphicon glyphicon-save-file" style="color: #0072bc;"></span>
+                        click to save python file
+                    </button>
+                </h2>
+            </div>
+            <div id="code">  {# class="tab-pane fade in active" #}
+                <pre class="code_out prettyprint linenums" height="200px" width="200px" id="code2"></pre>
+                <!--<code id="prettycode" class="prettyprint linenums"></code>-->
+            </div>
+        </div>
+    </div>
+
+    <div id="panel_help">
+        <div id="help" style="padding: 15px">
+            <h2 align="center" style="color: #0072bc;">The Curcuit</h2>
+            <p align="center"><img src="/static/img/electronics/rpi_led_rgbled_combo.png" height="700px"></p>
+
+        </div>
+    </div>
+{% endblock %}

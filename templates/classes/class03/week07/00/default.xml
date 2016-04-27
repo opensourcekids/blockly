@@ -1,0 +1,109 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="loops_while" collapsed="true" x="13" y="13">
+        <value name="BOOL">
+            <block type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+            </block>
+        </value>
+        <statement name="DO">
+            <block type="variables_set">
+                <field name="VAR">how_was_it</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="general_input">
+                        <value name="INPUT">
+                            <block type="strings">
+                                <field name="TEXT">How was your break (good/bad)?  </field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="controls_if">
+                        <mutation elseif="1" else="1"></mutation>
+                        <value name="IF0">
+                            <block type="logic_compare">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                    <block type="variables_get">
+                                        <field name="VAR">how_was_it</field>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="strings">
+                                        <field name="TEXT">good</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO0">
+                            <block type="strings_print_py3_commas">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="strings">
+                                        <field name="TEXT">I am glad you had a nice break!! Welcome back.</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="loops_break_continue">
+                                        <field name="WHAT">break</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                        <value name="IF1">
+                            <block type="logic_compare">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                    <block type="variables_get">
+                                        <field name="VAR">how_was_it</field>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="strings">
+                                        <field name="TEXT">bad</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO1">
+                            <block type="strings_print_py3_commas">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="strings">
+                                        <field name="TEXT">I am sorry to hear that.</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="strings">
+                                                <field name="TEXT">Cheer up. Only 8 more weeks until summer vacation.</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="loops_break_continue">
+                                                <field name="WHAT">break</field>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                        <statement name="ELSE">
+                            <block type="strings_print_py3_commas">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="strings">
+                                        <field name="TEXT">That is not a valid answer. Try again.</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>

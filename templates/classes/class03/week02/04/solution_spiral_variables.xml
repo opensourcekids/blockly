@@ -1,0 +1,139 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="turtle_import" x="13" y="13">
+        <next>
+            <block type="variables_set">
+                <field name="VAR">t</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="turtle_turtle"></block>
+                </value>
+                <next>
+                    <block type="turtle_shape">
+                        <field name="VAR">t</field>
+                        <field name="IMAGE">turtle</field>
+                        <next>
+                            <block type="turtle_speed">
+                                <field name="VAR">t</field>
+                                <field name="SPEED">0</field>
+                                <next>
+                                    <block type="turtle_hide_show">
+                                        <field name="VAR">t</field>
+                                        <field name="WHAT">hideturtle</field>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">number_of_sides</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">4</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">times_around</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">19</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="loops_for_each">
+                                                                <field name="VAR">item</field>
+                                                                <value name="ITER">
+                                                                    <block type="builtins_range_with">
+                                                                        <mutation items="1"></mutation>
+                                                                        <value name="ADD0">
+                                                                            <block type="variables_get">
+                                                                                <field name="VAR">times_around</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                                <statement name="DO">
+                                                                    <block type="loops_for_each">
+                                                                        <field name="VAR">item</field>
+                                                                        <value name="ITER">
+                                                                            <block type="builtins_range_with">
+                                                                                <mutation items="1"></mutation>
+                                                                                <value name="ADD0">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">number_of_sides</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <statement name="DO">
+                                                                            <block type="turtle_move">
+                                                                                <field name="VAR">t</field>
+                                                                                <field name="DIR">forward</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">100</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="turtle_turn">
+                                                                                        <field name="VAR">t</field>
+                                                                                        <field name="DIR">left</field>
+                                                                                        <value name="VALUE">
+                                                                                            <block type="numbers_arithmetic">
+                                                                                                <field name="OP">DIVIDE</field>
+                                                                                                <value name="A">
+                                                                                                    <block type="numbers_float">
+                                                                                                        <field name="NUM">360.0</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <value name="B">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">number_of_sides</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </statement>
+                                                                        <next>
+                                                                            <block type="turtle_turn">
+                                                                                <field name="VAR">t</field>
+                                                                                <field name="DIR">left</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="numbers_arithmetic">
+                                                                                        <field name="OP">DIVIDE</field>
+                                                                                        <value name="A">
+                                                                                            <block type="numbers_float">
+                                                                                                <field name="NUM">360.0</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">times_around</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </statement>
+                                                                <next>
+                                                                    <block type="turtle_done"></block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

@@ -14,50 +14,49 @@
 
         var myLayout; // a var is required because this page utilizes: myLayout.allowOverflow() method
 
+        function save_python() {
+            //console.log("in save_python");
+//            var text_to_save = document.getElementById("python_code").value;
+//            var blob = new Blob([text_to_save], {type: 'text/text'});
+//            console.log(blob);
+//            saveAs(blob, 'pyblocks.py');
+            console.log("in save_python()");
+        }
+
         $(document).ready(function () {
             myLayout = $('body').layout({
                 // enable showOverflow on west-pane so popups will overlap north pane
                 west__showOverflowOnHover: true
                 , west: {
-                    initClosed: true
-
+                    size: '400'
+                    , maxSize: '400'
+                    , initClosed: true
                 }
                 , east: {
                     size: '33%'
                 }
-                //,	west__fxSettings_open: { easing: "easeOutBounce", duration: 750 }
-                //	East Sidebar options
                 , east__childOptions: {
-//                    minSize: 50	// ALL panes
-//                    , south__size: 100
                     center__size: '50%'
                     , south__size: '50%'
                 }
-
                 , south: {
                     initClosed: true
-
                 }
-
                 , north: {
                     size: '80'
                     , resizable: false
                     , slidable: false
                     , closable: false
                 }
-
             });
-//            myLayout.close("west");
         });
 
-
     </script>
+
     <script src="../../blockly_compressed.js"></script>
     <script src="../../blocks_compressed.js"></script>
     <script src="../../msg/js/en.js"></script>
     <style type="text/css">
-
-
         /**
          *	Basic Layout Theme
          *
@@ -199,16 +198,13 @@
             padding-left: 0px;
             padding-right: 0px;
         }
-
     </style>
-
 
     <style type="text/css">
         /**
          *	ALL CSS below is only for cosmetic and demo purposes
          *	Nothing here affects the appearance of the layout
          */
-
         body {
             font-family: "Lucida Console", Monaco, monospace;
             /*font-size: 12pt;*/
@@ -221,7 +217,6 @@
         /*
          *	Rules below are for simulated drop-down/pop-up lists
          */
-
         ul {
             /* rules common to BOTH inner and outer UL */
             z-index: 100000;
@@ -284,22 +279,6 @@
             font-family: "Lucida Console", Monaco, monospace;
             font-size: 12pt;
         }
-    </style>
-
-    <style>
-        /*html, body {*/
-        /*height: 100%;*/
-        /*margin: 0;*/
-        /*}*/
-        /*body {*/
-        /*background-color: #fff;*/
-        /*font-family: sans-serif;*/
-        /*overflow: hidden;*/
-        /*}*/
-        /*h1 {*/
-            /*font-weight: normal;*/
-            /*!*font-size: 140%;*!*/
-        /*}*/
 
         table {
             height: 100%;
@@ -327,11 +306,11 @@
                 <ul class="menu_select">
                     <li id="menu">
                         <ul class="menu_select">
-                            <li class="menu_select">Delete All</li>
-                            <li class="menu_select">Load Blocks</li>
-                            <li class="menu_select">Save Blocks</li>
-                            <li class="menu_select">Save Code</li>
-                            <li class="menu_select">Run Code</li>
+                            <li class="menu_select" onclick="discard()">Delete All</li>
+                            <li class="menu_select" id="fakeload">Load Blocks</li>
+                            <li class="menu_select" onclick="save()">Save Blocks</li>
+                            <li class="menu_select" onclick="save_python()">Save Code</li>
+                            <li class="menu_select" id="run_button">Run Code</li>
                         </ul>
                         <img src="menu_graphic.png" alt="MENU" height="20px"/> <!-- put this below so IE and FF render the same! -->
                     </li>
@@ -383,60 +362,38 @@
     </div>
 </div>
 
-<!--<div class="ui-layout-south">-->
-    <!--<div id="help2">-->
-        <!--<h2>This is the west pane, closable, slidable and resizable</h2>-->
-        <!--<ol>-->
-            <!--<li>-->
-                <!--This is step one.-->
-            <!--</li>-->
-            <!--<li>-->
-                <!--This is step two.-->
-            <!--</li>-->
-            <!--<li>-->
-                <!--This is step three with substeps.-->
-                <!--<ol>-->
-                    <!--<li>-->
-                        <!--This is substep one.-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--This is substep two.-->
-                    <!--</li>-->
-                <!--</ol>-->
-            <!--</li>-->
-        <!--</ol>-->
-        <!--<button onclick="myLayout.toggle('north')">Toggle North Pane</button>-->
-    <!--</div>-->
-<!--</div>-->
-
 <div class="ui-layout-east">
-
-    <!--<div class="ui-layout-north">south</div>-->
-    <!--<div class="ui-layout-west">west</div>-->
     <div class="ui-layout-center" id="panel_code">
-        <h2>Code</h2>
+        <div id="code_panel" style="padding: 0px">
+            <div>
+                <h2 id="code_title" style="align: center;">Code
+                    <!--<button type="button" class="btn btn-default btn-noboard btn-large" style="border: none" onclick="save_python()">-->
+                        <!--<span class="glyphicon glyphicon-save-file" style="color: #0072bc;"></span>-->
+                        <!--click to save python file-->
+                    <!--</button>-->
+                </h2>
+            </div>
+            <div id="code">
+                <pre class="code_out prettyprint linenums" height="200px" width="200px" id="code2"></pre>
+                <!--<code id="prettycode" class="prettyprint linenums"></code>-->
+            </div>
+        </div>
     </div>
 
     <div class="ui-layout-south" id="panel_output">
-        <h2>Output</h2>
+        <div style="padding: 0px">
+            <h2 id="output_title" align="center">Output</h2>
+            <!--<div id="wrapper" style="border: 5px dotted black;color: white">-->
+                <!--{% module Terminal("/websocket") %}-->
+            <!--</div>-->
+        </div> <!-- AJL: This is extra, but DONT REMOVE IT.  Needed to handle teminal.-->
+        <!-- END: Terminal Code-->
     </div>
-    <!--<div class="ui-layout-east">east</div>-->
-
 </div>
 
 <div class="ui-layout-center" id="blocklyArea"></div>
 
 <div id="blocklyDiv" style="position: absolute"></div>
-
-<!--<xml id="toolbox" style="display: none">-->
-    <!--<block type="controls_if"></block>-->
-    <!--<block type="logic_compare"></block>-->
-    <!--<block type="controls_repeat_ext"></block>-->
-    <!--<block type="math_number"></block>-->
-    <!--<block type="math_arithmetic"></block>-->
-    <!--<block type="text"></block>-->
-    <!--<block type="text_print"></block>-->
-<!--</xml>-->
 
 <xml id="toolbox" style="display: none">
     <category name="Variables" custom="VARIABLE"></category>

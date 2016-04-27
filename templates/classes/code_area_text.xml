@@ -1,0 +1,52 @@
+<div class="content" style="height: 100%"> {# class="blockly"  col-xs-12 #}
+
+</div>
+
+
+{#    <div class="col-xs-8 blockly">#}
+{#        <div class="content">#}
+{#            <form action="." method="POST" id="emit" onsubmit="pretty()">#}
+{#                <div id="btns" class="col-md-3" style="    position: absolute; width: 901px;">#}
+{#                    <input type="file" id="load" style="display: none;"></input>#}
+{#                    <textarea id="python_code" name="code emit_data" class="content" visiblility="visible"></textarea>#}
+{#                    <pre style="margin-left:-600px;" id="python_code" type="text" name="emit_data" class="content prettyprint" readonly="false" wrap="off" contenteditable="true"></pre>#}
+{#                    <!--<div id="btns" class="col-md-3">-->#}
+{#                    <div class="btn-group" style="margin-top:-1350px; margin-left:768px;">#}
+{#                    <button type="button" class="btn btn-default btn-noboard btn-sm" onclick="">#}
+{#                        <span class="glyphicon glyphicon-remove"></span>#}
+{#                    </button>#}
+{#                    <button type="button" class="btn btn-default btn-noboard btn-sm" onclick="save()">#}
+{#                        <span class="glyphicon glyphicon-download"></span>#}
+{#                    </button>#}
+{#                    <button type="button" class="btn btn-default btn-noboard btn-sm" onclick="">#}
+{#                        <span class="glyphicon glyphicon-upload"></span>#}
+{#                    </button>#}
+{#                    <button id="run_button" type="submit" name="my-form" value="Send"#}
+{#                            class="btn btn-default btn-noboard btn-sm"#}
+{#                            onclick="run_code()">#}
+{#                        <span class="glyphicon glyphicon-play"></span>#}
+{#                    </button>#}
+{#                        </div>#}
+{#                </div>#}
+{#            </form>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="col-xs-4 tab-content">#}
+{#        <ul class="nav nav-tabs">#}
+{#            <li id="code_tab">#}
+{#                <a href="#code"></a>#}
+{#            </li>#}
+{#            <li class="active" id="output_tab" onclick="execute_code()">#}
+{#                <a data-toggle="tab" href="#output">Output</a>#}
+{#            </li>#}
+{#        </ul>#}
+{##}
+{#        <div id="output" class="tab-pane fade in active">#}
+{#            <pre class="output" height="100px" width="200px" id="log"></pre>#}
+{#        </div>#}
+{#        <div id="code" class="tab-pane fade in"  visibility="hidden">#}
+{#            <pre class="code_out prettyprint linenums" height="200px" width="200px" id="code2"></pre>#}
+{#            <!--<code id="prettycode" class="prettyprint linenums"></code>-->#}
+{#        </div>#}
+{#    </div>#}

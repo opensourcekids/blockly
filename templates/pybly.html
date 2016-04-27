@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>Terminado UIModule demo</title>
+    <!--
+      pyxterm: Basic Python socket implementation for term.js
+
+      Example template
+      Modified by: R. Saravanan <sarava@sarava.net> 2014
+      Original Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
+    -->
+</head>
+<style>
+    /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+    .clearfix:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    * {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+    }
+
+    .wrapper {
+        background: white;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .content {
+        padding: 2em;
+    }
+
+    .header {
+        background-color: #E2F7CE;
+        height: auto;
+        padding: .5em;
+    }
+
+    .header h1 {
+        display: inline-block;
+        font-size: 1.6em;
+        margin: 0;
+        padding: 0 .5em;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .col-50 {
+        padding: 1em;
+        width: 100%;
+    }
+
+    @media (min-width: 50em) {
+        .col-50 {
+            float: left;
+            padding: 1em;
+            width: 50%;
+        }
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity .2s ease-in-out 1s;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        display: block;
+    }
+
+    .flyout {
+        background-color: white;
+        bottom: 0;
+        height: 100%;
+        max-width: 280px;
+        overflow-y: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transform: translate3d(100%, 0, 0);
+        width: 80%;
+        -webkit-transition: transform 0.2s ease-in-out;
+        -moz-transition: transform 0.2s ease-in-out;
+        -ms-transition: transform 0.2s ease-in-out;
+        -o-transition: transform 0.2s ease-in-out;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .flyout.active {
+        transform: translate3d(0, 0, 0);
+    }
+
+    .flyout-header {
+        background-color: #452632;
+        color: white;
+        padding: 1em;
+    }
+
+    .flyout-header h4 {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .flyout-body {
+        overflow-y: auto;
+        padding: 1em;
+        flex: 0 1 0;
+    }
+
+    .flyout-close {
+        cursor: pointer;
+        float: right;
+    }
+
+    .btn {
+        background-color: #452632;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 1.2em;
+        padding: .5em;
+    }
+
+    #wrapper {
+        border: 5px dotted magenta;
+        padding: 10px;
+        display: inline-block; /*Need this, not sure why*/
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font: 20px/1.5 sans-serif;
+    }
+</style>
+
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src="{{ static('index.js') }}"></script>
+<script src="{{ xstatic('termjs', 'term.js') }}"></script>
+<script>
+
+var TERM;
+
+window.addEventListener('load', function () {
+    var containers = document.getElementsByClassName('terminado-container');
+    var container, rows, cols, protocol, ws_url;
+    for (var i = 0; i < containers.length; i++) {
+        container = containers[i];
+        rows = parseInt(container.dataset.rows);
+        cols = parseInt(container.dataset.cols);
+        protocol = (window.location.protocol.indexOf("https") === 0) ? "wss" : "ws";
+        ws_url = protocol + "://" + window.location.host + container.dataset.wsUrl;
+        TERM = make_terminal(container, {rows: rows, cols: cols}, ws_url);
+    }
+    console.log(TERM);
+}, false);
+
+
+function myFunction() {
+
+    TERM.term.showCursor();
+    TERM.term.handler("python ~/while_loop.py\r");
+}
+
+</script>
+<body>
+<h1>Terminado UIModule terminal</h1>
+<div class="wrapper">
+    <header class="header" role="banner">
+        <div class="header-main">
+            <h1>The Flyout</h1>
+        </div>
+    </header>
+
+    <div class="overlay"></div>
+    <aside class="flyout">
+        <div class="flyout-header clearfix"><h4>Heading!</h4><span class="flyout-close flyout-toggle">x</span></div>
+        <div class="flyout-body">
+            <!--<p>To make this scrollable, in older browsers, you have to add-->
+                <!--<code>overflow-y: auto;</code> to the flyout element. Kinda sucks because the header scrolls too. In newer browsers you can use-->
+                <!--<code>display: flex; flex-direction: column;</code> to the flyout and apply-->
+                <!--<code>overflow-y: auto</code> to the flyout body so it only shows the scrollbar as needed.</p>-->
+            <!--<p>Can also change <code>position: absolute</code> to-->
+                <!--<code>position: fixed</code> but haven't tested this thoroughly yet.-->
+            <!--</p>-->
+            <div id="dummy-screen" style="border: 5px dotted magenta; height: 200px; width: 100px">
+                <div>
+                    {% module Terminal("/websocket", rows=30, cols=90) %}
+                </div>
+            </div>
+            <!--<p>More text to make this longer and scrollable.-->
+                <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita voluptatibus sunt laborum aperiam dolorum numquam officia nam provident dicta aliquid placeat voluptates ratione nesciunt laudantium quam ut a. Hic nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nulla omnis facere sint quidem fugit quia labore ab unde officiis consequatur tenetur nemo aliquid ea sunt quis blanditiis magnam harum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla architecto libero distinctio dolores necessitatibus obcaecati pariatur cupiditate eaque unde modi ipsum quidem perferendis nam impedit laboriosam inventore debitis qui soluta!</p>-->
+        </div>
+    </aside>
+
+    <aside class="flyout2">
+        <div class="flyout-header clearfix"><h4>Heading 22222!</h4><span class="flyout-close flyout-toggle">x</span></div>
+        <div class="flyout-body">
+            <p>To make this scrollable, in older browsers, you have to add
+            <code>overflow-y: auto;</code> to the flyout element. Kinda sucks because the header scrolls too. In newer browsers you can use
+            <code>display: flex; flex-direction: column;</code> to the flyout and apply
+            <code>overflow-y: auto</code> to the flyout body so it only shows the scrollbar as needed.</p>
+            <p>Can also change <code>position: absolute</code> to
+            <code>position: fixed</code> but haven't tested this thoroughly yet.
+            </p>
+
+            <p>More text to make this longer and scrollable.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita voluptatibus sunt laborum aperiam dolorum numquam officia nam provident dicta aliquid placeat voluptates ratione nesciunt laudantium quam ut a. Hic nisi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nulla omnis facere sint quidem fugit quia labore ab unde officiis consequatur tenetur nemo aliquid ea sunt quis blanditiis magnam harum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla architecto libero distinctio dolores necessitatibus obcaecati pariatur cupiditate eaque unde modi ipsum quidem perferendis nam impedit laboriosam inventore debitis qui soluta!</p>
+        </div>
+    </aside>
+    <div class="content">
+        <section class="main" id="main">
+            <p>Flyout panel. Great for forms, searches, and other out-of-context items. Transitions used on transform(translate3d), based on these
+                <a href="http://coding.smashingmagazine.com/2013/01/15/off-canvas-navigation-for-responsive-website/">two</a>
+                <a href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/">articles</a>. I got the idea of using a panel for secondary information from
+                <a href="https://medium.com/design-ux/bc190d62eff5">this article</a>.</p>
+            <!--<button class="btn flyout-toggle">Click to Toggle</button>-->
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore distinctio animi a debitis aspernatur facere aut dolores quaerat reprehenderit aperiam fuga temporibus quae nostrum hic vitae consequuntur error et!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eaque maxime illum iure unde perferendis delectus temporibus deleniti eos sapiente numquam necessitatibus in quod voluptatibus nesciunt facilis assumenda! Explicabo soluta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis deleniti facilis dolore incidunt quaerat optio recusandae commodi pariatur cupiditate ex ab mollitia maiores sapiente sint expedita vel laborum nam dolores.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate sit cumque possimus maxime sunt recusandae distinctio numquam illum iure dolorem voluptatibus aliquid quae? Voluptatibus aperiam deleniti a quas nobis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente quibusdam necessitatibus! Quisquam pariatur aut est omnis harum eum et quas totam fuga dicta fugiat amet impedit atque culpa sint enim.</p>
+        </section>
+    </div>
+
+
+    <div class="container">
+    <table>
+        <tr>
+            <td style="border: 5px dotted magenta; width: 1000px">
+                <input id="enter">
+                <button class='clickme btn flyout-toggle' type="submit" value="Submit" onclick="myFunction()">text</button>
+                <button class='clickme btn flyout-open' type="submit" value="Submit">open output</button>
+                <button class='clickme btn flyout2-toggle' type="submit" value="Submit">open flyout2</button>
+
+            </td>
+            <!--<td id="dummy-screen" style="border: 5px dotted magenta; height: 200px; width: 100px">-->
+                <!--<div>-->
+                    <!--{% module Terminal("/websocket", rows=30, cols=90) %}-->
+                <!--</div>-->
+            <!--</td>-->
+        </tr>
+    </table>
+</div>
+
+</div>
+</body>

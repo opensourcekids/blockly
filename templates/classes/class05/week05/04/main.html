@@ -1,0 +1,125 @@
+{# _PyBlocks/templates/classes/class05/week00/00/main.html_ #}
+
+{% extends "../../../classes_layout_skulpt.html" %}
+
+{# Content of the modal popup that appears on canvas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+
+{# The title of the step. #}
+{% block middle %}
+    Guessing Game Solution
+{% end %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include '../../../code_area_blockly.xml' %}
+{% end %}
+
+{# Blockly related items.#}
+{% block isBlockly %}true{% end %}
+{% block details_and_toolbox %}
+    {% include 'toolbox.xml' %}
+    {% include 'default.xml' %}
+{% end %}
+
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}true{% end %}
+
+{% block python_start_text %}''{% end %}
+
+{# Code for side panels.  Leave blank to have no panels.#}
+{% block panel %}
+
+    <div id="panel_output">
+        <div style="padding: 0px">
+            <h2 id="output_title" align="center">Output</h2>
+
+            <!-- START: Skulpt Code-->
+            <!--<div id="output" style="background: #000000;"> {# class="tab-pane fade"#}-->
+            <!--<pre id="log" class="output" width="200px"></pre>-->
+            <!--</div>-->
+            <!-- End: Skulpt Code-->
+
+            <!-- START: Terminal Code-->
+            <!-- This div is for non-Skulpt operations.  It inserts a terminal.-->
+            <div id="wrapper" style="border: 5px dotted black;">
+                {% module Terminal("/websocket") %}
+            </div>
+        </div> <!-- AJL: This is extra, but DONT REMOVE IT.  Needed to handle teminal.-->
+        <!-- END: Terminal Code-->
+
+        </div>
+    </div>
+
+    <div id="panel_code" align="center">
+        <div id="code_panel" style="padding: 0px">
+            <div>
+                <h2 id="code_title" style="align: center;">Code
+                    <button type="button" class="btn btn-default btn-noboard btn-large" style="border: none" onclick="save_python()">
+                        <span class="glyphicon glyphicon-save-file" style="color: #0072bc;"></span>
+                        click to save python file
+                    </button>
+                </h2>
+            </div>
+            <div id="code">  {# class="tab-pane fade in active" #}
+                <pre class="code_out prettyprint linenums" height="200px" width="200px" id="code2"></pre>
+                <!--<code id="prettycode" class="prettyprint linenums"></code>-->
+            </div>
+        </div>
+    </div>
+
+    <div id="panel_help">
+        <div id="help" style="padding: 15px">
+            <h2 align="center" style="color: #0072bc;">Welcome to PyBlocks</h2>
+            <p>PyBlocks uses colorful blocks to write programs instead of typing.</p>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li><b style="color:#0072bc;">Menu</b></li>
+                <ul>
+                    <li>The blue area on the left.</li>
+                    <li>Labels groups of similar blocks.</li>
+                    <li>Clicking a label shows the blocks inside.</li>
+                </ul>
+                <li><b style="color:#0072bc;">Blocks</b></li>
+                <ul>
+                    <li>Blocks of code are used to write a program.</li>
+                    <li>Blocks are stored in the menus.</li>
+                    <li>Click or drag to place a block on the workspace.</li>
+                </ul>
+                <li><b style="color:#0072bc;">Workspace</b></li>
+                <ul>
+                    <li>The large white area to the right of the menu.</li>
+                    <li>All PyBlocks programming happens here.</li>
+                    <li>Controls at bottom right zoom in and out or center.</li>
+                    <li>Drag blocks to the trash can to delete them.</li>
+                </ul>
+                <li><b style="color:#0072bc;">Buttons</b></li>
+                <ul>
+                    <li><span class="glyphicon glyphicon-remove"></span> &nbsp;deletes all workspace blocks.</li>
+                    <li><span class="glyphicon glyphicon-download"></span> &nbsp;creates s file to save the workspace.</li>
+                    <li><span class="glyphicon glyphicon-upload"></span> &nbsp;uploads a saved workspace.</li>
+                    <li><span class="glyphicon glyphicon-play"></span> &nbsp;runs the workspace program.</li>
+                </ul>
+                <li><b style="color:#0072bc;">Python Code Area</b></li>
+                <ul>
+                    <li>Click the left tab with <span class="glyphicon glyphicon-text-size"></span> to access it.</li>
+                    <li>Python code generated here with workspace changes.</li>
+                    <li>This tab is open by default.</li>
+                </ul>
+                <li><b style="color:#0072bc;">Output Area</b></li>
+                <ul>
+                    <li>Click the left tab with
+                        <span style="background-color: #000000;" class="glyphicon glyphicon-console"></span> to access it.
+                    </li>
+                    <li>Print output is shown here when you run a program.</li>
+                    <li>Tab automatically opens when you run a program.</li>
+                </ul>
+                <li><b style="color:#0072bc;">Canvas</b></li>
+                <ul>
+                    <li>Pops up when a graphical program using Turtles runs.</li>
+                    <li>The ouput to the program is shown here.</li>
+                    <li>To exit, click the close button or the shaded area.</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+{% end %}

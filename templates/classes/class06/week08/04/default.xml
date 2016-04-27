@@ -1,0 +1,152 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="13" y="13">
+        <next>
+            <block type="gpiozero_import">
+                <mutation items="1"></mutation>
+                <value name="LIB0">
+                    <block type="gpiozero_libraries">
+                        <field name="LIB">PiLiter</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">lite</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="gpiozero_piliter">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                    <block type="logic_boolean">
+                                        <field name="BOOL">FALSE</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="time_sleep">
+                                <value name="amount_of_time">
+                                    <block type="numbers_float">
+                                        <field name="NUM">1.0</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Put an integer into the range. Set it to 128.</field>
+                                        <next>
+                                            <block type="loops_for_each">
+                                                <field name="VAR">number</field>
+                                                <value name="ITER">
+                                                    <block type="builtins_range_with">
+                                                        <mutation items="1"></mutation>
+                                                    </block>
+                                                </value>
+                                                <statement name="DO">
+                                                    <block type="general_comment">
+                                                        <field name="TEXT">Make sure the lights turn off each loop.</field>
+                                                        <next>
+                                                            <block type="general_comment">
+                                                                <field name="TEXT">Put variable lite into off() block from PiLiter menu.</field>
+                                                                <next>
+                                                                    <block type="variables_set">
+                                                                        <field name="VAR">vals</field>
+                                                                        <field name="OP">EQUALS</field>
+                                                                        <value name="VALUE">
+                                                                            <block type="tuple_create_empty"></block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="variables_set">
+                                                                                <field name="VAR">binary_string</field>
+                                                                                <field name="OP">EQUALS</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="builtins_format">
+                                                                                        <value name="VALUE">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">number</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <value name="SPEC">
+                                                                                            <block type="strings">
+                                                                                                <field name="TEXT">08b</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="loops_for_each">
+                                                                                        <field name="VAR">char</field>
+                                                                                        <value name="ITER">
+                                                                                            <block type="variables_get">
+                                                                                                <field name="VAR">binary_string</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <statement name="DO">
+                                                                                            <block type="variables_set">
+                                                                                                <field name="VAR">vals</field>
+                                                                                                <field name="OP">ADD</field>
+                                                                                                <value name="VALUE">
+                                                                                                    <block type="tuple_create_with">
+                                                                                                        <mutation items="1"></mutation>
+                                                                                                        <value name="ADD0">
+                                                                                                            <block type="numbers_cast_int">
+                                                                                                                <value name="CAST">
+                                                                                                                    <block type="variables_get">
+                                                                                                                        <field name="VAR">char</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </statement>
+                                                                                        <next>
+                                                                                            <block type="gpiozero_piliter_value_in">
+                                                                                                <value name="LED">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">lite</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <value name="VALUE">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">vals</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                    <block type="general_comment">
+                                                                                                        <field name="TEXT">Sleep for 0.25s.</field>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </statement>
+                                                <next>
+                                                    <block type="general_comment">
+                                                        <field name="TEXT">Leave the lights on for 5 seconds.</field>
+                                                        <next>
+                                                            <block type="general_comment">
+                                                                <field name="TEXT">Turn the lights off</field>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

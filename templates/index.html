@@ -1,0 +1,28 @@
+{# _BocklyPi/templates/index.html_ #}
+
+{% extends "layout.html" %}
+{% block title %}Home{% end %}
+{% block headers %}
+    <!-- Custom styles for this template -->
+    <link href="../static/css/home.css" rel="stylesheet">
+{% end %}
+{% block subheading %}&nbsp;courses{% end %}
+{% block body %}
+            <div class="jumbotron">
+                <h2>Select Your Course</h2>
+                <p>&nbsp;</p>
+                <p>
+                <div class="list-group">
+{#                    <a href="dir10" class="list-group-item">Introduction to Python using SnapPy Code</a>#}
+{#                    <a href="dir04" class="list-group-item">Mr. McCracken's Class</a>#}
+{#                    <a href="dir07" class="list-group-item">Introduction to Python Programming (Web)</a>#}
+                    <a href="dir08" class="list-group-item">Introduction to Python Programming (Raspberry Pi)</a>
+                    <a href="dir05" class="list-group-item">Python I</a>
+                    <a href="dir06" class="list-group-item">Python II</a>
+                    <a href="dir03" class="list-group-item">Using Python to Explore Common Core Math</a>
+
+{#                    <a href="dir11" class="list-group-item">Common Core Math</a>#}
+                </div>
+                </p>
+            </div>
+{% end %}

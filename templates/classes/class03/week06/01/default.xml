@@ -1,0 +1,28 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="63">
+        <field name="TEXT">Fractions_Ed Library has many useful fraction operations.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">A fraction is created using Fraction(numerator, denominator).</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Let's create and add two fractions.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">Make a variable f1 with the fraction 1/5.</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Make a variable f2 with the fraction 2/5.</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="38" y="338">
+        <field name="TEXT">Print the sum of these fractions.</field>
+    </block>
+</xml>

@@ -1,0 +1,66 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="strings_print" x="38" y="63">
+        <value name="TEXT">
+            <block type="lists_concat">
+                <value name="LIST1">
+                    <block type="lists_create_with">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                            <block type="numbers_int">
+                                <field name="NUM">0</field>
+                            </block>
+                        </value>
+                        <value name="ADD1">
+                            <block type="numbers_int">
+                                <field name="NUM">1</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <value name="LIST2">
+                    <block type="lists_create_with">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                            <block type="numbers_int">
+                                <field name="NUM">2</field>
+                            </block>
+                        </value>
+                        <value name="ADD1">
+                            <block type="numbers_int">
+                                <field name="NUM">3</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </value>
+        <next>
+            <block type="strings_print">
+                <value name="TEXT">
+                    <block type="lists_repeat">
+                        <value name="ITEM">
+                            <block type="lists_create_with">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                    <block type="numbers_int">
+                                        <field name="NUM">0</field>
+                                    </block>
+                                </value>
+                                <value name="ADD1">
+                                    <block type="numbers_int">
+                                        <field name="NUM">1</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <value name="NUM">
+                            <block type="numbers_int">
+                                <field name="NUM">10</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </next>
+    </block>
+</xml>

@@ -1,0 +1,156 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">Last lesson we learn about variables.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Variables hold data for us to pass around our program.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">What do we do if we need to pass around LOTS of data.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">We could make lots of variables:</field>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">a</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="numbers_int">
+                                                <field name="NUM">0</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">b</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">1</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">c</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">2</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="variables_set">
+                                                                <field name="VAR">d</field>
+                                                                <field name="OP">EQUALS</field>
+                                                                <value name="VALUE">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">3</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="variables_set">
+                                                                        <field name="VAR">e</field>
+                                                                        <field name="OP">EQUALS</field>
+                                                                        <value name="VALUE">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">4</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="variables_set">
+                                                                                <field name="VAR">f</field>
+                                                                                <field name="OP">EQUALS</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">5</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="general_comment">
+                                                                                        <field name="TEXT">This quickly becomes very cumbersome.</field>
+                                                                                        <next>
+                                                                                            <block type="general_comment">
+                                                                                                <field name="TEXT">There has to be a better way. Run this program and go to step 1.</field>
+                                                                                                <next>
+                                                                                                    <block type="strings_print_py3_commas">
+                                                                                                        <mutation items="1"></mutation>
+                                                                                                        <value name="ADD0">
+                                                                                                            <block type="variables_get">
+                                                                                                                <field name="VAR">a</field>
+                                                                                                            </block>
+                                                                                                        </value>
+                                                                                                        <next>
+                                                                                                            <block type="strings_print_py3_commas">
+                                                                                                                <mutation items="1"></mutation>
+                                                                                                                <value name="ADD0">
+                                                                                                                    <block type="variables_get">
+                                                                                                                        <field name="VAR">b</field>
+                                                                                                                    </block>
+                                                                                                                </value>
+                                                                                                                <next>
+                                                                                                                    <block type="strings_print_py3_commas">
+                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                        <value name="ADD0">
+                                                                                                                            <block type="variables_get">
+                                                                                                                                <field name="VAR">c</field>
+                                                                                                                            </block>
+                                                                                                                        </value>
+                                                                                                                        <next>
+                                                                                                                            <block type="strings_print_py3_commas">
+                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                <value name="ADD0">
+                                                                                                                                    <block type="variables_get">
+                                                                                                                                        <field name="VAR">d</field>
+                                                                                                                                    </block>
+                                                                                                                                </value>
+                                                                                                                                <next>
+                                                                                                                                    <block type="strings_print_py3_commas">
+                                                                                                                                        <mutation items="1"></mutation>
+                                                                                                                                        <value name="ADD0">
+                                                                                                                                            <block type="variables_get">
+                                                                                                                                                <field name="VAR">e</field>
+                                                                                                                                            </block>
+                                                                                                                                        </value>
+                                                                                                                                        <next>
+                                                                                                                                            <block type="strings_print_py3_commas">
+                                                                                                                                                <mutation items="1"></mutation>
+                                                                                                                                                <value name="ADD0">
+                                                                                                                                                    <block type="variables_get">
+                                                                                                                                                        <field name="VAR">f</field>
+                                                                                                                                                    </block>
+                                                                                                                                                </value>
+                                                                                                                                            </block>
+                                                                                                                                        </next>
+                                                                                                                                    </block>
+                                                                                                                                </next>
+                                                                                                                            </block>
+                                                                                                                        </next>
+                                                                                                                    </block>
+                                                                                                                </next>
+                                                                                                            </block>
+                                                                                                        </next>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

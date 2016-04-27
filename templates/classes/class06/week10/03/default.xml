@@ -1,0 +1,39 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">Now we will read the voltage of an analog device--a potentiometer.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">But, first we need to create a potentiometer called pot.</field>
+                <next>
+                    <block type="time_import">
+                        <next>
+                            <block type="explorerhat_import">
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">pot</field>
+                                        <field name="OP">EQUALS</field>
+                                        <next>
+                                            <block type="loops_for_each">
+                                                <field name="VAR">item</field>
+                                                <value name="ITER">
+                                                    <block type="builtins_range_with">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">20</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

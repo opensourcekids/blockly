@@ -1,0 +1,104 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">MathHomework.py</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Ask the user to enter a math problem.</field>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">problem</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="general_input">
+                                <value name="INPUT">
+                                    <block type="strings">
+                                        <field name="TEXT">Enter a math problem, or q to quit:</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="loops_for_each">
+                                <field name="VAR">item</field>
+                                <value name="ITER">
+                                    <block type="builtins_range_with">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="numbers_int">
+                                                <field name="NUM">12</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO">
+                                    <block type="controls_if">
+                                        <mutation else="1"></mutation>
+                                        <value name="IF0">
+                                            <block type="logic_compare">
+                                                <field name="OP">NEQ</field>
+                                                <value name="A">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">problem</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="strings">
+                                                        <field name="TEXT">q</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <statement name="DO0">
+                                            <block type="strings_print_commas">
+                                                <mutation items="4"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="strings">
+                                                        <field name="TEXT">The answer to</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">problem</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD2">
+                                                    <block type="strings">
+                                                        <field name="TEXT">is</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD3">
+                                                    <block type="builtins_eval">
+                                                        <value name="VALUE">
+                                                            <block type="variables_get">
+                                                                <field name="VAR">problem</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">problem</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="general_input">
+                                                                <value name="INPUT">
+                                                                    <block type="strings">
+                                                                        <field name="TEXT">Enter a math problem, or q to quit:</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </statement>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

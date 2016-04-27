@@ -1,0 +1,86 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" id="8" inline="true" x="13" y="13">
+        <field name="VAR">string</field>
+        <value name="VALUE">
+            <block type="strings" id="62">
+                <field name="TEXT">Hello, World!</field>
+            </block>
+        </value>
+        <next>
+            <block type="strings_print" id="1" inline="true">
+                <value name="TEXT">
+                    <block type="variables_get" id="41">
+                        <field name="VAR">string</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set" id="2" inline="true">
+                        <field name="VAR">integer</field>
+                        <value name="VALUE">
+                            <block type="numbers_int" id="56">
+                                <field name="NUM">42</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="strings_print" id="3" inline="true">
+                                <value name="TEXT">
+                                    <block type="variables_get" id="42">
+                                        <field name="VAR">integer</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set" id="4" inline="true">
+                                        <field name="VAR">boolean</field>
+                                        <value name="VALUE">
+                                            <block type="logic_boolean" id="82">
+                                                <field name="BOOL">FALSE</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="strings_print" id="5" inline="true">
+                                                <value name="TEXT">
+                                                    <block type="variables_get" id="43">
+                                                        <field name="VAR">boolean</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set" id="6" inline="true">
+                                                        <field name="VAR">list</field>
+                                                        <value name="VALUE">
+                                                            <block type="lists_create_with" id="70" inline="true">
+                                                                <mutation items="2"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_int" id="83">
+                                                                        <field name="NUM">2</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                    <block type="numbers_int" id="84">
+                                                                        <field name="NUM">3</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="strings_print" id="7" inline="true">
+                                                                <value name="TEXT">
+                                                                    <block type="variables_get" id="44">
+                                                                        <field name="VAR">list</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

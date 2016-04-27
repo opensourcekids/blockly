@@ -1,0 +1,48 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="loops_for_each" x="-13" y="13">
+        <field name="VAR">item</field>
+        <value name="ITER">
+            <block type="builtins_range_with">
+                <mutation items="1"></mutation>
+                <value name="ADD0">
+                    <block type="numbers_int">
+                        <field name="NUM">2</field>
+                    </block>
+                </value>
+            </block>
+        </value>
+        <statement name="DO">
+            <block type="strings_print_py3_commas">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                    <block type="builtins_format">
+                        <value name="VALUE">
+                            <block type="variables_get">
+                                <field name="VAR">item</field>
+                            </block>
+                        </value>
+                        <value name="SPEC">
+                            <block type="strings">
+                                <field name="TEXT">3</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <value name="ADD1">
+                    <block type="builtins_format">
+                        <value name="VALUE">
+                            <block type="variables_get">
+                                <field name="VAR">item</field>
+                            </block>
+                        </value>
+                        <value name="SPEC">
+                            <block type="strings">
+                                <field name="TEXT">&gt;10b</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </statement>
+    </block>
+</xml>

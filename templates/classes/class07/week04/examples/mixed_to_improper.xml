@@ -1,0 +1,200 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="strings_print" id="43" inline="true" x="-58" y="95">
+        <value name="TEXT">
+            <block type="procedures_callreturn" id="44" inline="true">
+                <mutation name="mixed_to_imporoper">
+                    <arg name="mixed_number"></arg>
+                </mutation>
+                <value name="ARG0">
+                    <block type="strings" id="45">
+                        <field name="TEXT">6 and 3/5</field>
+                    </block>
+                </value>
+            </block>
+        </value>
+    </block>
+    <block type="procedures_defreturn" id="46" inline="false" x="-58" y="158">
+        <mutation>
+            <arg name="mixed_number"></arg>
+        </mutation>
+        <field name="NAME">mixed_to_imporoper</field>
+        <statement name="STACK">
+            <block type="variables_set" id="47" inline="true">
+                <field name="VAR">parts</field>
+                <value name="VALUE">
+                    <block type="strings_split" id="48" inline="true">
+                        <value name="TEXT">
+                            <block type="variables_get" id="49">
+                                <field name="VAR">mixed_number</field>
+                            </block>
+                        </value>
+                        <value name="CHECK">
+                            <block type="strings" id="50">
+                                <field name="TEXT"> </field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="variables_set" id="51" inline="true">
+                        <field name="VAR">whole</field>
+                        <value name="VALUE">
+                            <block type="numbers_cast_int" id="52" inline="true">
+                                <value name="CAST">
+                                    <block type="general_create_with" id="53" inline="true">
+                                        <mutation items="1"></mutation>
+                                        <value name="STRING">
+                                            <block type="variables_get" id="54">
+                                                <field name="VAR">parts</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD0">
+                                            <block type="numbers_int" id="55">
+                                                <field name="NUM">0</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set" id="56" inline="true">
+                                <field name="VAR">fract</field>
+                                <value name="VALUE">
+                                    <block type="general_create_with" id="57" inline="true">
+                                        <mutation items="1"></mutation>
+                                        <value name="STRING">
+                                            <block type="variables_get" id="58">
+                                                <field name="VAR">parts</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD0">
+                                            <block type="numbers_int" id="59">
+                                                <field name="NUM">2</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set" id="60" inline="true">
+                                        <field name="VAR">fract_parts</field>
+                                        <value name="VALUE">
+                                            <block type="strings_split" id="61" inline="true">
+                                                <value name="TEXT">
+                                                    <block type="variables_get" id="62">
+                                                        <field name="VAR">fract</field>
+                                                    </block>
+                                                </value>
+                                                <value name="CHECK">
+                                                    <block type="strings" id="63">
+                                                        <field name="TEXT">/</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set" id="64" inline="true">
+                                                <field name="VAR">numerator</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_cast_int" id="65" inline="true">
+                                                        <value name="CAST">
+                                                            <block type="general_create_with" id="66" inline="true">
+                                                                <mutation items="1"></mutation>
+                                                                <value name="STRING">
+                                                                    <block type="variables_get" id="67">
+                                                                        <field name="VAR">fract_parts</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_int" id="68">
+                                                                        <field name="NUM">0</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set" id="69" inline="true">
+                                                        <field name="VAR">denominator</field>
+                                                        <value name="VALUE">
+                                                            <block type="numbers_cast_int" id="70" inline="true">
+                                                                <value name="CAST">
+                                                                    <block type="general_create_with" id="71" inline="true">
+                                                                        <mutation items="1"></mutation>
+                                                                        <value name="STRING">
+                                                                            <block type="variables_get" id="72">
+                                                                                <field name="VAR">fract_parts</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <value name="ADD0">
+                                                                            <block type="numbers_int" id="73">
+                                                                                <field name="NUM">1</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </statement>
+        <value name="RETURN">
+            <block type="strings_concatenate" id="328" inline="true">
+                <mutation items="3"></mutation>
+                <value name="ADD0">
+                    <block type="strings_cast_str" id="217" inline="true">
+                        <value name="CAST">
+                            <block type="numbers_arithmetic" id="278" inline="true">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                    <block type="numbers_arithmetic" id="254" inline="true">
+                                        <field name="OP">MULTIPLY</field>
+                                        <value name="A">
+                                            <block type="variables_get" id="271">
+                                                <field name="VAR">whole</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="variables_get" id="247">
+                                                <field name="VAR">denominator</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="variables_get" id="311">
+                                        <field name="VAR">numerator</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <value name="ADD1">
+                    <block type="strings" id="344">
+                        <field name="TEXT"> / </field>
+                    </block>
+                </value>
+                <value name="ADD2">
+                    <block type="strings_cast_str" id="356" inline="true">
+                        <value name="CAST">
+                            <block type="variables_get" id="345">
+                                <field name="VAR">denominator</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </value>
+    </block>
+</xml>

@@ -1,0 +1,47 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="12" y="13">
+        <field name="TEXT">We are going to look a little bit closer at variables.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Make the variable a hold an integer.</field>
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">a</field>
+                        <field name="OP">EQUALS</field>
+                        <next>
+                            <block type="strings_print_py3_commas">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="strings_format_with">
+                                        <mutation items="2"></mutation>
+                                        <field name="STR">a = {}; id = {}</field>
+                                        <value name="ADD1">
+                                            <block type="builtins_id"></block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">Now make another variable called b holding the integer 8.</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="13" y="238">
+        <field name="TEXT">Copy and paste the pink print block here. Change the a's to b's.</field>
+    </block>
+    <block type="general_comment" x="13" y="313">
+        <field name="TEXT">Put a variable block b here and make it = to a.</field>
+    </block>
+    <block type="general_comment" x="13" y="388">
+        <field name="TEXT">Copy and paste the first pink print block here.</field>
+    </block>
+    <block type="general_comment" x="13" y="463">
+        <field name="TEXT">Copy and paste the second pink print block here.</field>
+    </block>
+</xml>

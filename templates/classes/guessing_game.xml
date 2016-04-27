@@ -1,0 +1,180 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" x="137" y="38">
+        <field name="VAR">computer</field>
+        <field name="OP">EQUALS</field>
+        <value name="VALUE">
+            <block type="random_int">
+                <value name="FROM">
+                    <block type="numbers_int">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+                <value name="TO">
+                    <block type="numbers_int">
+                        <field name="NUM">20</field>
+                    </block>
+                </value>
+            </block>
+        </value>
+        <next>
+            <block type="variables_set">
+                <field name="VAR">user</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="general_input">
+                        <value name="INPUT">
+                            <block type="strings">
+                                <field name="TEXT">Guess a number between 1 and 20:</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="loops_for_each">
+                        <field name="VAR">item</field>
+                        <value name="ITER">
+                            <block type="builtins_range_with">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="numbers_int">
+                                        <field name="NUM">5</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO">
+                            <block type="controls_if">
+                                <mutation elseif="1" else="1"></mutation>
+                                <value name="IF0">
+                                    <block type="logic_compare">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                            <block type="numbers_cast_int">
+                                                <value name="CAST">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">user</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="variables_get">
+                                                <field name="VAR">computer</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO0">
+                                    <block type="strings_print">
+                                        <value name="TEXT">
+                                            <block type="strings">
+                                                <field name="TEXT">You win!!</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </statement>
+                                <value name="IF1">
+                                    <block type="logic_compare">
+                                        <field name="OP">GT</field>
+                                        <value name="A">
+                                            <block type="numbers_cast_int">
+                                                <value name="CAST">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">user</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="variables_get">
+                                                <field name="VAR">computer</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO1">
+                                    <block type="strings_print">
+                                        <value name="TEXT">
+                                            <block type="strings">
+                                                <field name="TEXT">Too high!</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">user</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="general_input">
+                                                        <value name="INPUT">
+                                                            <block type="strings">
+                                                                <field name="TEXT">Guess a number between 1 and 20:</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                                <statement name="ELSE">
+                                    <block type="strings_print">
+                                        <value name="TEXT">
+                                            <block type="strings">
+                                                <field name="TEXT">Too low!</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">user</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="general_input">
+                                                        <value name="INPUT">
+                                                            <block type="strings">
+                                                                <field name="TEXT">Guess a number between 1 and 20:</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                                <next>
+                                    <block type="strings_print_commas">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                            <block type="strings">
+                                                <field name="TEXT">The computer's number was</field>
+                                            </block>
+                                        </value>
+                                        <value name="ADD1">
+                                            <block type="variables_get">
+                                                <field name="VAR">computer</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="strings_print_commas">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                    <block type="strings">
+                                                        <field name="TEXT">Your closest guess was</field>
+                                                    </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">user</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

@@ -1,0 +1,25 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">1. Figure out how many steps in one rotation.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">2. Move clockwise to 3 o'clock. Return to 12 o'clock.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">3. Move clockwise to 6 o'clock. Return to 12 o'clock.</field>
+                        <next>
+                            <block type="general_comment">
+                                <field name="TEXT">4. Move clockwise to 9 o'clock. Return to 12 o'clock.</field>
+                                <next>
+                                    <block type="general_comment">
+                                        <field name="TEXT">5. Try each one counter-clockwise. Return to 12:00 between each.</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

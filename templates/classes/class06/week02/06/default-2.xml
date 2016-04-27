@@ -1,0 +1,37 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="138" y="163">
+        <next>
+            <block type="loops_for_each">
+                <field name="VAR">item</field>
+                <value name="ITER">
+                    <block type="builtins_range_with">
+                        <mutation items="1"></mutation>
+                        <value name="ADD0">
+                            <block type="numbers_int">
+                                <field name="NUM">10</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <statement name="DO">
+                    <block type="strings_print">
+                        <value name="TEXT">
+                            <block type="variables_get">
+                                <field name="VAR">item</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="time_sleep">
+                                <value name="amount_of_time">
+                                    <block type="numbers_int">
+                                        <field name="NUM">0.5</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </next>
+    </block>
+</xml>

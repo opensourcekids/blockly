@@ -1,0 +1,51 @@
+{# _PyBlocks/templates/classes/class02/week05/04/main.html_ #}
+
+{% extends "/classes/classes_layout_skulpt.html" %}
+{% block title %}Class{{ current_class }}:Week{{ current_week }}:Step{{ current_step }}{% endblock %}
+
+{# Content of the modal popup that appears on cavas based output (i.e., turtle graphics). #}
+{% set outputModalSize =  "modal-lg" %}
+{% block isModalIntro %}false{% endblock %}
+
+{% block middle %}
+    Exploration 2
+{% endblock %}
+
+{# Content of the coding area on the page. #}
+{% block code_area %}
+    {% include ['/classes/', 'code_area_blockly.xml'] | join('') %}
+{% endblock %}
+{# Blockly related items.#}
+{% block isBlockly %}true{% endblock %}
+{% block details_and_toolbox %}
+    {% include [step_path, 'toolbox.xml'] | join('') %}
+    {% include [step_path, 'default.xml'] | join('') %}
+{% endblock %}
+{#{% block autosave %}auto_save_and_restore_blocks();{% endblock %}#}
+{# False if Skulpt interpreter is used instead of server-side interpreter. #}
+{% block no_skulpt %}false{% endblock %}
+
+{% block python_start_text %}''{% endblock %}
+
+{% block panel %}
+    <div id="panel">
+        <div style="padding: 30px">
+            <h2 align="center" style="color: #0072bc;">What to Do</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>This is one of many possibilities based on exercises 3 & 4.</li>
+                <ul>
+                    <li>Change number of sides.</li>
+                    <li>Change any of the numbers.</li>
+                    <li>Anything!!!</li>
+                </ul>
+                <li>If you change the first left turn from + 1 to -10 you see a totally different design.</li>
+                <li>After about 5 minutes move on to the next step.</li>
+            </ul>
+            <h2 align="center" style="color: #0072bc;">Think About It</h2>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Can you predict the design before you run it?</li>
+                <li>Why or why not?</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

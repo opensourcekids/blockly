@@ -1,0 +1,110 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">These are the minimum necessary blocks for Turtle Graphics.</field>
+        <next>
+            <block type="turtle_import">
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">t</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="turtle_turtle"></block>
+                        </value>
+                        <next>
+                            <block type="turtle_hide_show">
+                                <field name="VAR">t</field>
+                                <field name="WHAT">hideturtle</field>
+                                <next>
+                                    <block type="turtle_speed">
+                                        <field name="VAR">t</field>
+                                        <field name="SPEED">0</field>
+                                        <next>
+                                            <block type="general_comment">
+                                                <field name="TEXT">Now let's change the background color.</field>
+                                                <next>
+                                                    <block type="general_comment">
+                                                        <field name="TEXT">These will be two new blocks.</field>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="613" y="38">
+        <field name="TEXT">Here are some colors in a list that we can play with.</field>
+        <next>
+            <block type="variables_set">
+                <field name="VAR">colors</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="lists_create_with">
+                        <mutation items="4"></mutation>
+                        <value name="ADD0">
+                            <block type="colour_picker">
+                                <field name="COLOUR">#ff0000</field>
+                            </block>
+                        </value>
+                        <value name="ADD1">
+                            <block type="colour_picker">
+                                <field name="COLOUR">#33cc00</field>
+                            </block>
+                        </value>
+                        <value name="ADD2">
+                            <block type="colour_picker">
+                                <field name="COLOUR">#3366ff</field>
+                            </block>
+                        </value>
+                        <value name="ADD3">
+                            <block type="colour_picker">
+                                <field name="COLOUR">#ffff00</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="613" y="163">
+        <field name="TEXT">We will use this block to change colors each loop.</field>
+        <next>
+            <block type="turtle_colour">
+                <field name="VAR">t</field>
+                <value name="COLOUR">
+                    <block type="general_create_with">
+                        <mutation items="1"></mutation>
+                        <value name="STRING">
+                            <block type="variables_get">
+                                <field name="VAR">colors</field>
+                            </block>
+                        </value>
+                        <value name="ADD0">
+                            <block type="numbers_arithmetic">
+                                <field name="OP">MODULUS</field>
+                                <value name="A">
+                                    <block type="variables_get">
+                                        <field name="VAR">c</field>
+                                    </block>
+                                </value>
+                                <value name="B">
+                                    <block type="numbers_int">
+                                        <field name="NUM">4</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="38" y="288">
+        <field name="TEXT">Next we want to get the users name like in the last step.</field>
+    </block>
+</xml>

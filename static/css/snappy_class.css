@@ -1,0 +1,165 @@
+body {
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-size: 14px;
+    line-height: 1;
+    /*color: #333;*/
+}
+
+#help {
+    background: #FFFFFF;
+    /*border: 1px solid #BBB;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    margin-top: -1px;
+    overflow: auto;
+}
+
+#head_left {
+    /*background: #F0FF00;*/
+    /*border: 1px solid #BBB;*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 20px;
+    width: 150px;
+    /*overflow: auto;*/
+}
+
+#head_middle {
+    /*background: #FFFFFF;*/
+    /*border: 1px solid #BBB;*/
+    /*padding-top: 0px;*/
+    /*padding-bottom: 0px;*/
+    /*padding-left: 10px;*/
+    /*padding-right: 10px;*/
+    width: 100%;
+    /*text-align: center;*/
+    /*overflow: auto;*/
+}
+.logo {
+    vertical-align: middle;
+    font-weight: bold;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: -15px;
+}
+
+.home {
+    font-size: 12pt;
+    font-family: "Lucida Console", Monaco, monospace;
+    /*vertical-align: middle;*/
+    /*font-weight: bold;*/
+    padding-left: 7px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 10px;
+}
+
+.week {
+    font-size: 12pt;
+    font-family: "Lucida Console", Monaco, monospace;
+    vertical-align: middle;
+    /*font-weight: bold;*/
+    margin-top: 5px;
+    padding-top: 0px;
+    color: #337ab7;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 4px;
+}
+
+.navbar {
+    font-size: 12pt;
+    font-family: "Lucida Console", Monaco, monospace;
+    vertical-align: middle;
+    /*font-weight: bold;*/
+    border-radius: 4px;
+    /*margin-top: 5px;*/
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+
+#head_right {
+    /*background: #FF00FF;*/
+    /*border: 1px solid #BBB;*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 40px;
+
+    text-align: center;
+    bottom: auto;
+    /*margin: 0;*/
+    /*margin-top: 1.45em;*/
+    /*overflow: auto;*/
+}
+
+#panel_code {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12pt;
+    background: #FFFFFF;
+    color: #000000;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 0px;
+
+}
+
+#panel_output {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12pt;
+    background: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+#menu {
+    background-color: #FFFFFF;
+    color: #0000FF;
+    /*border-color: #0000FF;*/
+}
+
+.menu_select {
+    /*background-color: #FFFFFF;*/
+    /*color: #0000FF;*/
+    /*border-bottom-width: thin;*/
+    /*border-color: rgba(205, 205, 205, 0.33);*/
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12pt;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+}
+
+#content_area {
+    height: 99%;
+    width: 99%;
+    margin-top: -2px;
+
+}

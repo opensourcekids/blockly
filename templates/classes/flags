@@ -1,0 +1,1 @@
+var display_needed = {% block display_needed %}{% end %}

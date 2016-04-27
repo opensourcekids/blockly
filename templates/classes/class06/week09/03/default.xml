@@ -1,0 +1,110 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">Feel free to explore the Pirelli lights, button and the motor.</field>
+        <next>
+            <block type="gpiozero_import_stepper">
+                <next>
+                    <block type="gpiozero_import">
+                        <mutation items="3"></mutation>
+                        <value name="LIB0">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">LED</field>
+                            </block>
+                        </value>
+                        <value name="LIB1">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">PWMLED</field>
+                            </block>
+                        </value>
+                        <value name="LIB2">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">Button</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">red</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="gpiozero_led">
+                                        <mutation items="1"></mutation>
+                                        <field name="CLASS">LED</field>
+                                        <value name="ADD0">
+                                            <block type="gpiozero_pins">
+                                                <field name="pin_number">27</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">yellow</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="gpiozero_led">
+                                                <mutation items="1"></mutation>
+                                                <field name="CLASS">LED</field>
+                                                <value name="ADD0">
+                                                    <block type="gpiozero_pins">
+                                                        <field name="pin_number">17</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">green</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="gpiozero_led">
+                                                        <mutation items="1"></mutation>
+                                                        <field name="CLASS">LED</field>
+                                                        <value name="ADD0">
+                                                            <block type="gpiozero_pins">
+                                                                <field name="pin_number">4</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">btn</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="gpiozero_button">
+                                                                <mutation items="2"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">11</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                    <block type="logic_boolean">
+                                                                        <field name="BOOL">FALSE</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="variables_set">
+                                                                <field name="VAR">s</field>
+                                                                <field name="OP">EQUALS</field>
+                                                                <value name="VALUE">
+                                                                    <block type="gpiozero_stepper"></block>
+                                                                </value>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

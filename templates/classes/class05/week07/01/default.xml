@@ -1,0 +1,76 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="time_import" x="13" y="13">
+        <next>
+            <block type="gpiozero_import">
+                <mutation items="1"></mutation>
+                <value name="LIB0">
+                    <block type="gpiozero_libraries">
+                        <field name="LIB">LED</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">The LED pins are...red 17, yellow 27, green 22.</field>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">red_light</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="gpiozero_led">
+                                        <mutation items="1"></mutation>
+                                        <field name="CLASS">LED</field>
+                                        <value name="ADD0">
+                                            <block type="gpiozero_pins">
+                                                <field name="pin_number">17</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">yellow-light</field>
+                                        <field name="OP">EQUALS</field>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">green-light</field>
+                                                <field name="OP">EQUALS</field>
+                                                <next>
+                                                    <block type="general_comment">
+                                                        <field name="TEXT">Turn green on and the others off.</field>
+                                                        <next>
+                                                            <block type="gpiozero_led_on_off_toggle">
+                                                                <field name="OP">on()</field>
+                                                                <value name="LED">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">green-light</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="13" y="363">
+        <field name="TEXT">Wait for 10s, green off/yellow on 3s, yellow off/red on 10s, red off.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Loop 3 times through.</field>
+                <next>
+                    <block type="general_comment">
+                        <field name="TEXT">Turn the green off before the program ends.</field>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

@@ -1,0 +1,116 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="13">
+        <field name="TEXT">How can we change this square so we can make any shape?</field>
+        <next>
+            <block type="turtle_import">
+                <next>
+                    <block type="variables_set">
+                        <field name="VAR">t</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="turtle_turtle"></block>
+                        </value>
+                        <next>
+                            <block type="turtle_shape">
+                                <field name="VAR">t</field>
+                                <field name="IMAGE">turtle</field>
+                                <next>
+                                    <block type="turtle_speed">
+                                        <field name="VAR">t</field>
+                                        <field name="SPEED">6</field>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">length</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">100</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="general_comment">
+                                                        <field name="TEXT">Add a variable called "angle".</field>
+                                                        <next>
+                                                            <block type="general_comment">
+                                                                <field name="TEXT">Add a variable called "sides".</field>
+                                                                <next>
+                                                                    <block type="loops_for_each">
+                                                                        <field name="VAR">i</field>
+                                                                        <value name="ITER">
+                                                                            <block type="builtins_range_with">
+                                                                                <mutation items="1"></mutation>
+                                                                                <value name="ADD0">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">4</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <statement name="DO">
+                                                                            <block type="turtle_move">
+                                                                                <field name="VAR">t</field>
+                                                                                <field name="DIR">forward</field>
+                                                                                <value name="VALUE">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">length</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="turtle_turn">
+                                                                                        <field name="VAR">t</field>
+                                                                                        <field name="DIR">left</field>
+                                                                                        <value name="VALUE">
+                                                                                            <block type="numbers_int">
+                                                                                                <field name="NUM">90</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </statement>
+                                                                        <next>
+                                                                            <block type="general_comment">
+                                                                                <field name="TEXT">Angles:</field>
+                                                                                <next>
+                                                                                    <block type="general_comment">
+                                                                                        <field name="TEXT">        triangle = 120</field>
+                                                                                        <next>
+                                                                                            <block type="general_comment">
+                                                                                                <field name="TEXT">        square = 90</field>
+                                                                                                <next>
+                                                                                                    <block type="general_comment">
+                                                                                                        <field name="TEXT">        hexagon = 60</field>
+                                                                                                        <next>
+                                                                                                            <block type="general_comment">
+                                                                                                                <field name="TEXT">        octagon = 45</field>
+                                                                                                                <next>
+                                                                                                                    <block type="turtle_done"></block>
+                                                                                                                </next>
+                                                                                                            </block>
+                                                                                                        </next>
+                                                                                                    </block>
+                                                                                                </next>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

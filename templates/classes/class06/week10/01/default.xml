@@ -1,0 +1,116 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="13" y="38">
+        <field name="TEXT">This is Step00 solution.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Let's modify this so we can change the speed with a loop.</field>
+                <next>
+                    <block type="time_import">
+                        <next>
+                            <block type="explorerhat_import">
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">motor</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="explorerhat_motor">
+                                                <field name="DROP_PINS">one</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="explorerhat_motor_direction_speed">
+                                                <field name="DROP_DIRECTION">forward</field>
+                                                <value name="EXP_HAT">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">motor</field>
+                                                    </block>
+                                                </value>
+                                                <value name="SPEED">
+                                                    <block type="numbers_int">
+                                                        <field name="NUM">50</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="time_sleep">
+                                                        <value name="amount_of_time">
+                                                            <block type="numbers_int">
+                                                                <field name="NUM">5</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="explorerhat_motor_direction_speed">
+                                                                <field name="DROP_DIRECTION">forward</field>
+                                                                <value name="EXP_HAT">
+                                                                    <block type="variables_get">
+                                                                        <field name="VAR">motor</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="SPEED">
+                                                                    <block type="numbers_int">
+                                                                        <field name="NUM">0</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="time_sleep">
+                                                                        <value name="amount_of_time">
+                                                                            <block type="numbers_int">
+                                                                                <field name="NUM">5</field>
+                                                                            </block>
+                                                                        </value>
+                                                                        <next>
+                                                                            <block type="explorerhat_motor_direction_speed">
+                                                                                <field name="DROP_DIRECTION">backward</field>
+                                                                                <value name="EXP_HAT">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">motor</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <value name="SPEED">
+                                                                                    <block type="numbers_int">
+                                                                                        <field name="NUM">50</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="time_sleep">
+                                                                                        <value name="amount_of_time">
+                                                                                            <block type="numbers_int">
+                                                                                                <field name="NUM">5</field>
+                                                                                            </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                            <block type="explorerhat_motor_direction_speed">
+                                                                                                <field name="DROP_DIRECTION">backward</field>
+                                                                                                <value name="EXP_HAT">
+                                                                                                    <block type="variables_get">
+                                                                                                        <field name="VAR">motor</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                                <value name="SPEED">
+                                                                                                    <block type="numbers_int">
+                                                                                                        <field name="NUM">0</field>
+                                                                                                    </block>
+                                                                                                </value>
+                                                                                            </block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

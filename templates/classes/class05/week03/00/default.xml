@@ -1,0 +1,5 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">How do you get input from the user?</field>
+    </block>
+</xml>

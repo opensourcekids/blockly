@@ -1,0 +1,5 @@
+ptyprocess == 0.5.1
+tornado == 4.3
+tornado_xstatic == 0.2
+XStatic-term.js == 0.0.7.0
+-e ./libraries

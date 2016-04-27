@@ -1,0 +1,141 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="12" y="13">
+        <field name="TEXT">Import the time and GPIOZero libraries.</field>
+        <next>
+            <block type="time_import">
+                <next>
+                    <block type="gpiozero_import">
+                        <mutation items="2"></mutation>
+                        <value name="LIB0">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">LED</field>
+                            </block>
+                        </value>
+                        <value name="LIB1">
+                            <block type="gpiozero_libraries">
+                                <field name="LIB">Button</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="variables_set">
+                                <field name="VAR">red_light</field>
+                                <field name="OP">EQUALS</field>
+                                <value name="VALUE">
+                                    <block type="gpiozero_led">
+                                        <mutation items="1"></mutation>
+                                        <field name="CLASS">LED</field>
+                                        <value name="ADD0">
+                                            <block type="gpiozero_pins">
+                                                <field name="pin_number">17</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="variables_set">
+                                        <field name="VAR">green_light</field>
+                                        <field name="OP">EQUALS</field>
+                                        <value name="VALUE">
+                                            <block type="gpiozero_led">
+                                                <mutation items="1"></mutation>
+                                                <field name="CLASS">LED</field>
+                                                <value name="ADD0">
+                                                    <block type="gpiozero_pins">
+                                                        <field name="pin_number">22</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="variables_set">
+                                                <field name="VAR">button_for_red</field>
+                                                <field name="OP">EQUALS</field>
+                                                <value name="VALUE">
+                                                    <block type="gpiozero_button">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="gpiozero_pins">
+                                                                <field name="pin_number">23</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="variables_set">
+                                                        <field name="VAR">button_for_green</field>
+                                                        <field name="OP">EQUALS</field>
+                                                        <value name="VALUE">
+                                                            <block type="gpiozero_button">
+                                                                <mutation items="1"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="gpiozero_pins">
+                                                                        <field name="pin_number">24</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="loops_while">
+                                                                <value name="BOOL">
+                                                                    <block type="logic_boolean">
+                                                                        <field name="BOOL">TRUE</field>
+                                                                    </block>
+                                                                </value>
+                                                                <statement name="DO">
+                                                                    <block type="controls_if">
+                                                                        <mutation else="1"></mutation>
+                                                                        <value name="IF0">
+                                                                            <block type="gpiozero_button_is_pressed">
+                                                                                <value name="Button">
+                                                                                    <block type="variables_get">
+                                                                                        <field name="VAR">button_for_red</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                            </block>
+                                                                        </value>
+                                                                        <statement name="DO0">
+                                                                            <block type="strings_print">
+                                                                                <value name="TEXT">
+                                                                                    <block type="strings">
+                                                                                        <field name="TEXT">The red button was pressed.</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="loops_break_continue">
+                                                                                        <field name="WHAT">break</field>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </statement>
+                                                                        <statement name="ELSE">
+                                                                            <block type="strings_print">
+                                                                                <value name="TEXT">
+                                                                                    <block type="strings">
+                                                                                        <field name="TEXT">The green button was pressed.</field>
+                                                                                    </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                    <block type="loops_break_continue">
+                                                                                        <field name="WHAT">break</field>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </statement>
+                                                                    </block>
+                                                                </statement>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

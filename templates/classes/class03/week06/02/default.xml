@@ -1,0 +1,21 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="63">
+        <field name="TEXT">The last addition problem wasn't too bad, the numerators were the same.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">How does it work with different denominators.</field>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="38" y="163">
+        <field name="TEXT">Make a variable f1 with the fraction 1/3.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Make a variable f2 with the fraction 1/2.</field>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="38" y="338">
+        <field name="TEXT">Print the sum of these fractions.</field>
+    </block>
+</xml>

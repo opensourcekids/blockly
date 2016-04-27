@@ -1,0 +1,178 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="variables_set" x="38" y="38">
+        <field name="VAR">show_decimal</field>
+        <field name="OP">EQUALS</field>
+        <value name="VALUE">
+            <block type="logic_boolean">
+                <field name="BOOL">FALSE</field>
+            </block>
+        </value>
+        <next>
+            <block type="variables_set">
+                <field name="VAR">show_binary</field>
+                <field name="OP">EQUALS</field>
+                <value name="VALUE">
+                    <block type="logic_boolean">
+                        <field name="BOOL">TRUE</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="loops_for_each">
+                        <field name="VAR">item</field>
+                        <value name="ITER">
+                            <block type="builtins_range_with">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                    <block type="numbers_int">
+                                        <field name="NUM">10</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <statement name="DO">
+                            <block type="controls_if">
+                                <mutation elseif="2" else="1"></mutation>
+                                <value name="IF0">
+                                    <block type="logic_operation">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                            <block type="variables_get">
+                                                <field name="VAR">show_decimal</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="variables_get">
+                                                <field name="VAR">show_binary</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO0">
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                            <block type="builtins_format">
+                                                <value name="VALUE">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">item</field>
+                                                    </block>
+                                                </value>
+                                                <value name="SPEC">
+                                                    <block type="strings">
+                                                        <field name="TEXT">3</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <value name="ADD1">
+                                            <block type="builtins_format">
+                                                <value name="VALUE">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">item</field>
+                                                    </block>
+                                                </value>
+                                                <value name="SPEC">
+                                                    <block type="strings">
+                                                        <field name="TEXT">&gt;10b</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </statement>
+                                <value name="IF1">
+                                    <block type="logic_operation">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                            <block type="variables_get">
+                                                <field name="VAR">show_binary</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="logic_compare">
+                                                <field name="OP">EQ</field>
+                                                <value name="A">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">show_decimal</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="logic_boolean">
+                                                        <field name="BOOL">FALSE</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO1">
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="builtins_format">
+                                                <value name="VALUE">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">item</field>
+                                                    </block>
+                                                </value>
+                                                <value name="SPEC">
+                                                    <block type="strings">
+                                                        <field name="TEXT">&gt;13b</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </statement>
+                                <value name="IF2">
+                                    <block type="logic_operation">
+                                        <field name="OP">AND</field>
+                                        <value name="A">
+                                            <block type="variables_get">
+                                                <field name="VAR">show_decimal</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="logic_compare">
+                                                <field name="OP">EQ</field>
+                                                <value name="A">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">show_binary</field>
+                                                    </block>
+                                                </value>
+                                                <value name="B">
+                                                    <block type="logic_boolean">
+                                                        <field name="BOOL">FALSE</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO2">
+                                    <block type="strings_print_py3_commas">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                            <block type="builtins_format">
+                                                <value name="VALUE">
+                                                    <block type="variables_get">
+                                                        <field name="VAR">item</field>
+                                                    </block>
+                                                </value>
+                                                <value name="SPEC">
+                                                    <block type="strings">
+                                                        <field name="TEXT">3</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </statement>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

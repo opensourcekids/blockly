@@ -1,0 +1,25 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="12" y="13">
+        <field name="TEXT">The steps below will illustrate Python variable naming rules.</field>
+    </block>
+    <block type="general_comment" x="13" y="63">
+        <field name="TEXT">Make a variable and choose "New variable..." from the list.</field>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Name the variable "name", print it.</field>
+            </block>
+        </next>
+    </block>
+    <block type="general_comment" x="13" y="163">
+        <field name="TEXT">Make a new variable "my_name", print it.</field>
+    </block>
+    <block type="general_comment" x="13" y="238">
+        <field name="TEXT">Make a new variable "my-name", print it.</field>
+    </block>
+    <block type="general_comment" x="13" y="313">
+        <field name="TEXT">Make a new variable "3frogs", print it.</field>
+    </block>
+    <block type="general_comment" x="13" y="388">
+        <field name="TEXT">Make a new variable "frogs3", print it.</field>
+    </block>
+</xml>
