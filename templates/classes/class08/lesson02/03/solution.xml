@@ -1,0 +1,86 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" id="qzU6~.^098GNjj[lcfRQ" x="13" y="13">
+        <field name="TEXT">List are useful, but so far, we still need to add each item.</field>
+        <next>
+            <block type="general_comment" id="pEX[=|r{{2`6ViOgPfD.">
+                <field name="TEXT">What if we want to print the numbers 0-99. Try it.</field>
+                <next>
+                    <block type="variables_set" id="a(Rp:AkP~cJgQne(]=bY">
+                        <field name="VAR">big_list</field>
+                        <field name="OP">EQUALS</field>
+                        <value name="VALUE">
+                            <block type="lists_create_with" id="Gg)*/y%DcBo=K59SWbrm">
+                                <mutation items="5"></mutation>
+                                <value name="ADD0">
+                                    <block type="numbers_int" id="1PPI/zw2PAvL(W*5Xsg.">
+                                        <field name="NUM">0</field>
+                                    </block>
+                                </value>
+                                <value name="ADD1">
+                                    <block type="numbers_int" id="Jl?shg^B4**RWi]-84qM">
+                                        <field name="NUM">1</field>
+                                    </block>
+                                </value>
+                                <value name="ADD2">
+                                    <block type="numbers_int" id="T=921#U=5BXX2[O58I/D">
+                                        <field name="NUM">2</field>
+                                    </block>
+                                </value>
+                                <value name="ADD3">
+                                    <block type="numbers_int" id="=p,(Ve5wo{8VOQP*Dk=2">
+                                        <field name="NUM">3</field>
+                                    </block>
+                                </value>
+                                <value name="ADD4">
+                                    <block type="numbers_int" id="/:R]^K,0jEXnD~`?m_bO">
+                                        <field name="NUM">4</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="general_comment" id="~s)jCw+wrDEefDM,#}AK">
+                                <field name="TEXT">STOP! That's going to take awhile.</field>
+                                <next>
+                                    <block type="general_comment" id="{OXqn!tSB.CtKh=Z4Hh{">
+                                        <field name="TEXT">Replace "big_list with a range() block (Builtin menu).</field>
+                                        <next>
+                                            <block type="loops_for_each" id="@9eM9NV{UlCFW@kYCF%9">
+                                                <field name="VAR">number</field>
+                                                <value name="ITER">
+                                                    <block type="builtins_range_with" id="D6Y6V-MCDY-E~RSC+t3M">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                            <block type="numbers_int" id="J|0Kwf;FR{8aI)w+)CuB">
+                                                                <field name="NUM">1000</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <statement name="DO">
+                                                    <block type="general_comment" id="Y,)8?kNAaCCOtX`.JG{`">
+                                                        <field name="TEXT">Print the variable "number".</field>
+                                                        <next>
+                                                            <block type="strings_print_py3_commas" id="NEi7cU8/,Wf0f=U{mB)*">
+                                                                <mutation items="1"></mutation>
+                                                                <value name="ADD0">
+                                                                    <block type="variables_get" id="R{YZamXL@*LW9Xa|-9r]">
+                                                                        <field name="VAR">number</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </statement>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </next>
+            </block>
+        </next>
+    </block>
+</xml>

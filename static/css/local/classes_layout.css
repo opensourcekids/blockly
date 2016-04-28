@@ -25,44 +25,6 @@
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-.nav-tabs {
-    width: 440px;
-    height: 30px;
-    border-bottom: 1px solid #2856B7;
-    margin: 0px;
-}
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-    width: 220px;
-    padding-top: 5px;
-    color: #2856B7;
-    background-color: #FFFFFF;
-    border: 1px solid #2856B7;
-    border-bottom-color: transparent;
-    height: 30px;
-    margin: 0px;
-}
-
-.nav-tabs > li:not(.active) > a,
-.nav-tabs > li:not(.active) > a:hover,
-.nav-tabs > li:not(.active) > a:focus {
-    width: 220px;
-    padding-top: 5px;
-    height: 30px;
-    margin: 0px;
-}
-
-ul.nav {
-    margin: 0px;
-    margin-bottom: 0 !important;
-}
-
-.tab-content {
-    padding-left: 5px;
-    padding-right: 0px;
-}
-
 /* See http://stackoverflow.com/questions/10374171/how-to-make-twitter-bootstraps-pre-blocks-scroll-horizontally
 *  for horizontal scrolling fix.
 */
@@ -89,7 +51,6 @@ pre {
 }
 
 pre code {
-    overflow-wrap: normal;
     white-space: pre;
 }
 
@@ -123,7 +84,7 @@ pre.output {
 #btns > div {
     position: relative;
 }
-
+/* This is the hidden box into which blocks get changed to python. */
 textarea {
     height: 10px;
     width: 10px;
@@ -150,9 +111,6 @@ textarea {
     color: #ffffff;
 }
 
-
-
-
 #code2 {
     text-align: left;
 }
@@ -160,25 +118,6 @@ textarea {
 #output {
     padding-top: 5px;
     padding-left: 5px;
-}
-
-.sidebar-right > .toggler[order=two] {
-    border-right: 0px solid #fff;
-}
-
-.sidebar-right > .toggler[order=three] {
-    font-weight: bolder;
-    border-right: 0px solid #000075;
-    background-color: #000075;
-    padding-left: 5px;
-}
-
-iframe:focus {
-    outline: none;
-}
-
-iframe[seamless] {
-    display: none;
 }
 
 #panel_terminal {

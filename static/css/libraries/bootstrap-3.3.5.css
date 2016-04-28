@@ -7342,9 +7342,9 @@ button.close {
     .modal-lg {
         position: fixed;
         left: 50px;
-        top: 10px;
-        width: 900px;
-        height: 500px;
+        top: 0px;
+        width: 600px;
+        height: 600px;
     }
 }
 

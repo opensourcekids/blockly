@@ -1,0 +1,22 @@
+<xml id="defaultblocks" style="display: none" xmlns="http://www.w3.org/1999/xhtml">
+    <block type="general_comment" x="38" y="38">
+        <field name="TEXT">These purple blocks ith the # are comment blocks.</field>
+        <next>
+            <block type="general_comment" id="p~UnYDd/Vw=:1o[v;Nzm">
+                <field name="TEXT">Write a program to show datatypes and variables.</field>
+            </block>
+        </next>
+    </block>
+    <block type="strings_print"  x="35" y="219">
+        <value name="TEXT">
+            <block type="strings" >
+                <field name="TEXT">mlmdlmdlkmdlmdlllmllkgd;ldbldkpoetmb;dam;dumb;dfblkgmdlkldgkglkgldfglf., mx.v,mgjdog</field>
+            </block>
+        </value>
+        <next>
+            <block type="general_comment">
+                <field name="TEXT">Create a variable named string. Add a string block and print the variable.</field>
+            </block>
+        </next>
+    </block>
+</xml>

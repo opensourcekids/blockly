@@ -2,17 +2,9 @@
 
 {% extends "../../../classes_layout_skulpt.html" %}
 
-{# Content of the modal popup that appears on canvas based output (i.e., turtle graphics). #}
-{% set outputModalSize =  "modal-lg" %}
-
 {# The title of the step. #}
 {% block middle %}
     Variables at Runtime
-{% end %}
-
-{# Content of the coding area on the page. #}
-{% block code_area %}
-    {% include '../../../code_area_blockly.xml' %}
 {% end %}
 
 {# Blockly related items.#}
@@ -25,51 +17,55 @@
 {# False if Skulpt interpreter is used instead of server-side interpreter. #}
 {% block no_skulpt %}true{% end %}
 
-{# Use the operating system override; mostly for Raspberry Pi #}
-{% block display_needed %}false{% end %}
-
-{% block python_start_text %}''{% end %}
-
 {# Code for side panels.  Leave blank to have no panels.#}
-{% block panel %}
-
-    <div id="panel_output">
+{% block help %}
+    <!--
+    <div id="panel_help">
         <div style="padding: 0px">
-            <h2 id="output_title" align="center">Output</h2>
-
-            <!-- START: Skulpt Code-->
-{#            <div id="output" style="background: #000000;"> {# class="tab-pane fade"#}
-{#                <pre id="log" class="output" width="200px"></pre>#}
-{#            </div>#}
-            <!-- End: Skulpt Code-->
-
-            <!-- START: Terminal Code-->
-            <!-- This div is for non-Skulpt operations.  It inserts a terminal.-->
-            <div id="wrapper" style="border: 5px dotted black;color: white">
-                {% module Terminal("/websocket") %}
-            </div>
-        </div> <!-- AJL: This is extra, but DONT REMOVE IT.  Needed to handle teminal.-->
-        <!-- END: Terminal Code-->
-
+            <h2 align="center" style="color: #0072bc;font-size: 16pt;">Welcome to Snappy Code</h2>
+            <br/>
+            <p>Snappy Code uses colorful blocks to write programs instead of typing.</p>
+            <p/>
+            <ul class="backgrd_detail" style="line-height:25px;">
+                <li>Blocks</li>
+                <ul>
+                    <li>Blocks are used to write a program.</li>
+                    <li>Blocks are stored in the menu.</li>
+                </ul>
+                <li>Menu</li>
+                <ul>
+                    <li>The gray menu on the left.</li>
+                    <li>Some menus have menus inside.</li>
+                    <li>Labels group the blocks by category.</li>
+                    <li>Clicking a label shows the blocks inside.</li>
+                    <li>Click a block to place it onto the workspace.</li>
+                </ul>
+                <li>Workspace</li>
+                <ul>
+                    <li>This is the large white area to the right of the menu.</li>
+                    <li>All PyBlocks programming happens here.</li>
+                </ul>
+                <li>Python Code Area</li>
+                <ul>
+                    <li>Underneath this panel is the Python Code Area.</li>
+                    <li>It is accessed by clicking on the Code tab.</li>
+                    <li>Python code is generated here whenever the workspace changes.</li>
+                </ul>
+                <li>Output Area</li>
+                <ul>
+                    <li>Underneath this panel is the Ouput Area.</li>
+                    <li>It is accessed by clicking on the Output tab.</li>
+                    <li>The program runs when the Output tab is clicked.</li>
+                    <li>Only printable output shows up here.</li>
+                </ul>
+                <li>Canvas</li>
+                <ul>
+                    <li>Pops up when a graphical program like Turtles runs.</li>
+                    <li>The ouput to the program is shown here.</li>
+                    <li>To exit, click the close button or the shaded area.</li>
+                </ul>
+            </ul>
         </div>
     </div>
-
-    <div id="panel_code" align="center">
-        <div id="code_panel" style="padding: 0px">
-            <div>
-                <h2 id="code_title" style="align: center;">Code
-                    <button type="button" class="btn btn-default btn-noboard btn-large" style="border: none" onclick="save_python()">
-                        <span class="glyphicon glyphicon-save-file" style="color: #0072bc;"></span>
-                        click to save python file
-                    </button>
-                </h2>
-            </div>
-            <div id="code">  {# class="tab-pane fade in active" #}
-                <pre class="code_out prettyprint linenums" height="200px" width="200px" id="code2"></pre>
-                <!--<code id="prettycode" class="prettyprint linenums"></code>-->
-            </div>
-        </div>
-    </div>
-
-
+-->
 {% end %}

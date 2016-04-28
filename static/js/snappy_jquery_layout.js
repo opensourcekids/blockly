@@ -12,6 +12,7 @@ $(document).ready(function () {
             size: '400'
             , maxSize: '400'
             , initClosed: true
+            , allowOverflow: true
         }
         , east: {
             size: '33%'
@@ -20,6 +21,7 @@ $(document).ready(function () {
             center__size: '50%'
             , south: {
                 size: '50%'
+                , maxSize: '50%'
                 , initClosed: true
             }
         }

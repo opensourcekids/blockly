@@ -5,18 +5,21 @@ body {
     /*color: #333;*/
 }
 
-#help {
-    background: #FFFFFF;
-    /*border: 1px solid #BBB;*/
+
+
+/* BEGIN Blockly CSS Here*/
+.blocklySvg {
+}
+/* End Blockly CSS Here*/
+
+.outer {
+    padding-left: 20px;
+    padding-right: 0px;
     padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 100%;
-    margin-top: -1px;
-    overflow: auto;
+    padding-bottom: 0px;
 }
 
+/**********BEGIN: NORTH PANEL**********/
 #head_left {
     /*background: #F0FF00;*/
     /*border: 1px solid #BBB;*/
@@ -93,8 +96,6 @@ body {
     margin-right: 0px;
 }
 
-
-
 #head_right {
     /*background: #FF00FF;*/
     /*border: 1px solid #BBB;*/
@@ -110,32 +111,6 @@ body {
     /*margin-top: 1.45em;*/
     /*overflow: auto;*/
 }
-
-#panel_code {
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 12pt;
-    background: #FFFFFF;
-    color: #000000;
-    text-align: center;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-    padding-right: 0px;
-
-}
-
-#panel_output {
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 12pt;
-    background: #000000;
-    color: #FFFFFF;
-    text-align: center;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
 
 #menu {
     background-color: #FFFFFF;
@@ -157,9 +132,273 @@ table {
     width: 100%;
 }
 
+.nav {
+    width: auto;
+}
+/**********END: NORTH PANEL**********/
+
+
+#btns {
+    position: absolute;
+    z-index: 5;
+    top: 40px;
+    width: 150px;
+    margin-left: -30px;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#btns > div {
+    position: relative;
+}
+
+
+/**********BEGIN: WEST PANEL**********/
+#help {
+    background: #FFFFFF;
+    /*border: 1px solid #BBB;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    margin-top: -1px;
+    overflow: auto;
+}
+/**********END: WEST PANEL**********/
+
+
+/**********BEGIN: CENTER PANEL**********/
+/* This is the hidden box into which blocks get changed to python. */
+textarea {
+    height: 10px;
+    width: 10px;
+    visibility: hidden;
+}
+
 #content_area {
     height: 99%;
     width: 99%;
     margin-top: -2px;
 
+}
+/**********END: CENTER PANEL**********/
+
+/* See http://simurai.com/blog/2011/07/26/webkit-scrollbar */
+/* Overwrite the default to keep the scrollbar always visible */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.18);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+/**********BEGIN: EAST-CENTER (CODE AREA)**********/
+#panel_code {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12pt;
+    background: #FFFFFF;
+    color: #000000;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 0px;
+    overflow-y: scroll;
+
+}
+
+#code_title {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14pt;
+    color: #0072bc;
+    text-align: center;
+}
+
+/* See http://stackoverflow.com/questions/10374171/how-to-make-twitter-bootstraps-pre-blocks-scroll-horizontally
+*  for horizontal scrolling fix.
+*/
+pre {
+    tab-size: 4;
+
+    /*width: 440px;*/
+
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+    /*padding-left: 0px;*/
+    /*padding-right: 20px;*/
+    /*padding-top: 0px;*/
+    /*padding-bottom: 0px;*/
+
+    font-weight: normal;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 110%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+pre code {
+    white-space: pre;
+}
+
+pre.code_out {
+    background-color: #FFFFFF;
+    height: 100%;
+    border: none;
+}
+
+#code2 {
+    text-align: left;
+}
+/**********END: EAST-CENTER (CODE AREA)**********/
+
+
+/**********BEGIN: EAST-SOUTH (OUTPUT AREA)**********/
+
+#panel_output {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12pt;
+    background: #000000;
+    color: #FFFFFF;
+    /*text-align: center;*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    /*height: 100%;*/
+    /*width: 100%;*/
+}
+
+#output_title {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14pt;
+    color: #ffffff;
+    height: 30px;
+    text-align: center;
+}
+
+#output_panel {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    /*overflow-x: scroll;*/
+    /*overflow-y: scroll;*/
+}
+
+/*pre.output {*/
+    /*background-color: #000000;*/
+    /*color: #FFFFFF;*/
+    /*border: none;*/
+    /*height: 100%;*/
+    /*font-size: 14px;*/
+/*}*/
+
+/*#output {*/
+    /*padding-top: 5px;*/
+    /*padding-left: 5px;*/
+/*}*/
+
+#wrapper {
+    padding-left: 10px;
+}
+
+#panel_terminal {
+    /*background-color: #000075;*/
+}
+
+.terminado-conatainer {
+    tab-size: 4;
+
+    border: 5px dotted black;
+    color: white;
+
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+    /*padding-left: 0px;*/
+    /*padding-right: 20px;*/
+    /*padding-top: 0px;*/
+    /*padding-bottom: 0px;*/
+
+    font-weight: normal;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20pt;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+/**********END: EAST-SOUTH (OUTPUT AREA)**********/
+
+
+.public {
+    font-size: 24pt;
+    font-family: "Lucida Console", Monaco, monospace;
+    vertical-align: middle;
+    font-weight: bold;
+    padding-left: 7px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #0072bc;
+}
+
+.modal-dialog {
+    margin: 90px 200px;
+}
+
+#mycanvas {
+    height: 500px;
+    width: 500px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+canvas {
+    height: 500px;
+    width: 500px;
+}
+
+canvas[style]:nth-child(2) {
+    margin-top: -500px !important;
+}
+
+ul.backgrd_detail li {
+    margin-left: -20px;
+    position: static;
+}
+
+ul.backgrd_detail ul {
+    display: inherit;
+    position: static;
+}
+
+ul.backgrd_detail ul li {
+    margin-left: -40px;
+    padding: 0;
+}
+
+#panel_help {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 10pt;
+    background: #FFFFFF;
+    color: #000000;
+    /*text-align: center;*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 0px;
+    overflow-y: scroll;
 }

@@ -98,7 +98,7 @@ class ClassLesson(tornado.web.RequestHandler):
         class_number = class_url.replace('class', '')
         lesson_number = int(lesson_url.replace('lesson', ''))
         step_number = step_url.replace('step', '')
-        print(class_url, lesson_url, step_url)
+        # print(class_url, lesson_url, step_url)
         max_steps = range(CLASS_DICT[class_number][lesson_number])
         path_to_step = 'classes/' + class_url + '/' + lesson_url + '/' + step_url + '/main.html'
         return self.render(path_to_step, current_class=class_url, current_week=lesson_url,

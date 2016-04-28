@@ -13,12 +13,6 @@ function modalIntro() {
     $('#modal-intro').modal('show');
 }
 
-if (modal_template) {
-    $(window).load(function () {
-        modalIntro();
-    });
-}
-
 function canvasClose() {
     wasCanvasClosed = true;
 }
